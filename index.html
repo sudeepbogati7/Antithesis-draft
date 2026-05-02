@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antithesis Consulting — Fractional Leadership &amp; Strategic Intelligence</title>
+<meta name="description" content="Senior strategic leadership without the six-figure overhead. Fractional CMOs, CFOs, and strategists embedded in your business — measured by outcome, not headcount.">
+<meta property="og:title" content="Antithesis Consulting — Fractional Leadership & Strategic Intelligence">
+<meta property="og:description" content="Senior strategic leadership without the six-figure overhead. Fractional CMOs, CFOs, and strategists embedded in your business — measured by outcome, not headcount.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://antithesis.co">
+<meta property="og:site_name" content="Antithesis Consulting">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Antithesis Consulting",
+  "description": "Fractional leadership and strategic consulting. Senior CMOs, CFOs, and strategists embedded in your business — measured by outcome, not headcount.",
+  "url": "https://antithesis.co",
+  "email": "hello@antithesis.co",
+  "serviceType": "Management Consulting",
+  "areaServed": "AU",
+  "foundingDate": "2024"
+}
+</script>
+<style>
+/* ================================================================
+   CUSTOM PROPERTIES
+   ================================================================ */
+:root {
+  --color-bg: #0E0E10;
+  --color-bg-raised: #16161A;
+  --color-fg: #F2EFEA;
+  --color-accent: #D4A24C;
+  --color-muted: #8A8A92;
+  --color-muted-dim: #5A5A60;
+  --color-border: #2A2A30;
+  --color-surface: #1A1A1F;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'DM Mono', 'SFMono-Regular', Consolas, monospace;
+  --page-gutter: 80px;
+  --section-pad: 160px;
+  --content-max: 1200px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ================================================================
+   RESET & BASE
+   ================================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+button { cursor: pointer; }
+ul, ol { list-style: none; }
+
+/* ================================================================
+   FOCUS STYLES
+   ================================================================ */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ================================================================
+   NOISE / GRAIN OVERLAY
+   ================================================================ */
+.grain {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+}
+.grain rect { filter: url(#noiseFilter); }
+
+/* ================================================================
+   TYPOGRAPHY UTILITIES
+   ================================================================ */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 40px;
+}
+.heading-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+.body-large {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--color-fg);
+}
+
+/* ================================================================
+   LAYOUT
+   ================================================================ */
+.container {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+}
+
+/* ================================================================
+   SCROLL REVEAL
+   ================================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================================================
+   NAVIGATION
+   ================================================================ */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 16px 24px 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+.site-nav.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.site-nav__inner {
+  max-width: 1080px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  border-radius: 10px;
+  background: rgba(14, 14, 16, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(242, 239, 234, 0.06);
+}
+.nav-wordmark {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-fg);
+}
+.nav-links {
+  display: flex;
+  gap: 36px;
+}
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  transition: color 0.3s ease;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover { color: var(--color-fg); }
+.nav-links a:hover::after { width: 100%; }
+
+/* Hamburger */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  z-index: 1002;
+}
+.nav-hamburger span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--color-fg);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.nav-hamburger.open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Mobile overlay */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  background: rgba(14, 14, 16, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.mobile-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.mobile-overlay nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.mobile-overlay nav a {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--color-fg);
+  transition: color 0.3s ease;
+}
+.mobile-overlay nav a:hover { color: var(--color-accent); }
+
+/* ================================================================
+   HERO
+   ================================================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+/* Video background */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.65) brightness(0.35) contrast(1.05);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 14, 16, 0.55) 0%,
+    rgba(14, 14, 16, 0.45) 40%,
+    rgba(14, 14, 16, 0.88) 100%
+  );
+}
+/* Hero content container */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  width: 100%;
+  padding: 140px var(--page-gutter) 80px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-headline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(42px, 6vw, 84px);
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+.hero-sub {
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.55;
+  max-width: 580px;
+  color: var(--color-fg);
+  opacity: 0.72;
+  margin-bottom: 48px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-block;
+  padding: 16px 40px;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn-primary:hover {
+  background: #e0b05e;
+  transform: translateY(-1px);
+}
+.text-link {
+  font-size: 15px;
+  color: var(--color-muted);
+  border-bottom: 1px solid var(--color-muted-dim);
+  padding-bottom: 2px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.text-link:hover {
+  color: var(--color-fg);
+  border-color: var(--color-fg);
+}
+.hero-tag {
+  margin-top: auto;
+  padding-top: 48px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted-dim);
+}
+
+/* ================================================================
+   LOGO STRIP
+   ================================================================ */
+.logo-strip {
+  padding: 80px var(--page-gutter);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.logo-strip__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted-dim);
+  text-align: center;
+  margin-bottom: 40px;
+}
+.logo-strip__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 4vw, 56px);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.logo-strip__row::-webkit-scrollbar { display: none; }
+/* Replace these styled text items with real logo SVGs as needed */
+.logo-strip__item {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 2vw, 21px);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--color-muted-dim);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+.logo-strip__item:hover { color: var(--color-muted); }
+
+/* ================================================================
+   SECTION — VALUE PROPOSITION (01 / The Case)
+   ================================================================ */
+.value-prop {
+  padding: var(--section-pad) var(--page-gutter);
+}
+.value-prop__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+}
+.value-prop__body {
+  max-width: 600px;
+}
+.value-prop__body h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(36px, 5vw, 56px);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 32px;
+}
+.value-prop__body p {
+  color: var(--color-muted);
+  margin-bottom: 20px;
+}
+.value-prop__stat {
+  display: flex;
+  flex-direction: column;
+}
+.stat-number {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(100px, 14vw, 180px);
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  color: var(--color-accent);
+  margin-bottom: 16px;
+}
+.stat-caption {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-muted);
+  max-width: 380px;
+}
+
+/* ================================================================
+   SECTION — SERVICES (02 / Services)
+   ================================================================ */
+.services {
+  padding: var(--section-pad) var(--page-gutter);
+}
+.services h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(36px, 5vw, 56px);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 64px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+.service-card {
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  padding: 44px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s ease;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.service-card:hover {
+  background: var(--color-surface);
+}
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+.service-card__number {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: 24px;
+  opacity: 0.7;
+}
+.service-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.service-card__desc {
+  color: var(--color-muted);
+  margin-bottom: 20px;
+  max-width: 480px;
+}
+.service-card__use {
+  font-style: italic;
+  font-size: 14px;
+  color: var(--color-muted-dim);
+}
+
+/* ================================================================
+   SECTION — METHOD (03 / Method)
+   ================================================================ */
+.method {
+  padding: var(--section-pad) var(--page-gutter);
+}
+.method h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(36px, 5vw, 56px);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 24px;
+}
+.method__intro {
+  color: var(--color-muted);
+  max-width: 640px;
+  margin-bottom: 72px;
+}
+.method-flow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-bottom: 64px;
+  position: relative;
+}
+.method-stage {
+  flex: 1;
+  padding: 0 20px;
+  position: relative;
+}
+.method-stage__number {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  display: block;
+  margin-bottom: 8px;
+}
+.method-stage__label {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.method-stage__desc {
+  font-size: 14px;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+.method-connector {
+  flex: 0 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 36px;
+  position: relative;
+}
+.method-connector__line {
+  width: 100%;
+  height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s var(--ease-out-expo);
+}
+.method-connector__arrow {
+  position: absolute;
+  right: -2px;
+  font-size: 14px;
+  color: var(--color-accent);
+  opacity: 0;
+  transition: opacity 0.4s ease 0.6s;
+}
+.method-flow.visible .method-connector__line {
+  transform: scaleX(1);
+}
+.method-flow.visible .method-connector__arrow {
+  opacity: 1;
+}
+.method-flow.visible .method-stage {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation */
+.method-stage {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+}
+.method-flow.visible .method-stage:nth-child(1) { transition-delay: 0s; }
+.method-flow.visible .method-connector:nth-child(2) .method-connector__line { transition-delay: 0.15s; }
+.method-flow.visible .method-connector:nth-child(2) .method-connector__arrow { transition-delay: 0.75s; }
+.method-flow.visible .method-stage:nth-child(3) { transition-delay: 0.3s; }
+.method-flow.visible .method-connector:nth-child(4) .method-connector__line { transition-delay: 0.45s; }
+.method-flow.visible .method-connector:nth-child(4) .method-connector__arrow { transition-delay: 1.05s; }
+.method-flow.visible .method-stage:nth-child(5) { transition-delay: 0.6s; }
+.method-flow.visible .method-connector:nth-child(6) .method-connector__line { transition-delay: 0.75s; }
+.method-flow.visible .method-connector:nth-child(6) .method-connector__arrow { transition-delay: 1.35s; }
+.method-flow.visible .method-stage:nth-child(7) { transition-delay: 0.9s; }
+
+/* Outcome chips */
+.outcome-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.chip {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  padding: 10px 20px;
+  white-space: nowrap;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+.chip:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* ================================================================
+   SECTION — CONTACT (04 / Contact)
+   ================================================================ */
+.contact {
+  padding: var(--section-pad) var(--page-gutter);
+}
+.contact h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(36px, 5vw, 72px);
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+  max-width: 720px;
+  margin-bottom: 24px;
+}
+.contact__intro {
+  color: var(--color-muted);
+  max-width: 580px;
+  margin-bottom: 56px;
+}
+
+/* Form */
+.contact-form {
+  max-width: 540px;
+}
+.form-field {
+  position: relative;
+  margin-bottom: 36px;
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-muted-dim);
+  color: var(--color-fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  padding: 28px 0 10px;
+  transition: border-color 0.3s ease;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.form-field textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+.form-field select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%238A8A92' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  padding-right: 20px;
+}
+.form-field select option {
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+.form-field label {
+  position: absolute;
+  left: 0;
+  top: 28px;
+  font-size: 17px;
+  color: var(--color-muted);
+  pointer-events: none;
+  transition: all 0.25s ease;
+  transform-origin: left top;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-bottom-color: var(--color-accent);
+}
+.form-field input:focus + label,
+.form-field input:not(:placeholder-shown) + label,
+.form-field textarea:focus + label,
+.form-field textarea:not(:placeholder-shown) + label {
+  top: 4px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+}
+.form-field select + label {
+  top: 4px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+}
+.btn-submit {
+  display: inline-block;
+  padding: 18px 56px;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 8px;
+}
+.btn-submit:hover {
+  background: #e0b05e;
+  transform: translateY(-1px);
+}
+.form-thankyou {
+  display: none;
+}
+.form-thankyou.active {
+  display: block;
+}
+.form-thankyou h3 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.form-thankyou p {
+  color: var(--color-muted);
+  max-width: 420px;
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+.site-footer {
+  padding: 40px var(--page-gutter);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-left,
+.footer-right {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted-dim);
+}
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.footer-right a {
+  color: var(--color-muted-dim);
+  transition: color 0.3s ease;
+}
+.footer-right a:hover { color: var(--color-fg); }
+.footer-right svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ================================================================
+   RESPONSIVE — TABLET (768px+)
+   ================================================================ */
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .services-grid .service-card:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 12px);
+  }
+}
+
+/* ================================================================
+   RESPONSIVE — DESKTOP (1024px+)
+   ================================================================ */
+@media (min-width: 1024px) {
+  .value-prop__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .value-prop__stat { order: 0; }
+  .value-prop__body { order: 0; }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .services-grid .service-card:last-child {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .method-flow {
+    align-items: flex-start;
+  }
+}
+
+/* ================================================================
+   RESPONSIVE — MOBILE (<768px)
+   ================================================================ */
+@media (max-width: 767px) {
+  :root {
+    --page-gutter: 24px;
+    --section-pad: 96px;
+  }
+  .site-nav { padding: 12px 16px 0; }
+  .site-nav__inner { padding: 12px 20px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+
+  .hero-content { padding: 120px var(--page-gutter) 64px; }
+
+  .value-prop__stat { order: -1; }
+
+  .method-flow {
+    flex-direction: column;
+    gap: 0;
+  }
+  .method-stage {
+    padding: 0 0 24px 0;
+  }
+  .method-connector {
+    flex: 0 0 32px;
+    width: 1px;
+    height: 32px;
+    flex-direction: column;
+    padding-top: 0;
+    margin-left: 12px;
+  }
+  .method-connector__line {
+    width: 1px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  .method-flow.visible .method-connector__line {
+    transform: scaleY(1);
+  }
+  .method-connector__arrow {
+    bottom: -2px;
+    right: auto;
+    transform: rotate(90deg);
+    font-size: 12px;
+  }
+
+  .contact h2 { margin-bottom: 20px; }
+  .btn-submit { width: 100%; text-align: center; }
+
+  .logo-strip__row {
+    justify-content: flex-start;
+    padding: 0 var(--page-gutter);
+  }
+}
+
+@media (max-width: 480px) {
+  :root { --page-gutter: 20px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 20px; }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .method-stage {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .method-connector__line {
+    transform: scaleX(1);
+    transition: none;
+  }
+  .method-connector__arrow {
+    opacity: 1;
+    transition: none;
+  }
+  .site-nav {
+    transition: none;
+  }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- SVG noise filter (hidden) -->
+<svg aria-hidden="true" style="position:absolute;width:0;height:0">
+  <filter id="noiseFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+</svg>
+
+<!-- Grain overlay -->
+<svg class="grain" aria-hidden="true" width="100%" height="100%">
+  <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+</svg>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<header class="site-nav" role="banner">
+  <div class="site-nav__inner">
+    <a href="#" class="nav-wordmark" aria-label="Antithesis — Home">Antithesis</a>
+    <div class="nav-links" role="navigation" aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#method">Method</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile overlay -->
+<div class="mobile-overlay" aria-hidden="true">
+  <nav aria-label="Mobile navigation">
+    <a href="#services">Services</a>
+    <a href="#method">Method</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div>
+
+<main>
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" id="hero">
+    <!-- Background video — drop your .mp4 in the same folder as hero-bg.mp4 -->
+    <div class="hero-bg">
+      <video autoplay muted loop playsinline aria-hidden="true">
+        <source src="hero-bg.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1 class="hero-headline reveal">Strategic expertise.<br>On demand.</h1>
+      <p class="hero-sub reveal" style="transition-delay:0.1s">Senior leadership without the six-figure overhead. Fractional CMOs, CFOs, and strategists embedded in your business — measured by outcome, not headcount.</p>
+      <div class="hero-actions reveal" style="transition-delay:0.2s">
+        <a href="#contact" class="btn-primary">Book a consultation</a>
+        <a href="#the-case" class="text-link">See how it works &#8595;</a>
+      </div>
+      <div class="hero-tag">Est. 2024 — Melbourne</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LOGO STRIP (Trusted By)
+       ============================================================ -->
+  <section class="logo-strip reveal" id="work" aria-label="Trusted by">
+    <p class="logo-strip__label">Trusted by</p>
+    <div class="logo-strip__row">
+      <!-- Replace each .logo-strip__item with an <svg> or <img> of the real client logo -->
+      <span class="logo-strip__item">Disney</span>
+      <span class="logo-strip__item">Lego</span>
+      <span class="logo-strip__item">T2 Tea</span>
+      <span class="logo-strip__item">Surfing for Farmers</span>
+      <span class="logo-strip__item">NAOS</span>
+      <span class="logo-strip__item">Bioderma</span>
+      <span class="logo-strip__item">Amazonia</span>
+      <span class="logo-strip__item">RAW</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       01 / THE CASE — VALUE PROPOSITION
+       ============================================================ -->
+  <section class="value-prop" id="the-case">
+    <div class="container">
+      <p class="section-label reveal">01 / The Case</p>
+      <div class="value-prop__grid">
+        <div class="value-prop__body reveal" style="transition-delay:0.1s">
+          <h2>The full-time hire is the wrong default.</h2>
+          <p>Most early-stage companies hire senior leadership too early or too late. Too early, and the overhead burns runway before the role justifies itself. Too late, and strategic gaps compound into existential problems.</p>
+          <p>Fractional leadership resolves the timing paradox: you get the experience of a seasoned executive, scoped to the decisions that actually matter, without the fixed cost of a full-time hire. It is how smart companies build strategic capacity without overbuilding the org chart.</p>
+        </div>
+        <div class="value-prop__stat reveal" style="transition-delay:0.25s">
+          <span class="stat-number">3&#8211;5&times;</span>
+          <p class="stat-caption">The capital efficiency gap between fractional and full-time strategic leadership in early-stage growth companies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       02 / SERVICES
+       ============================================================ -->
+  <section class="services" id="services">
+    <div class="container">
+      <p class="section-label reveal">02 / Services</p>
+      <h2 class="reveal" style="transition-delay:0.1s">Three ways we work with you.</h2>
+      <div class="services-grid">
+        <div class="service-card reveal" style="transition-delay:0.15s">
+          <div class="service-card__number">01</div>
+          <h3 class="service-card__title">Fractional Leadership</h3>
+          <p class="service-card__desc">A senior operator embedded in your business one to three days per week. They sit in the room, own the decisions, and carry the accountability of a full-time executive — without the fixed cost or the twelve-month ramp.</p>
+          <p class="service-card__use">Use it for: CMO, CFO, or CSO functions when the need is real but the budget is not.</p>
+        </div>
+        <div class="service-card reveal" style="transition-delay:0.25s">
+          <div class="service-card__number">02</div>
+          <h3 class="service-card__title">Research &amp; Validation</h3>
+          <p class="service-card__desc">Market intelligence, competitive analysis, and strategic research delivered in weeks, not quarters. We pressure-test assumptions before you commit capital, so the expensive decisions are also the informed ones.</p>
+          <p class="service-card__use">Use it for: new market entry, product validation, pricing strategy, or investment due diligence.</p>
+        </div>
+        <div class="service-card reveal" style="transition-delay:0.35s">
+          <div class="service-card__number">03</div>
+          <h3 class="service-card__title">Impact &amp; SROI</h3>
+          <p class="service-card__desc">Rigorous measurement frameworks that prove the value of what you do. Social return on investment, impact reporting, and outcome mapping that satisfies funders, boards, and your own strategic clarity.</p>
+          <p class="service-card__use">Use it for: grant reporting, ESG compliance, program evaluation, or stakeholder communication.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       03 / METHOD
+       ============================================================ -->
+  <section class="method" id="method">
+    <div class="container">
+      <p class="section-label reveal">03 / Method</p>
+      <h2 class="reveal" style="transition-delay:0.1s">Inputs in. Impact out.</h2>
+      <p class="method__intro reveal" style="transition-delay:0.15s">Every engagement follows a structured methodology that converts ambiguity into measurable results. We start with your business reality — not a templated framework — and work backward from the outcomes that actually move your metrics.</p>
+
+      <div class="method-flow" id="methodFlow">
+        <div class="method-stage">
+          <span class="method-stage__number">Stage 01</span>
+          <h3 class="method-stage__label">Inputs</h3>
+          <p class="method-stage__desc">Business context, data, stakeholder&nbsp;interviews</p>
+        </div>
+        <div class="method-connector" aria-hidden="true">
+          <div class="method-connector__line"></div>
+          <span class="method-connector__arrow">&#8594;</span>
+        </div>
+        <div class="method-stage">
+          <span class="method-stage__number">Stage 02</span>
+          <h3 class="method-stage__label">Outputs</h3>
+          <p class="method-stage__desc">Research findings, strategic recommendations, frameworks</p>
+        </div>
+        <div class="method-connector" aria-hidden="true">
+          <div class="method-connector__line"></div>
+          <span class="method-connector__arrow">&#8594;</span>
+        </div>
+        <div class="method-stage">
+          <span class="method-stage__number">Stage 03</span>
+          <h3 class="method-stage__label">Outcomes</h3>
+          <p class="method-stage__desc">Implemented changes, operational shifts, capability building</p>
+        </div>
+        <div class="method-connector" aria-hidden="true">
+          <div class="method-connector__line"></div>
+          <span class="method-connector__arrow">&#8594;</span>
+        </div>
+        <div class="method-stage">
+          <span class="method-stage__number">Stage 04</span>
+          <h3 class="method-stage__label">Impact</h3>
+          <p class="method-stage__desc">Measurable business results, validated&nbsp;ROI</p>
+        </div>
+      </div>
+
+      <div class="outcome-chips reveal">
+        <span class="chip">Lower CAC</span>
+        <span class="chip">Increased efficiency</span>
+        <span class="chip">Long-term resilience</span>
+        <span class="chip">Faster time to market</span>
+        <span class="chip">Reduced burn</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       04 / CONTACT
+       ============================================================ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="section-label reveal">04 / Contact</p>
+      <h2 class="reveal" style="transition-delay:0.1s">Stop guessing.<br>Start measuring.</h2>
+      <p class="contact__intro reveal" style="transition-delay:0.15s">Tell us what you are working on. We will come back within one business day with a view on whether we can help — and if we cannot, who can.</p>
+
+      <form class="contact-form reveal" id="contactForm" style="transition-delay:0.2s" novalidate>
+        <div class="form-field">
+          <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name">
+          <label for="cf-name">Name</label>
+        </div>
+        <div class="form-field">
+          <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email">
+          <label for="cf-email">Email</label>
+        </div>
+        <div class="form-field">
+          <select id="cf-need" name="need" required>
+            <option value="" disabled selected hidden></option>
+            <option value="research">Research &amp; validation</option>
+            <option value="impact">Impact &amp; SROI</option>
+            <option value="leadership">Fractional leadership</option>
+            <option value="unsure">Not sure yet</option>
+          </select>
+          <label for="cf-need">What do you need help with?</label>
+        </div>
+        <div class="form-field">
+          <textarea id="cf-notes" name="notes" placeholder=" " rows="2"></textarea>
+          <label for="cf-notes">Anything else?</label>
+        </div>
+        <button type="submit" class="btn-submit">Send</button>
+      </form>
+
+      <div class="form-thankyou" id="formThankyou">
+        <h3>Thank you.</h3>
+        <p>We have received your message and will be in touch within one business day.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-left">&copy; 2024 Antithesis Consulting</div>
+  <div class="footer-right">
+    <a href="mailto:hello@antithesis.co">hello@antithesis.co</a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    </a>
+  </div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  /* ============================================================
+     INTERSECTION OBSERVER — SCROLL REVEAL
+     ============================================================ */
+  var revealElements = document.querySelectorAll('.reveal');
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  revealElements.forEach(function(el) {
+    revealObserver.observe(el);
+  });
+
+  /* ============================================================
+     METHOD FLOW — OBSERVE & ANIMATE
+     ============================================================ */
+  var methodFlow = document.getElementById('methodFlow');
+  if (methodFlow) {
+    var methodObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          methodObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    methodObserver.observe(methodFlow);
+  }
+
+  /* ============================================================
+     STICKY NAV — SHOW AFTER SCROLLING PAST HERO
+     ============================================================ */
+  var nav = document.querySelector('.site-nav');
+  var hero = document.getElementById('hero');
+  var navObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) {
+        nav.classList.add('active');
+      } else {
+        nav.classList.remove('active');
+      }
+    });
+  }, { threshold: 0.05 });
+  if (hero) navObserver.observe(hero);
+
+  /* ============================================================
+     MOBILE MENU
+     ============================================================ */
+  var hamburger = document.querySelector('.nav-hamburger');
+  var overlay = document.querySelector('.mobile-overlay');
+  var overlayLinks = overlay ? overlay.querySelectorAll('a') : [];
+
+  function toggleMenu() {
+    var isOpen = hamburger.classList.toggle('open');
+    overlay.classList.toggle('open', isOpen);
+    overlay.setAttribute('aria-hidden', !isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  }
+
+  if (hamburger) hamburger.addEventListener('click', toggleMenu);
+  overlayLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (hamburger.classList.contains('open')) toggleMenu();
+    });
+  });
+
+  /* ============================================================
+     FORM SUBMISSION
+     ============================================================ */
+  var form = document.getElementById('contactForm');
+  var thankyou = document.getElementById('formThankyou');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.style.display = 'none';
+      thankyou.classList.add('active');
+    });
+  }
+
+  /* ============================================================
+     SMOOTH SCROLL FOR ANCHOR LINKS
+     ============================================================ */
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  /* ============================================================
+     TRIGGER HERO REVEAL ON LOAD
+     ============================================================ */
+  window.addEventListener('load', function() {
+    document.querySelectorAll('.hero-content .reveal').forEach(function(el, i) {
+      setTimeout(function() { el.classList.add('visible'); }, 100 + (i * 120));
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
