@@ -62,6 +62,10 @@
   --grain-opacity: 0.035;
   --grain-blend: overlay;
   --video-filter: saturate(0.65) brightness(0.35) contrast(1.05);
+  --logo-filter: grayscale(1) invert(1);
+  --logo-blend: lighten;
+  --logo-opacity: 0.6;
+  --logo-hover-opacity: 0.9;
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'DM Mono', 'SFMono-Regular', Consolas, monospace;
@@ -92,6 +96,10 @@
   --grain-opacity: 0.06;
   --grain-blend: multiply;
   --video-filter: saturate(0.4) brightness(1.4) contrast(0.9);
+  --logo-filter: grayscale(1);
+  --logo-blend: multiply;
+  --logo-opacity: 0.7;
+  --logo-hover-opacity: 0.95;
 }
 
 html { transition: background-color 0.3s ease; }
@@ -240,11 +248,14 @@ a:focus-visible, button:focus-visible {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
 }
 .nav-wordmark {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
   color: var(--color-fg);
+}
+.nav-logo {
+  height: 20px;
+  width: auto;
+  fill: currentColor;
 }
 .site-nav__right {
   display: flex;
@@ -494,30 +505,58 @@ a:focus-visible, button:focus-visible {
   margin-bottom: 40px;
 }
 .logo-strip__row {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+.logo-strip__track {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: clamp(24px, 4vw, 56px);
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding-bottom: 4px;
+  width: max-content;
+  animation: logoMarquee 45s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
-.logo-strip__row::-webkit-scrollbar { display: none; }
-/* Replace these styled text items with real logo SVGs as needed */
+.logo-strip__row:hover .logo-strip__track {
+  animation-play-state: paused;
+}
+@keyframes logoMarquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
 .logo-strip__item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  user-select: none;
+  margin-right: 72px;
+}
+/* Image logos */
+.logo-strip__img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  filter: var(--logo-filter);
+  mix-blend-mode: var(--logo-blend);
+  opacity: var(--logo-opacity);
+  transition: opacity 0.3s ease;
+}
+.logo-strip__item:hover .logo-strip__img {
+  opacity: var(--logo-hover-opacity);
+}
+/* Text fallback logos (for brands without image files) */
+.logo-strip__text {
   font-family: var(--font-display);
   font-size: clamp(16px, 2vw, 21px);
   font-weight: 400;
   letter-spacing: 0.02em;
   color: var(--color-muted-dim);
-  white-space: nowrap;
-  flex-shrink: 0;
   transition: color 0.3s ease;
-  user-select: none;
 }
-.logo-strip__item:hover { color: var(--color-muted); }
+.logo-strip__item:hover .logo-strip__text { color: var(--color-muted); }
 
 /* ================================================================
    SECTION — VALUE PROPOSITION (01 / The Case)
@@ -899,37 +938,110 @@ a:focus-visible, button:focus-visible {
 /* ================================================================
    FOOTER
    ================================================================ */
+/* ================================================================
+   FOOTER
+   ================================================================ */
 .site-footer {
-  padding: 40px var(--page-gutter);
+  padding: 0 var(--page-gutter);
+}
+.footer-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+/* Footer columns */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  padding: 100px 0 80px;
   border-top: 1px solid var(--color-border);
+}
+.footer-col__title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 20px;
+}
+.footer-col a,
+.footer-col p {
+  display: block;
+  font-size: 15px;
+  color: var(--color-muted-dim);
+  line-height: 1.8;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover { color: var(--color-fg); }
+.footer-social {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-muted-dim);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.footer-social a:hover {
+  color: var(--color-fg);
+  border-color: var(--color-muted);
+}
+.footer-social svg {
+  width: 16px;
+  height: 16px;
+}
+/* Footer bottom bar */
+.footer-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
+  padding: 28px 0;
+  border-top: 1px solid var(--color-border);
 }
-.footer-left,
-.footer-right {
+.footer-bottom span,
+.footer-bottom a {
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-muted-dim);
-}
-.footer-right {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-.footer-right a {
-  color: var(--color-muted-dim);
   transition: color 0.3s ease;
 }
-.footer-right a:hover { color: var(--color-fg); }
-.footer-right svg {
-  display: inline-block;
-  vertical-align: middle;
+.footer-bottom a:hover { color: var(--color-fg); }
+.footer-bottom-links {
+  display: flex;
+  gap: 24px;
+}
+/* Giant brand logo at the very bottom */
+.footer-brand {
+  padding: 60px 0 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  cursor: default;
+}
+.footer-brand-logo {
+  display: block;
+  width: 90%;
+  max-width: 100%;
+  height: auto;
+  fill: var(--color-border);
+  transition: fill 0.5s ease;
+}
+.footer-brand:hover .footer-brand-logo {
+  fill: var(--color-muted);
 }
 
 /* ================================================================
@@ -1026,10 +1138,11 @@ a:focus-visible, button:focus-visible {
   .contact h2 { margin-bottom: 20px; }
   .btn-submit { width: 100%; text-align: center; }
 
-  .logo-strip__row {
-    justify-content: flex-start;
-    padding: 0 var(--page-gutter);
-  }
+  .logo-strip__item { margin-right: 56px; }
+  .logo-strip__img { height: 44px; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 40px; padding: 64px 0 48px; }
+  .footer-brand { padding: 32px 0 16px; }
 }
 
 @media (max-width: 480px) {
@@ -1043,6 +1156,7 @@ a:focus-visible, button:focus-visible {
    REDUCED MOTION
    ================================================================ */
 @media (prefers-reduced-motion: reduce) {
+  .logo-strip__track { animation: none; }
   .reveal {
     opacity: 1;
     transform: none;
@@ -1093,7 +1207,9 @@ a:focus-visible, button:focus-visible {
      ============================================================ -->
 <header class="site-nav" role="banner">
   <div class="site-nav__inner">
-    <a href="#" class="nav-wordmark" aria-label="Antithesis — Home">Antithesis</a>
+    <a href="#" class="nav-wordmark" aria-label="Antithesis — Home">
+      <svg class="nav-logo" viewBox="100 160 2210 295" aria-hidden="true"><g transform="scale(8.571428571428571) translate(10, 10)"><path d="M5.6641 27.266l-2.2461 0 9.1797-16.387 9.7461 0 1.582 16.387 2.1875 0 1.2305 12.715-10.059 0-0.41016-5.4883-5.5664 0c-0.97656 1.8164-1.8945 3.6523-2.8711 5.4883l-9.8828 0zM16.621 27.676l0-0.41016-2.1289 0 0.039063-6.4844-2.6172 6.4844 2.168 0-0.15625 0.41016 2.6953 0zM58.408 27.266l-2.9102 12.715-9.082 0-3.8672-12.715-0.44922 0-2.9492 12.715-9.1992 0 2.9492-12.715-1.7773 0 3.7695-16.367 10.723 0 3.1641 10.273 2.4023-10.273 9.2383 0-3.7891 16.367 1.7773 0zM80.879 26.719l-2.9688 13.359-9.9023 0 3.0469-13.359-1.7773 0 1.9727-8.5547-7.8125 0 1.7188-7.4023 25.352 0-1.6602 7.4023-7.793 0-1.9141 8.5547 1.7383 0zM101.944 27.344l-2.9297 12.734-9.8828 0 2.9297-12.734-1.9922 0 3.8281-16.484 9.8633 0-3.7891 16.484 1.9727 0zM122.989 26.719l-2.9688 13.359-9.9023 0 3.0469-13.359-1.7773 0 1.9727-8.5547-7.8125 0 1.7188-7.4023 25.352 0-1.6602 7.4023-7.793 0-1.9141 8.5547 1.7383 0zM159.619 27.344l-2.9688 12.734-9.7852 0 2.7734-11.953-5.6641 0-2.793 11.953-9.8438 0 2.9492-12.734-1.9727 0 3.7695-16.484 9.8438 0-2.2461 9.9023 5.6445 0 2.2852-9.9023 9.8047 0-3.8086 16.484 2.0117 0zM165.449 27.344l-1.9922 0 3.8281-16.484 20.918 0-1.6797 7.4023-11.152 0-0.58594 2.5 10.254 0-1.5039 6.582 1.9922 0-0.17578 0.78125-10.273 0-1.0352 4.5703 11.113 0-1.6797 7.3828-20.957 0zM213.779 26.719c1.1328 4.1016-2.2656 8.9453-5.4102 11.074-6.1719 4.043-14.316 3.3984-20.625 0.15625l1.8359-8.125 3.0273 0c0.39063 4.1992 9.7852 5.9375 10.742 1.7969 0.46875-2.0508-6.8945-2.6172-9.3555-4.5508-0.13672-0.11719-0.29297-0.23438-0.41016-0.35156l-1.7969 0c-1.9531-1.8359-2.1289-4.2773-1.5625-6.8164 2.3828-10.41 16.523-11.445 24.688-7.3242l-1.8164 7.9102-3.0469 0c0.19531-2.9688-8.7891-5-9.6289-1.4258-0.56641 2.7734 8.5352 1.9531 11.055 6.3477 0.21484 0.39063 0.39063 0.85938 0.50781 1.3086l1.7969 0zM228.301 27.344l-2.9297 12.734-9.8828 0 2.9297-12.734-1.9922 0 3.8281-16.484 9.8633 0-3.7891 16.484 1.9727 0zM257.529 26.719c1.1328 4.1016-2.2656 8.9453-5.4102 11.074-6.1719 4.043-14.316 3.3984-20.625 0.15625l1.8359-8.125 3.0273 0c0.39063 4.1992 9.7852 5.9375 10.742 1.7969 0.46875-2.0508-6.8945-2.6172-9.3555-4.5508-0.13672-0.11719-0.29297-0.23438-0.41016-0.35156l-1.7969 0c-1.9531-1.8359-2.1289-4.2773-1.5625-6.8164 2.3828-10.41 16.523-11.445 24.688-7.3242l-1.8164 7.9102-3.0469 0c0.19531-2.9688-8.7891-5-9.6289-1.4258-0.56641 2.7734 8.5352 1.9531 11.055 6.3477 0.21484 0.39063 0.39063 0.85938 0.50781 1.3086l1.7969 0z"/></g></svg>
+    </a>
     <div class="site-nav__right">
       <div class="nav-links" role="navigation" aria-label="Main navigation">
         <a href="#services">Services</a>
@@ -1156,15 +1272,45 @@ a:focus-visible, button:focus-visible {
   <section class="logo-strip reveal" id="work" aria-label="Trusted by">
     <p class="logo-strip__label">Trusted by</p>
     <div class="logo-strip__row">
-      <!-- Replace each .logo-strip__item with an <svg> or <img> of the real client logo -->
-      <span class="logo-strip__item">Disney</span>
-      <span class="logo-strip__item">Lego</span>
-      <span class="logo-strip__item">T2 Tea</span>
-      <span class="logo-strip__item">Surfing for Farmers</span>
-      <span class="logo-strip__item">NAOS</span>
-      <span class="logo-strip__item">Bioderma</span>
-      <span class="logo-strip__item">Amazonia</span>
-      <span class="logo-strip__item">RAW</span>
+      <div class="logo-strip__track">
+        <!-- Track contains 6 copies of the logo set. translateX(-50%) shifts by exactly 3 copies, and the second half is identical to the first → seamless loop. -->
+        <!-- Set 1 (only this set is announced to screen readers) -->
+        <span class="logo-strip__item"><img class="logo-strip__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="Disney" loading="lazy"></span>
+        <span class="logo-strip__item"><img class="logo-strip__img" src="assets/trusted-by/SFF.png" alt="Surfing for Farmers" loading="lazy"></span>
+        <span class="logo-strip__item"><img class="logo-strip__img" src="assets/trusted-by/Bioderma 2.png" alt="Bioderma" loading="lazy"></span>
+        <span class="logo-strip__item"><img class="logo-strip__img" src="assets/trusted-by/Amazonia logo.png" alt="Amazonia" loading="lazy"></span>
+        <span class="logo-strip__item"><img class="logo-strip__img" src="assets/trusted-by/Raw logo.jpeg" alt="RAW" loading="lazy"></span>
+        <!-- Set 2 -->
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/SFF.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy"></span>
+        <!-- Set 3 -->
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/SFF.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy"></span>
+        <!-- Set 4 (mirror duplicate of set 1) -->
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/SFF.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy"></span>
+        <!-- Set 5 -->
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/SFF.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy"></span>
+        <!-- Set 6 -->
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/SFF.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy"></span>
+        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy"></span>
+      </div>
     </div>
   </section>
 
@@ -1319,14 +1465,51 @@ a:focus-visible, button:focus-visible {
      FOOTER
      ============================================================ -->
 <footer class="site-footer" role="contentinfo">
-  <div class="footer-left">&copy; 2024 Antithesis Consulting</div>
-  <div class="footer-right">
-    <a href="mailto:hello@antithesis.co">hello@antithesis.co</a>
-    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-      </svg>
-    </a>
+  <div class="footer-inner">
+    <!-- Footer columns -->
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="footer-col__title">Contact</p>
+        <a href="mailto:hello@antithesis.co">hello@antithesis.co</a>
+        <a href="tel:+61390001234">+61 3 9000 1234</a>
+        <p>Level 2, 180 Flinders St<br>Melbourne VIC 3000<br>Australia</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Services</p>
+        <a href="#services">Fractional Leadership</a>
+        <a href="#services">Research &amp; Validation</a>
+        <a href="#services">Impact &amp; SROI</a>
+        <a href="#method">Our Method</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Connect</p>
+        <div class="footer-social">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="mailto:hello@antithesis.co" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <span>&copy; 2024 Antithesis Consulting</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+
+    <!-- Giant brand logo at the very bottom -->
+    <div class="footer-brand" aria-hidden="true">
+      <svg class="footer-brand-logo" viewBox="100 160 2210 295"><g transform="scale(8.571428571428571) translate(10, 10)"><path d="M5.6641 27.266l-2.2461 0 9.1797-16.387 9.7461 0 1.582 16.387 2.1875 0 1.2305 12.715-10.059 0-0.41016-5.4883-5.5664 0c-0.97656 1.8164-1.8945 3.6523-2.8711 5.4883l-9.8828 0zM16.621 27.676l0-0.41016-2.1289 0 0.039063-6.4844-2.6172 6.4844 2.168 0-0.15625 0.41016 2.6953 0zM58.408 27.266l-2.9102 12.715-9.082 0-3.8672-12.715-0.44922 0-2.9492 12.715-9.1992 0 2.9492-12.715-1.7773 0 3.7695-16.367 10.723 0 3.1641 10.273 2.4023-10.273 9.2383 0-3.7891 16.367 1.7773 0zM80.879 26.719l-2.9688 13.359-9.9023 0 3.0469-13.359-1.7773 0 1.9727-8.5547-7.8125 0 1.7188-7.4023 25.352 0-1.6602 7.4023-7.793 0-1.9141 8.5547 1.7383 0zM101.944 27.344l-2.9297 12.734-9.8828 0 2.9297-12.734-1.9922 0 3.8281-16.484 9.8633 0-3.7891 16.484 1.9727 0zM122.989 26.719l-2.9688 13.359-9.9023 0 3.0469-13.359-1.7773 0 1.9727-8.5547-7.8125 0 1.7188-7.4023 25.352 0-1.6602 7.4023-7.793 0-1.9141 8.5547 1.7383 0zM159.619 27.344l-2.9688 12.734-9.7852 0 2.7734-11.953-5.6641 0-2.793 11.953-9.8438 0 2.9492-12.734-1.9727 0 3.7695-16.484 9.8438 0-2.2461 9.9023 5.6445 0 2.2852-9.9023 9.8047 0-3.8086 16.484 2.0117 0zM165.449 27.344l-1.9922 0 3.8281-16.484 20.918 0-1.6797 7.4023-11.152 0-0.58594 2.5 10.254 0-1.5039 6.582 1.9922 0-0.17578 0.78125-10.273 0-1.0352 4.5703 11.113 0-1.6797 7.3828-20.957 0zM213.779 26.719c1.1328 4.1016-2.2656 8.9453-5.4102 11.074-6.1719 4.043-14.316 3.3984-20.625 0.15625l1.8359-8.125 3.0273 0c0.39063 4.1992 9.7852 5.9375 10.742 1.7969 0.46875-2.0508-6.8945-2.6172-9.3555-4.5508-0.13672-0.11719-0.29297-0.23438-0.41016-0.35156l-1.7969 0c-1.9531-1.8359-2.1289-4.2773-1.5625-6.8164 2.3828-10.41 16.523-11.445 24.688-7.3242l-1.8164 7.9102-3.0469 0c0.19531-2.9688-8.7891-5-9.6289-1.4258-0.56641 2.7734 8.5352 1.9531 11.055 6.3477 0.21484 0.39063 0.39063 0.85938 0.50781 1.3086l1.7969 0zM228.301 27.344l-2.9297 12.734-9.8828 0 2.9297-12.734-1.9922 0 3.8281-16.484 9.8633 0-3.7891 16.484 1.9727 0zM257.529 26.719c1.1328 4.1016-2.2656 8.9453-5.4102 11.074-6.1719 4.043-14.316 3.3984-20.625 0.15625l1.8359-8.125 3.0273 0c0.39063 4.1992 9.7852 5.9375 10.742 1.7969 0.46875-2.0508-6.8945-2.6172-9.3555-4.5508-0.13672-0.11719-0.29297-0.23438-0.41016-0.35156l-1.7969 0c-1.9531-1.8359-2.1289-4.2773-1.5625-6.8164 2.3828-10.41 16.523-11.445 24.688-7.3242l-1.8164 7.9102-3.0469 0c0.19531-2.9688-8.7891-5-9.6289-1.4258-0.56641 2.7734 8.5352 1.9531 11.055 6.3477 0.21484 0.39063 0.39063 0.85938 0.50781 1.3086l1.7969 0z"/></g></svg>
+    </div>
   </div>
 </footer>
 
