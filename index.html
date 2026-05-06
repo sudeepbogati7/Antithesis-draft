@@ -4,16 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Antithesis Consulting — Fractional Leadership &amp; Strategic Intelligence</title>
-<meta name="description" content="Senior strategic leadership without the six-figure overhead. Fractional CMOs, CFOs, and strategists embedded in your business — measured by outcome, not headcount.">
-<meta property="og:title" content="Antithesis Consulting — Fractional Leadership & Strategic Intelligence">
-<meta property="og:description" content="Senior strategic leadership without the six-figure overhead. Fractional CMOs, CFOs, and strategists embedded in your business — measured by outcome, not headcount.">
+<meta name="description" content="The antithesis of traditional consulting. Fractional leadership and strategists embedded in your business, on retainer or by the project — measured by outcome, not headcount.">
+<meta property="og:title" content="Antithesis Consulting — The antithesis of traditional consulting.">
+<meta property="og:description" content="Fractional leadership and strategists for for-profit and not-for-profit organisations. Measured by outcome, not headcount.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://antithesis.co">
 <meta property="og:site_name" content="Antithesis Consulting">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <script>
+  // Pre-paint theme detection — must run before stylesheet to avoid FOUC.
   (function() {
     try {
       var saved = localStorage.getItem('antithesis-theme');
@@ -29,7 +30,7 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Antithesis Consulting",
-  "description": "Fractional leadership and strategic consulting. Senior CMOs, CFOs, and strategists embedded in your business — measured by outcome, not headcount.",
+  "description": "The antithesis of traditional consulting. Fractional leadership and strategists for for-profit and not-for-profit organisations.",
   "url": "https://antithesis.co",
   "email": "hello@antithesis.co",
   "serviceType": "Management Consulting",
@@ -37,1155 +38,10 @@
   "foundingDate": "2024"
 }
 </script>
-<style>
-/* ================================================================
-   CUSTOM PROPERTIES
-   ================================================================ */
-:root, [data-theme="dark"] {
-  --color-bg: #0E0E10;
-  --color-bg-raised: #16161A;
-  --color-fg: #F2EFEA;
-  --color-accent: #D4A24C;
-  --color-accent-hover: #E0B05E;
-  --color-accent-text: #0E0E10;
-  --color-muted: #8A8A92;
-  --color-muted-dim: #5A5A60;
-  --color-border: #2A2A30;
-  --color-surface: #1A1A1F;
-  --color-nav-bg: rgba(14, 14, 16, 0.82);
-  --color-nav-border: rgba(242, 239, 234, 0.06);
-  --color-mobile-overlay: rgba(14, 14, 16, 0.97);
-  --color-hero-overlay-1: rgba(14, 14, 16, 0.55);
-  --color-hero-overlay-2: rgba(14, 14, 16, 0.45);
-  --color-hero-overlay-3: rgba(14, 14, 16, 0.88);
-  --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%238A8A92' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  --grain-opacity: 0.035;
-  --grain-blend: overlay;
-  --video-filter: saturate(0.65) brightness(0.35) contrast(1.05);
-  --logo-filter: grayscale(1) invert(1);
-  --logo-blend: lighten;
-  --logo-opacity: 0.6;
-  --logo-hover-opacity: 0.9;
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'DM Mono', 'SFMono-Regular', Consolas, monospace;
-  --page-gutter: 80px;
-  --section-pad: 160px;
-  --content-max: 1200px;
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-[data-theme="light"] {
-  --color-bg: #F4F1EC;
-  --color-bg-raised: #EAE6DD;
-  --color-fg: #14141A;
-  --color-accent: #B5832C;
-  --color-accent-hover: #9A6E22;
-  --color-accent-text: #F4F1EC;
-  --color-muted: #5C5C64;
-  --color-muted-dim: #8E8E96;
-  --color-border: #DAD5CB;
-  --color-surface: #ECE7DD;
-  --color-nav-bg: rgba(244, 241, 236, 0.82);
-  --color-nav-border: rgba(20, 20, 26, 0.08);
-  --color-mobile-overlay: rgba(244, 241, 236, 0.97);
-  --color-hero-overlay-1: rgba(244, 241, 236, 0.72);
-  --color-hero-overlay-2: rgba(244, 241, 236, 0.62);
-  --color-hero-overlay-3: rgba(244, 241, 236, 0.92);
-  --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%235C5C64' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  --grain-opacity: 0.06;
-  --grain-blend: multiply;
-  --video-filter: saturate(0.4) brightness(1.4) contrast(0.9);
-  --logo-filter: grayscale(1);
-  --logo-blend: multiply;
-  --logo-opacity: 0.7;
-  --logo-hover-opacity: 0.95;
-}
-
-html { transition: background-color 0.3s ease; }
-body { transition: background-color 0.3s ease, color 0.3s ease; }
-
-/* ================================================================
-   RESET & BASE
-   ================================================================ */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body {
-  font-family: var(--font-body);
-  font-size: 17px;
-  line-height: 1.65;
-  color: var(--color-fg);
-  background: var(--color-bg);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-}
-img, svg { display: block; max-width: 100%; }
-a { color: inherit; text-decoration: none; }
-button, input, select, textarea {
-  font: inherit;
-  color: inherit;
-  background: none;
-  border: none;
-  outline: none;
-}
-button { cursor: pointer; }
-ul, ol { list-style: none; }
-
-/* ================================================================
-   FOCUS STYLES
-   ================================================================ */
-:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 3px;
-}
-a:focus-visible, button:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 3px;
-}
-
-/* ================================================================
-   NOISE / GRAIN OVERLAY
-   ================================================================ */
-.grain {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: var(--grain-opacity);
-  mix-blend-mode: var(--grain-blend);
-}
-.grain rect { filter: url(#noiseFilter); }
-
-/* ================================================================
-   TYPOGRAPHY UTILITIES
-   ================================================================ */
-.section-label {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  margin-bottom: 40px;
-}
-.heading-display {
-  font-family: var(--font-display);
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-}
-.body-large {
-  font-size: 20px;
-  line-height: 1.6;
-  color: var(--color-fg);
-}
-
-/* ================================================================
-   LAYOUT
-   ================================================================ */
-.container {
-  max-width: var(--content-max);
-  margin: 0 auto;
-  padding: 0 var(--page-gutter);
-}
-
-/* ================================================================
-   SCROLL REVEAL
-   ================================================================ */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ================================================================
-   NAVIGATION
-   ================================================================ */
-.site-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  padding: 16px 24px 0;
-  animation: navFadeIn 0.7s var(--ease-out-expo) 0.2s both;
-}
-@keyframes navFadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.site-nav__inner {
-  max-width: 1080px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 32px;
-  border-radius: 10px;
-  background: transparent;
-  border: 1px solid transparent;
-  backdrop-filter: blur(0);
-  -webkit-backdrop-filter: blur(0);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  transition:
-    background 0.4s ease,
-    border-color 0.4s ease,
-    backdrop-filter 0.4s ease,
-    -webkit-backdrop-filter 0.4s ease,
-    box-shadow 0.4s ease;
-}
-.site-nav.scrolled .site-nav__inner {
-  background: var(--color-nav-bg);
-  border-color: var(--color-nav-border);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-}
-.nav-wordmark {
-  display: flex;
-  align-items: center;
-  color: var(--color-fg);
-}
-.nav-logo {
-  height: 20px;
-  width: auto;
-  fill: currentColor;
-}
-.site-nav__right {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-.nav-links {
-  display: flex;
-  gap: 36px;
-}
-.nav-links a {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  transition: color 0.3s ease;
-  position: relative;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-accent);
-  transition: width 0.3s ease;
-}
-.nav-links a:hover { color: var(--color-fg); }
-.nav-links a:hover::after { width: 100%; }
-
-/* Theme toggle */
-.theme-toggle {
-  width: 34px;
-  height: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  cursor: pointer;
-  color: var(--color-muted);
-  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-  flex-shrink: 0;
-}
-.theme-toggle:hover {
-  color: var(--color-fg);
-  border-color: var(--color-muted);
-}
-.theme-toggle svg { width: 15px; height: 15px; }
-.theme-toggle .theme-icon-moon { display: none; }
-[data-theme="light"] .theme-toggle .theme-icon-sun { display: none; }
-[data-theme="light"] .theme-toggle .theme-icon-moon { display: block; }
-
-/* Hamburger */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  width: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px 0;
-  z-index: 1002;
-}
-.nav-hamburger span {
-  display: block;
-  width: 100%;
-  height: 1.5px;
-  background: var(--color-fg);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.nav-hamburger.open span:nth-child(1) {
-  transform: translateY(6.5px) rotate(45deg);
-}
-.nav-hamburger.open span:nth-child(2) { opacity: 0; }
-.nav-hamburger.open span:nth-child(3) {
-  transform: translateY(-6.5px) rotate(-45deg);
-}
-
-/* Mobile overlay */
-.mobile-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 1001;
-  background: var(--color-mobile-overlay);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-}
-.mobile-overlay.open {
-  opacity: 1;
-  pointer-events: auto;
-}
-.mobile-overlay nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-}
-.mobile-overlay nav a {
-  font-family: var(--font-display);
-  font-size: 36px;
-  font-weight: 400;
-  color: var(--color-fg);
-  transition: color 0.3s ease;
-}
-.mobile-overlay nav a:hover { color: var(--color-accent); }
-
-/* ================================================================
-   HERO
-   ================================================================ */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-/* Video background */
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-.hero-bg video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: var(--video-filter);
-  transition: filter 0.4s ease;
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    180deg,
-    var(--color-hero-overlay-1) 0%,
-    var(--color-hero-overlay-2) 40%,
-    var(--color-hero-overlay-3) 100%
-  );
-  transition: background 0.3s ease;
-}
-/* Hero content container */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: var(--content-max);
-  margin: 0 auto;
-  width: 100%;
-  padding: 140px var(--page-gutter) 80px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.hero-headline {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(52px, 8vw, 112px);
-  letter-spacing: -0.03em;
-  line-height: 1.02;
-  max-width: 820px;
-  margin-bottom: 32px;
-}
-.hero-sub {
-  font-size: clamp(17px, 2vw, 22px);
-  line-height: 1.55;
-  max-width: 580px;
-  color: var(--color-fg);
-  opacity: 0.72;
-  margin-bottom: 48px;
-}
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-.btn-primary {
-  display: inline-block;
-  padding: 16px 40px;
-  background: var(--color-accent);
-  color: var(--color-accent-text);
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: 2px;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-.btn-primary:hover {
-  background: var(--color-accent-hover);
-  transform: translateY(-1px);
-}
-.text-link {
-  font-size: 15px;
-  color: var(--color-muted);
-  border-bottom: 1px solid var(--color-muted-dim);
-  padding-bottom: 2px;
-  transition: color 0.3s ease, border-color 0.3s ease;
-}
-.text-link:hover {
-  color: var(--color-fg);
-  border-color: var(--color-fg);
-}
-.hero-tag {
-  position: absolute;
-  bottom: 48px;
-  left: var(--page-gutter);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-muted-dim);
-}
-
-/* ================================================================
-   LOGO STRIP
-   ================================================================ */
-.logo-strip {
-  padding: 80px var(--page-gutter);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-}
-.logo-strip__label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-muted-dim);
-  text-align: center;
-  margin-bottom: 40px;
-}
-.logo-strip__row {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-}
-.logo-strip__track {
-  display: flex;
-  align-items: center;
-  width: max-content;
-  animation: logoMarquee 45s linear infinite;
-  will-change: transform;
-  backface-visibility: hidden;
-}
-.logo-strip__row:hover .logo-strip__track {
-  animation-play-state: paused;
-}
-@keyframes logoMarquee {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(-50%, 0, 0); }
-}
-.logo-strip__item {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  white-space: nowrap;
-  user-select: none;
-  margin-right: 72px;
-}
-/* Image logos */
-.logo-strip__img {
-  height: 56px;
-  width: auto;
-  object-fit: contain;
-  filter: var(--logo-filter);
-  mix-blend-mode: var(--logo-blend);
-  opacity: var(--logo-opacity);
-  transition: opacity 0.3s ease;
-}
-.logo-strip__item:hover .logo-strip__img {
-  opacity: var(--logo-hover-opacity);
-}
-/* Text fallback logos (for brands without image files) */
-.logo-strip__text {
-  font-family: var(--font-display);
-  font-size: clamp(16px, 2vw, 21px);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  color: var(--color-muted-dim);
-  transition: color 0.3s ease;
-}
-.logo-strip__item:hover .logo-strip__text { color: var(--color-muted); }
-
-/* ================================================================
-   SECTION — VALUE PROPOSITION (01 / The Case)
-   ================================================================ */
-.value-prop {
-  padding: var(--section-pad) var(--page-gutter);
-}
-.value-prop__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 64px;
-}
-.value-prop__body {
-  max-width: 600px;
-}
-.value-prop__body h2 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(36px, 5vw, 56px);
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-  margin-bottom: 32px;
-}
-.value-prop__body p {
-  color: var(--color-muted);
-  margin-bottom: 20px;
-}
-.value-prop__stat {
-  display: flex;
-  flex-direction: column;
-}
-.stat-number {
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: clamp(100px, 14vw, 180px);
-  letter-spacing: -0.04em;
-  line-height: 0.9;
-  color: var(--color-accent);
-  margin-bottom: 16px;
-}
-.stat-caption {
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--color-muted);
-  max-width: 380px;
-}
-
-/* ================================================================
-   SECTION — SERVICES (02 / Services)
-   ================================================================ */
-.services {
-  padding: var(--section-pad) var(--page-gutter);
-}
-.services h2 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(36px, 5vw, 56px);
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-  margin-bottom: 64px;
-}
-.services-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-}
-.service-card {
-  border: 1px solid var(--color-border);
-  border-radius: 3px;
-  padding: 44px;
-  position: relative;
-  overflow: hidden;
-  transition: background 0.4s ease;
-}
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s var(--ease-out-expo);
-}
-.service-card:hover {
-  background: var(--color-surface);
-}
-.service-card:hover::before {
-  transform: scaleX(1);
-}
-.service-card__number {
-  font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 300;
-  color: var(--color-accent);
-  line-height: 1;
-  margin-bottom: 24px;
-  opacity: 0.7;
-}
-.service-card__title {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 3vw, 32px);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin-bottom: 16px;
-}
-.service-card__desc {
-  color: var(--color-muted);
-  margin-bottom: 20px;
-  max-width: 480px;
-}
-.service-card__use {
-  font-style: italic;
-  font-size: 14px;
-  color: var(--color-muted-dim);
-}
-
-/* ================================================================
-   SECTION — METHOD (03 / Method)
-   ================================================================ */
-.method {
-  padding: var(--section-pad) var(--page-gutter);
-}
-.method h2 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(36px, 5vw, 56px);
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-  margin-bottom: 24px;
-}
-.method__intro {
-  color: var(--color-muted);
-  max-width: 640px;
-  margin-bottom: 72px;
-}
-.method-flow {
-  display: flex;
-  align-items: flex-start;
-  gap: 0;
-  margin-bottom: 64px;
-  position: relative;
-}
-.method-stage {
-  flex: 1;
-  padding: 0 20px;
-  position: relative;
-}
-.method-stage__number {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  display: block;
-  margin-bottom: 8px;
-}
-.method-stage__label {
-  font-family: var(--font-display);
-  font-size: clamp(22px, 2.5vw, 28px);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-bottom: 10px;
-}
-.method-stage__desc {
-  font-size: 14px;
-  color: var(--color-muted);
-  line-height: 1.5;
-}
-.method-connector {
-  flex: 0 0 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 36px;
-  position: relative;
-}
-.method-connector__line {
-  width: 100%;
-  height: 1px;
-  background: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 1s var(--ease-out-expo);
-}
-.method-connector__arrow {
-  position: absolute;
-  right: -2px;
-  font-size: 14px;
-  color: var(--color-accent);
-  opacity: 0;
-  transition: opacity 0.4s ease 0.6s;
-}
-.method-flow.visible .method-connector__line {
-  transform: scaleX(1);
-}
-.method-flow.visible .method-connector__arrow {
-  opacity: 1;
-}
-.method-flow.visible .method-stage {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger animation */
-.method-stage {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
-}
-.method-flow.visible .method-stage:nth-child(1) { transition-delay: 0s; }
-.method-flow.visible .method-connector:nth-child(2) .method-connector__line { transition-delay: 0.15s; }
-.method-flow.visible .method-connector:nth-child(2) .method-connector__arrow { transition-delay: 0.75s; }
-.method-flow.visible .method-stage:nth-child(3) { transition-delay: 0.3s; }
-.method-flow.visible .method-connector:nth-child(4) .method-connector__line { transition-delay: 0.45s; }
-.method-flow.visible .method-connector:nth-child(4) .method-connector__arrow { transition-delay: 1.05s; }
-.method-flow.visible .method-stage:nth-child(5) { transition-delay: 0.6s; }
-.method-flow.visible .method-connector:nth-child(6) .method-connector__line { transition-delay: 0.75s; }
-.method-flow.visible .method-connector:nth-child(6) .method-connector__arrow { transition-delay: 1.35s; }
-.method-flow.visible .method-stage:nth-child(7) { transition-delay: 0.9s; }
-
-/* Outcome chips */
-.outcome-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.chip {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  color: var(--color-muted);
-  border: 1px solid var(--color-border);
-  border-radius: 100px;
-  padding: 10px 20px;
-  white-space: nowrap;
-  transition: border-color 0.3s ease, color 0.3s ease;
-}
-.chip:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-
-/* ================================================================
-   SECTION — CONTACT (04 / Contact)
-   ================================================================ */
-.contact {
-  padding: var(--section-pad) var(--page-gutter);
-}
-.contact h2 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(42px, 7vw, 96px);
-  letter-spacing: -0.03em;
-  line-height: 1.04;
-  max-width: 800px;
-  margin-bottom: 24px;
-}
-.contact__intro {
-  color: var(--color-muted);
-  max-width: 580px;
-  margin-bottom: 56px;
-}
-
-/* Form */
-.contact-form {
-  max-width: 540px;
-}
-.form-field {
-  position: relative;
-  margin-bottom: 36px;
-}
-.form-field input,
-.form-field select,
-.form-field textarea {
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--color-muted-dim);
-  color: var(--color-fg);
-  font-family: var(--font-body);
-  font-size: 17px;
-  padding: 28px 0 10px;
-  transition: border-color 0.3s ease;
-  border-radius: 0;
-  -webkit-appearance: none;
-}
-.form-field textarea {
-  resize: vertical;
-  min-height: 60px;
-}
-.form-field select {
-  cursor: pointer;
-  background-image: var(--select-arrow);
-  background-repeat: no-repeat;
-  background-position: right 0 center;
-  padding-right: 20px;
-}
-.form-field select option {
-  background: var(--color-bg);
-  color: var(--color-fg);
-}
-.form-field label {
-  position: absolute;
-  left: 0;
-  top: 28px;
-  font-size: 17px;
-  color: var(--color-muted);
-  pointer-events: none;
-  transition: all 0.25s ease;
-  transform-origin: left top;
-}
-.form-field input:focus,
-.form-field select:focus,
-.form-field textarea:focus {
-  border-bottom-color: var(--color-accent);
-}
-.form-field input:focus + label,
-.form-field input:not(:placeholder-shown) + label,
-.form-field textarea:focus + label,
-.form-field textarea:not(:placeholder-shown) + label {
-  top: 4px;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  font-family: var(--font-mono);
-}
-.form-field select + label {
-  top: 4px;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  font-family: var(--font-mono);
-}
-.btn-submit {
-  display: inline-block;
-  padding: 18px 56px;
-  background: var(--color-accent);
-  color: var(--color-accent-text);
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-  margin-top: 8px;
-}
-.btn-submit:hover {
-  background: var(--color-accent-hover);
-  transform: translateY(-1px);
-}
-.form-thankyou {
-  display: none;
-}
-.form-thankyou.active {
-  display: block;
-}
-.form-thankyou h3 {
-  font-family: var(--font-display);
-  font-size: 36px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-}
-.form-thankyou p {
-  color: var(--color-muted);
-  max-width: 420px;
-}
-
-/* ================================================================
-   FOOTER
-   ================================================================ */
-/* ================================================================
-   FOOTER
-   ================================================================ */
-.site-footer {
-  padding: 0 var(--page-gutter);
-}
-.footer-inner {
-  max-width: var(--content-max);
-  margin: 0 auto;
-}
-/* Footer columns */
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
-  padding: 100px 0 80px;
-  border-top: 1px solid var(--color-border);
-}
-.footer-col__title {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  margin-bottom: 20px;
-}
-.footer-col a,
-.footer-col p {
-  display: block;
-  font-size: 15px;
-  color: var(--color-muted-dim);
-  line-height: 1.8;
-  transition: color 0.3s ease;
-}
-.footer-col a:hover { color: var(--color-fg); }
-.footer-social {
-  display: flex;
-  gap: 16px;
-  margin-top: 8px;
-}
-.footer-social a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  color: var(--color-muted-dim);
-  transition: color 0.3s ease, border-color 0.3s ease;
-}
-.footer-social a:hover {
-  color: var(--color-fg);
-  border-color: var(--color-muted);
-}
-.footer-social svg {
-  width: 16px;
-  height: 16px;
-}
-/* Footer bottom bar */
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 28px 0;
-  border-top: 1px solid var(--color-border);
-}
-.footer-bottom span,
-.footer-bottom a {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-muted-dim);
-  transition: color 0.3s ease;
-}
-.footer-bottom a:hover { color: var(--color-fg); }
-.footer-bottom-links {
-  display: flex;
-  gap: 24px;
-}
-/* Giant brand logo at the very bottom */
-.footer-brand {
-  padding: 60px 0 48px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  cursor: default;
-}
-.footer-brand-logo {
-  display: block;
-  width: 90%;
-  max-width: 100%;
-  height: auto;
-  fill: var(--color-border);
-  transition: fill 0.5s ease;
-}
-.footer-brand:hover .footer-brand-logo {
-  fill: var(--color-muted);
-}
-
-/* ================================================================
-   RESPONSIVE — TABLET (768px+)
-   ================================================================ */
-@media (min-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .services-grid .service-card:last-child {
-    grid-column: 1 / -1;
-    max-width: calc(50% - 12px);
-  }
-}
-
-/* ================================================================
-   RESPONSIVE — DESKTOP (1024px+)
-   ================================================================ */
-@media (min-width: 1024px) {
-  .value-prop__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
-  }
-  .value-prop__stat { order: 0; }
-  .value-prop__body { order: 0; }
-
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .services-grid .service-card:last-child {
-    grid-column: auto;
-    max-width: none;
-  }
-
-  .method-flow {
-    align-items: flex-start;
-  }
-}
-
-/* ================================================================
-   RESPONSIVE — MOBILE (<768px)
-   ================================================================ */
-@media (max-width: 767px) {
-  :root {
-    --page-gutter: 24px;
-    --section-pad: 96px;
-  }
-  .site-nav { padding: 12px 16px 0; }
-  .site-nav__inner { padding: 12px 20px; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-
-  .hero-content { padding: 120px var(--page-gutter) 64px; }
-
-  .service-card { padding: 28px 24px; }
-  .service-card__number { font-size: 40px; margin-bottom: 18px; }
-
-  .value-prop__stat { order: -1; }
-
-  .method-flow {
-    flex-direction: column;
-    gap: 0;
-  }
-  .method-stage {
-    padding: 0 0 24px 0;
-  }
-  .method-connector {
-    flex: 0 0 48px;
-    width: 1px;
-    height: 48px;
-    flex-direction: column;
-    padding-top: 0;
-    margin: 4px 0 12px 12px;
-  }
-  .method-connector__line {
-    width: 1px;
-    height: 100%;
-    transform: scaleY(0);
-    transform-origin: top;
-  }
-  .method-flow.visible .method-connector__line {
-    transform: scaleY(1);
-  }
-  .method-connector__arrow {
-    bottom: 4px;
-    right: auto;
-    left: 50%;
-    margin-left: -6px;
-    transform: rotate(90deg);
-    font-size: 12px;
-  }
-
-  .contact h2 { margin-bottom: 20px; }
-  .btn-submit { width: 100%; text-align: center; }
-
-  .logo-strip__item { margin-right: 56px; }
-  .logo-strip__img { height: 44px; }
-
-  .footer-grid { grid-template-columns: 1fr; gap: 40px; padding: 64px 0 48px; }
-  .footer-brand { padding: 32px 0 16px; }
-}
-
-@media (max-width: 480px) {
-  :root { --page-gutter: 20px; }
-  .hero-actions { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .service-card { padding: 24px 20px; }
-  .service-card__number { font-size: 36px; margin-bottom: 14px; }
-}
-
-/* ================================================================
-   REDUCED MOTION
-   ================================================================ */
-@media (prefers-reduced-motion: reduce) {
-  .logo-strip__track { animation: none; }
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  .method-stage {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  .method-connector__line {
-    transform: scaleX(1);
-    transition: none;
-  }
-  .method-connector__arrow {
-    opacity: 1;
-    transition: none;
-  }
-  .site-nav {
-    transition: none;
-  }
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-</style>
+<link rel="stylesheet" href="css/main.css">
+<!-- GSAP for advanced carousel + counter animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
 
@@ -1207,7 +63,7 @@ a:focus-visible, button:focus-visible {
      ============================================================ -->
 <header class="site-nav" role="banner">
   <div class="site-nav__inner">
-    <a href="#" class="nav-wordmark" aria-label="Antithesis — Home">
+    <a href="index.html" class="nav-wordmark" aria-label="Antithesis — Home">
       <svg class="nav-logo" viewBox="100 160 2210 295" aria-hidden="true"><g transform="scale(8.571428571428571) translate(10, 10)"><path d="M5.6641 27.266l-2.2461 0 9.1797-16.387 9.7461 0 1.582 16.387 2.1875 0 1.2305 12.715-10.059 0-0.41016-5.4883-5.5664 0c-0.97656 1.8164-1.8945 3.6523-2.8711 5.4883l-9.8828 0zM16.621 27.676l0-0.41016-2.1289 0 0.039063-6.4844-2.6172 6.4844 2.168 0-0.15625 0.41016 2.6953 0zM58.408 27.266l-2.9102 12.715-9.082 0-3.8672-12.715-0.44922 0-2.9492 12.715-9.1992 0 2.9492-12.715-1.7773 0 3.7695-16.367 10.723 0 3.1641 10.273 2.4023-10.273 9.2383 0-3.7891 16.367 1.7773 0zM80.879 26.719l-2.9688 13.359-9.9023 0 3.0469-13.359-1.7773 0 1.9727-8.5547-7.8125 0 1.7188-7.4023 25.352 0-1.6602 7.4023-7.793 0-1.9141 8.5547 1.7383 0zM101.944 27.344l-2.9297 12.734-9.8828 0 2.9297-12.734-1.9922 0 3.8281-16.484 9.8633 0-3.7891 16.484 1.9727 0zM122.989 26.719l-2.9688 13.359-9.9023 0 3.0469-13.359-1.7773 0 1.9727-8.5547-7.8125 0 1.7188-7.4023 25.352 0-1.6602 7.4023-7.793 0-1.9141 8.5547 1.7383 0zM159.619 27.344l-2.9688 12.734-9.7852 0 2.7734-11.953-5.6641 0-2.793 11.953-9.8438 0 2.9492-12.734-1.9727 0 3.7695-16.484 9.8438 0-2.2461 9.9023 5.6445 0 2.2852-9.9023 9.8047 0-3.8086 16.484 2.0117 0zM165.449 27.344l-1.9922 0 3.8281-16.484 20.918 0-1.6797 7.4023-11.152 0-0.58594 2.5 10.254 0-1.5039 6.582 1.9922 0-0.17578 0.78125-10.273 0-1.0352 4.5703 11.113 0-1.6797 7.3828-20.957 0zM213.779 26.719c1.1328 4.1016-2.2656 8.9453-5.4102 11.074-6.1719 4.043-14.316 3.3984-20.625 0.15625l1.8359-8.125 3.0273 0c0.39063 4.1992 9.7852 5.9375 10.742 1.7969 0.46875-2.0508-6.8945-2.6172-9.3555-4.5508-0.13672-0.11719-0.29297-0.23438-0.41016-0.35156l-1.7969 0c-1.9531-1.8359-2.1289-4.2773-1.5625-6.8164 2.3828-10.41 16.523-11.445 24.688-7.3242l-1.8164 7.9102-3.0469 0c0.19531-2.9688-8.7891-5-9.6289-1.4258-0.56641 2.7734 8.5352 1.9531 11.055 6.3477 0.21484 0.39063 0.39063 0.85938 0.50781 1.3086l1.7969 0zM228.301 27.344l-2.9297 12.734-9.8828 0 2.9297-12.734-1.9922 0 3.8281-16.484 9.8633 0-3.7891 16.484 1.9727 0zM257.529 26.719c1.1328 4.1016-2.2656 8.9453-5.4102 11.074-6.1719 4.043-14.316 3.3984-20.625 0.15625l1.8359-8.125 3.0273 0c0.39063 4.1992 9.7852 5.9375 10.742 1.7969 0.46875-2.0508-6.8945-2.6172-9.3555-4.5508-0.13672-0.11719-0.29297-0.23438-0.41016-0.35156l-1.7969 0c-1.9531-1.8359-2.1289-4.2773-1.5625-6.8164 2.3828-10.41 16.523-11.445 24.688-7.3242l-1.8164 7.9102-3.0469 0c0.19531-2.9688-8.7891-5-9.6289-1.4258-0.56641 2.7734 8.5352 1.9531 11.055 6.3477 0.21484 0.39063 0.39063 0.85938 0.50781 1.3086l1.7969 0z"/></g></svg>
     </a>
     <div class="site-nav__right">
@@ -1248,17 +104,15 @@ a:focus-visible, button:focus-visible {
        HERO
        ============================================================ -->
   <section class="hero" id="hero">
-    <!-- Background video — drop your .mp4 in the same folder as hero-bg.mp4 -->
     <div class="hero-bg">
-      <video autoplay muted loop playsinline aria-hidden="true">
-        <source src="hero-bg.mp4" type="video/mp4">
-      </video>
+      <img src="assets/hero_bg.jpeg" alt="" aria-hidden="true">
     </div>
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
-      <h1 class="hero-headline reveal">Strategic expertise.<br>On demand.</h1>
-      <p class="hero-sub reveal" style="transition-delay:0.1s">Senior leadership without the six-figure overhead. Fractional CMOs, CFOs, and strategists embedded in your business — measured by outcome, not headcount.</p>
-      <div class="hero-actions reveal" style="transition-delay:0.2s">
+      <p class="hero-kicker reveal">The antithesis of traditional consulting.</p>
+      <h1 class="hero-headline reveal" style="transition-delay:0.05s">We think <em>different</em>.</h1>
+      <p class="hero-sub reveal" style="transition-delay:0.15s">Fractional leadership and strategists embedded in your business — on retainer or by the project. Senior expertise without the six-figure overhead, measured by outcome rather than headcount.</p>
+      <div class="hero-actions reveal" style="transition-delay:0.25s">
         <a href="#contact" class="btn-primary">Book a consultation</a>
         <a href="#the-case" class="text-link">See how it works &#8595;</a>
       </div>
@@ -1267,49 +121,153 @@ a:focus-visible, button:focus-visible {
   </section>
 
   <!-- ============================================================
-       LOGO STRIP (Trusted By)
+       LOGO STRIP (Trusted By) — colourful cards + animated stats
        ============================================================ -->
   <section class="logo-strip reveal" id="work" aria-label="Trusted by">
     <p class="logo-strip__label">Trusted by</p>
+
+    <!-- Animated stats row -->
+    <div class="trusted-stats" id="trustedStats">
+      <div class="trusted-stats__item">
+        <span class="trusted-stats__value">
+          <span class="trusted-stats__num" data-target="120">0</span><span class="trusted-stats__suffix">+</span>
+        </span>
+        <p class="trusted-stats__label">Engagements delivered</p>
+      </div>
+      <div class="trusted-stats__item">
+        <span class="trusted-stats__value">
+          <span class="trusted-stats__num" data-target="7">0</span>
+        </span>
+        <p class="trusted-stats__label">Industries served</p>
+      </div>
+      <div class="trusted-stats__item">
+        <span class="trusted-stats__value">
+          <span class="trusted-stats__num" data-target="98">0</span><span class="trusted-stats__suffix">%</span>
+        </span>
+        <p class="trusted-stats__label">On-time delivery</p>
+      </div>
+    </div>
+
+    <!-- Carousel: full-colour logos in subtle cards, marquee with pause-on-hover -->
     <div class="logo-strip__row">
       <div class="logo-strip__track">
-        <!-- Track contains 6 copies of the logo set. translateX(-50%) shifts by exactly 3 copies, and the second half is identical to the first → seamless loop. -->
-        <!-- Set 1 (only this set is announced to screen readers) -->
-        <span class="logo-strip__item"><img class="logo-strip__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="Disney" loading="lazy"></span>
-        <span class="logo-strip__item"><img class="logo-strip__img" src="assets/trusted-by/SFF.png" alt="Surfing for Farmers" loading="lazy"></span>
-        <span class="logo-strip__item"><img class="logo-strip__img" src="assets/trusted-by/Bioderma 2.png" alt="Bioderma" loading="lazy"></span>
-        <span class="logo-strip__item"><img class="logo-strip__img" src="assets/trusted-by/Amazonia logo.png" alt="Amazonia" loading="lazy"></span>
-        <span class="logo-strip__item"><img class="logo-strip__img" src="assets/trusted-by/Raw logo.jpeg" alt="RAW" loading="lazy"></span>
+        <!-- 4 copies × 7 cards = 28 items. translateX(-50%) shifts by 2 copies → seamless loop. -->
+        <!-- Set 1 (announced to screen readers) -->
+        <div class="logo-card">
+          <img class="logo-card__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="Disney" loading="lazy">
+          <span class="logo-card__industry">Entertainment</span>
+        </div>
+        <div class="logo-card">
+          <img class="logo-card__img" src="assets/trusted-by/SFF_Logo V_Spot copy.jpeg" alt="Surfing for Farmers" loading="lazy">
+          <span class="logo-card__industry">Not-for-profit</span>
+        </div>
+        <div class="logo-card">
+          <img class="logo-card__img" src="assets/trusted-by/T2 logo.png" alt="T2 Tea" loading="lazy">
+          <span class="logo-card__industry">Retail</span>
+        </div>
+        <div class="logo-card">
+          <img class="logo-card__img" src="assets/trusted-by/Bioderma 2.png" alt="Bioderma" loading="lazy">
+          <span class="logo-card__industry">Skincare</span>
+        </div>
+        <div class="logo-card">
+          <img class="logo-card__img" src="assets/trusted-by/Naos 2.png" alt="NAOS" loading="lazy">
+          <span class="logo-card__industry">Skincare</span>
+        </div>
+        <div class="logo-card">
+          <img class="logo-card__img" src="assets/trusted-by/Amazonia logo.png" alt="Amazonia" loading="lazy">
+          <span class="logo-card__industry">Wellness</span>
+        </div>
+        <div class="logo-card">
+          <img class="logo-card__img" src="assets/trusted-by/Raw logo.jpeg" alt="RAW" loading="lazy">
+          <span class="logo-card__industry">Wellness</span>
+        </div>
         <!-- Set 2 -->
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/SFF.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy"></span>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Entertainment</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/SFF_Logo V_Spot copy.jpeg" alt="" loading="lazy">
+          <span class="logo-card__industry">Not-for-profit</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/T2 logo.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Retail</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Skincare</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/Naos 2.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Skincare</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Wellness</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy">
+          <span class="logo-card__industry">Wellness</span>
+        </div>
         <!-- Set 3 -->
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/SFF.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy"></span>
-        <!-- Set 4 (mirror duplicate of set 1) -->
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/SFF.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy"></span>
-        <!-- Set 5 -->
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/SFF.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy"></span>
-        <!-- Set 6 -->
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/SFF.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy"></span>
-        <span class="logo-strip__item" aria-hidden="true"><img class="logo-strip__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy"></span>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Entertainment</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/SFF_Logo V_Spot copy.jpeg" alt="" loading="lazy">
+          <span class="logo-card__industry">Not-for-profit</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/T2 logo.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Retail</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Skincare</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/Naos 2.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Skincare</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Wellness</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy">
+          <span class="logo-card__industry">Wellness</span>
+        </div>
+        <!-- Set 4 -->
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Entertainment</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/SFF_Logo V_Spot copy.jpeg" alt="" loading="lazy">
+          <span class="logo-card__industry">Not-for-profit</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/T2 logo.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Retail</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Skincare</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/Naos 2.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Skincare</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy">
+          <span class="logo-card__industry">Wellness</span>
+        </div>
+        <div class="logo-card" aria-hidden="true">
+          <img class="logo-card__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy">
+          <span class="logo-card__industry">Wellness</span>
+        </div>
       </div>
     </div>
   </section>
@@ -1323,44 +281,332 @@ a:focus-visible, button:focus-visible {
       <div class="value-prop__grid">
         <div class="value-prop__body reveal" style="transition-delay:0.1s">
           <h2>The full-time hire is the wrong default.</h2>
-          <p>Most early-stage companies hire senior leadership too early or too late. Too early, and the overhead burns runway before the role justifies itself. Too late, and strategic gaps compound into existential problems.</p>
-          <p>Fractional leadership resolves the timing paradox: you get the experience of a seasoned executive, scoped to the decisions that actually matter, without the fixed cost of a full-time hire. It is how smart companies build strategic capacity without overbuilding the org chart.</p>
+          <p>Most early-stage and not-for-profit organisations hire senior leadership too early or too late. Too early, and the overhead burns runway before the role justifies itself. Too late, and the strategic gaps compound into existential problems.</p>
+          <p>Fractional leadership resolves the timing paradox: senior expertise scoped to the decisions that actually matter — on retainer or by the project — without the fixed cost of a full-time hire. It is how smart organisations build strategic capacity without overbuilding the org chart.</p>
         </div>
-        <div class="value-prop__stat reveal" style="transition-delay:0.25s">
-          <span class="stat-number">3&#8211;5&times;</span>
-          <p class="stat-caption">The capital efficiency gap between fractional and full-time strategic leadership in early-stage growth companies.</p>
+        <div class="value-prop__chart reveal" style="transition-delay:0.25s">
+          <p class="chart-eyebrow"><span class="chart-eyebrow__dot" aria-hidden="true"></span>Capital efficiency &mdash; normalised</p>
+          <div class="chart-frame" id="capitalChart" role="img" aria-label="Capital efficiency comparison: full-time hire at 100% versus fractional engagement at approximately 28%, a 3 to 5 times gap.">
+            <div class="chart-grid" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="chart-axis-labels" aria-hidden="true">
+              <span>100</span><span>75</span><span>50</span><span>25</span>
+            </div>
+            <div class="chart-bars">
+              <div class="chart-bar">
+                <span class="chart-bar__value chart-bar__value--ft">100<em>%</em></span>
+                <span class="chart-bar__shape chart-bar__shape--ft"></span>
+                <span class="chart-bar__name">Full-time hire</span>
+              </div>
+              <div class="chart-bar chart-bar--accent">
+                <span class="chart-bar__value chart-bar__value--fr">~28<em>%</em></span>
+                <span class="chart-bar__shape chart-bar__shape--fr">
+                  <span class="chart-bar__pulse" aria-hidden="true"></span>
+                </span>
+                <span class="chart-bar__name">Fractional</span>
+              </div>
+            </div>
+            <div class="chart-callout" aria-hidden="true">
+              <svg class="chart-callout__bracket" viewBox="0 0 80 200" preserveAspectRatio="none">
+                <path d="M 10 6 Q 70 6 70 100 Q 70 194 10 194" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 5"/>
+              </svg>
+              <span class="chart-callout__chip">
+                <span class="chart-callout__num">3&ndash;5<em>&times;</em></span>
+                <span class="chart-callout__cap">capital efficiency</span>
+              </span>
+            </div>
+          </div>
+          <p class="chart-caption">The capital efficiency gap between fractional and full-time strategic leadership &mdash; in early-stage growth and not-for-profit organisations alike.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       02 / SERVICES
+       02 / SERVICES — triangular constellation around a pulsing hub
        ============================================================ -->
   <section class="services" id="services">
     <div class="container">
-      <p class="section-label reveal">02 / Services</p>
-      <h2 class="reveal" style="transition-delay:0.1s">Three ways we work with you.</h2>
-      <div class="services-grid">
-        <div class="service-card reveal" style="transition-delay:0.15s">
-          <div class="service-card__number">01</div>
-          <h3 class="service-card__title">Fractional Leadership</h3>
-          <p class="service-card__desc">A senior operator embedded in your business one to three days per week. They sit in the room, own the decisions, and carry the accountability of a full-time executive — without the fixed cost or the twelve-month ramp.</p>
-          <p class="service-card__use">Use it for: CMO, CFO, or CSO functions when the need is real but the budget is not.</p>
-        </div>
-        <div class="service-card reveal" style="transition-delay:0.25s">
-          <div class="service-card__number">02</div>
-          <h3 class="service-card__title">Research &amp; Validation</h3>
-          <p class="service-card__desc">Market intelligence, competitive analysis, and strategic research delivered in weeks, not quarters. We pressure-test assumptions before you commit capital, so the expensive decisions are also the informed ones.</p>
-          <p class="service-card__use">Use it for: new market entry, product validation, pricing strategy, or investment due diligence.</p>
-        </div>
-        <div class="service-card reveal" style="transition-delay:0.35s">
-          <div class="service-card__number">03</div>
-          <h3 class="service-card__title">Impact &amp; SROI</h3>
-          <p class="service-card__desc">Rigorous measurement frameworks that prove the value of what you do. Social return on investment, impact reporting, and outcome mapping that satisfies funders, boards, and your own strategic clarity.</p>
-          <p class="service-card__use">Use it for: grant reporting, ESG compliance, program evaluation, or stakeholder communication.</p>
-        </div>
+      <div class="services__header">
+        <p class="section-label reveal">02 / Services</p>
+        <h2 class="reveal" style="transition-delay:0.1s">Three ways we work with you.</h2>
+        <p class="services__intro reveal" style="transition-delay:0.15s">Senior expertise on retainer or by the project &mdash; for both for-profit and not-for-profit organisations. The shape of the engagement bends to what you actually need.</p>
       </div>
+
+      <div class="services-constellation reveal" style="transition-delay:0.2s">
+        <!-- SVG layer: orbit rings + connecting spokes from hub to each node -->
+        <svg class="services-constellation__svg" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <circle cx="500" cy="400" r="310" class="services-orbit services-orbit--outer"/>
+          <circle cx="500" cy="400" r="230" class="services-orbit services-orbit--inner"/>
+          <line class="services-spoke" data-spoke="01" x1="500" y1="400" x2="500" y2="100"/>
+          <line class="services-spoke" data-spoke="02" x1="500" y1="400" x2="160" y2="700"/>
+          <line class="services-spoke" data-spoke="03" x1="500" y1="400" x2="840" y2="700"/>
+          <circle cx="500" cy="100" r="6" class="services-spoke-tip" data-spoke="01"/>
+          <circle cx="160" cy="700" r="6" class="services-spoke-tip" data-spoke="02"/>
+          <circle cx="840" cy="700" r="6" class="services-spoke-tip" data-spoke="03"/>
+        </svg>
+
+        <!-- Central hub — pulsing accent pill with wordmark -->
+        <div class="services-hub" aria-hidden="true">
+          <span class="services-hub__pulse"></span>
+          <span class="services-hub__pulse"></span>
+          <span class="services-hub__pulse"></span>
+          <span class="services-hub__ring"></span>
+          <div class="services-hub__core">
+            <svg class="services-hub__logo" viewBox="100 160 2210 295" aria-hidden="true"><g transform="scale(8.571428571428571) translate(10, 10)"><path d="M5.6641 27.266l-2.2461 0 9.1797-16.387 9.7461 0 1.582 16.387 2.1875 0 1.2305 12.715-10.059 0-0.41016-5.4883-5.5664 0c-0.97656 1.8164-1.8945 3.6523-2.8711 5.4883l-9.8828 0zM16.621 27.676l0-0.41016-2.1289 0 0.039063-6.4844-2.6172 6.4844 2.168 0-0.15625 0.41016 2.6953 0zM58.408 27.266l-2.9102 12.715-9.082 0-3.8672-12.715-0.44922 0-2.9492 12.715-9.1992 0 2.9492-12.715-1.7773 0 3.7695-16.367 10.723 0 3.1641 10.273 2.4023-10.273 9.2383 0-3.7891 16.367 1.7773 0zM80.879 26.719l-2.9688 13.359-9.9023 0 3.0469-13.359-1.7773 0 1.9727-8.5547-7.8125 0 1.7188-7.4023 25.352 0-1.6602 7.4023-7.793 0-1.9141 8.5547 1.7383 0zM101.944 27.344l-2.9297 12.734-9.8828 0 2.9297-12.734-1.9922 0 3.8281-16.484 9.8633 0-3.7891 16.484 1.9727 0zM122.989 26.719l-2.9688 13.359-9.9023 0 3.0469-13.359-1.7773 0 1.9727-8.5547-7.8125 0 1.7188-7.4023 25.352 0-1.6602 7.4023-7.793 0-1.9141 8.5547 1.7383 0zM159.619 27.344l-2.9688 12.734-9.7852 0 2.7734-11.953-5.6641 0-2.793 11.953-9.8438 0 2.9492-12.734-1.9727 0 3.7695-16.484 9.8438 0-2.2461 9.9023 5.6445 0 2.2852-9.9023 9.8047 0-3.8086 16.484 2.0117 0zM165.449 27.344l-1.9922 0 3.8281-16.484 20.918 0-1.6797 7.4023-11.152 0-0.58594 2.5 10.254 0-1.5039 6.582 1.9922 0-0.17578 0.78125-10.273 0-1.0352 4.5703 11.113 0-1.6797 7.3828-20.957 0zM213.779 26.719c1.1328 4.1016-2.2656 8.9453-5.4102 11.074-6.1719 4.043-14.316 3.3984-20.625 0.15625l1.8359-8.125 3.0273 0c0.39063 4.1992 9.7852 5.9375 10.742 1.7969 0.46875-2.0508-6.8945-2.6172-9.3555-4.5508-0.13672-0.11719-0.29297-0.23438-0.41016-0.35156l-1.7969 0c-1.9531-1.8359-2.1289-4.2773-1.5625-6.8164 2.3828-10.41 16.523-11.445 24.688-7.3242l-1.8164 7.9102-3.0469 0c0.19531-2.9688-8.7891-5-9.6289-1.4258-0.56641 2.7734 8.5352 1.9531 11.055 6.3477 0.21484 0.39063 0.39063 0.85938 0.50781 1.3086l1.7969 0zM228.301 27.344l-2.9297 12.734-9.8828 0 2.9297-12.734-1.9922 0 3.8281-16.484 9.8633 0-3.7891 16.484 1.9727 0zM257.529 26.719c1.1328 4.1016-2.2656 8.9453-5.4102 11.074-6.1719 4.043-14.316 3.3984-20.625 0.15625l1.8359-8.125 3.0273 0c0.39063 4.1992 9.7852 5.9375 10.742 1.7969 0.46875-2.0508-6.8945-2.6172-9.3555-4.5508-0.13672-0.11719-0.29297-0.23438-0.41016-0.35156l-1.7969 0c-1.9531-1.8359-2.1289-4.2773-1.5625-6.8164 2.3828-10.41 16.523-11.445 24.688-7.3242l-1.8164 7.9102-3.0469 0c0.19531-2.9688-8.7891-5-9.6289-1.4258-0.56641 2.7734 8.5352 1.9531 11.055 6.3477 0.21484 0.39063 0.39063 0.85938 0.50781 1.3086l1.7969 0z"/></g></svg>
+          </div>
+          <p class="services-hub__caption">Three pathways &middot; one approach</p>
+        </div>
+
+        <!-- Three service nodes arranged in a triangle -->
+        <article class="services-node services-node--01" data-spoke="01">
+          <header class="services-node__head">
+            <span class="services-node__num">01</span>
+            <span class="services-node__icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="16" cy="11" r="5"/>
+                <path d="M6 28c1-5 5-8 10-8s9 3 10 8"/>
+                <circle cx="16" cy="11" r="1.5" fill="currentColor"/>
+              </svg>
+            </span>
+          </header>
+          <h3 class="services-node__title">Fractional Leadership &amp; Strategists</h3>
+          <p class="services-node__desc">Senior operators embedded in your business &mdash; part-time on retainer or scoped to a single project. CMOs, CFOs, strategists, and impact specialists who own the outcomes from inside the room.</p>
+          <p class="services-node__use"><span>Use it for</span> &mdash; strategic gaps where a full-time hire is overkill: leadership, brand, finance, or operations.</p>
+          <footer class="services-node__foot">
+            <span class="services-node__sector">For-profit &amp; NFP</span>
+            <a href="#contact" class="services-node__cta" aria-label="Discuss a fractional engagement">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </footer>
+        </article>
+
+        <article class="services-node services-node--02" data-spoke="02">
+          <header class="services-node__head">
+            <span class="services-node__num">02</span>
+            <span class="services-node__icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="14" cy="14" r="8"/>
+                <path d="m20 20 7 7"/>
+                <path d="M14 10v4l3 2"/>
+              </svg>
+            </span>
+          </header>
+          <h3 class="services-node__title">Research &amp; Validation</h3>
+          <p class="services-node__desc">Market intelligence, competitive analysis, and strategic research delivered in weeks, not quarters. We pressure-test assumptions before you commit capital &mdash; so the expensive decisions are the informed ones.</p>
+          <p class="services-node__use"><span>Use it for</span> &mdash; new market entry, product validation, pricing strategy, or investment due diligence.</p>
+          <footer class="services-node__foot">
+            <span class="services-node__sector">For-profit &amp; NFP</span>
+            <a href="#contact" class="services-node__cta" aria-label="Scope a research engagement">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </footer>
+        </article>
+
+        <article class="services-node services-node--03" data-spoke="03">
+          <header class="services-node__head">
+            <span class="services-node__num">03</span>
+            <span class="services-node__icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 26V14"/>
+                <path d="M13 26V8"/>
+                <path d="M21 26V18"/>
+                <path d="M29 26V4"/>
+                <path d="M3 28h28"/>
+              </svg>
+            </span>
+          </header>
+          <h3 class="services-node__title">Impact &amp; SROI</h3>
+          <p class="services-node__desc">Rigorous measurement frameworks built specifically for not-for-profit organisations. Social return on investment, impact reporting, and outcome mapping that satisfies funders, boards, and your own strategic clarity.</p>
+          <p class="services-node__use"><span>Use it for</span> &mdash; grant reporting, ESG compliance, program evaluation, or stakeholder communication.</p>
+          <footer class="services-node__foot">
+            <span class="services-node__sector">NFP-specific</span>
+            <a href="#contact" class="services-node__cta" aria-label="Plan an impact engagement">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       APPROACH — DEEP-DIVE PANELS (one per service, alternating)
+       ============================================================ -->
+  <section class="approach" aria-label="How each engagement works in practice">
+    <div class="container">
+
+      <!-- Panel 01 — Fractional Leadership (text left, visual right) -->
+      <article class="approach-panel reveal">
+        <div class="approach-panel__copy">
+          <p class="approach-eyebrow"><span class="approach-dot" aria-hidden="true"></span>Closing leadership gaps</p>
+          <h3 class="approach-headline">When the strategic gap is real, but a full-time hire is <em>overkill</em>.</h3>
+          <p class="approach-lead">Most growing organisations don't fail because they're missing a CMO, a COO, or a Head of Strategy. They fail because the work that role exists to do isn't getting done — and the cost of hiring at that seniority is hard to justify until the business is twice the size it is now. Fractional leadership closes that gap. A senior operator embedded in your business, on retainer or by the project, owning specific outcomes from inside the room — not from a slide deck.</p>
+          <div class="approach-pillars">
+            <div class="approach-pillar">
+              <p class="approach-pillar__title">What we deliver</p>
+              <ul class="approach-pillar__list">
+                <li>Embedded weekly presence — not advisory from a distance</li>
+                <li>Strategic ownership of a defined remit (brand, growth, ops, impact)</li>
+                <li>Direct accountability for the metrics that move the business</li>
+                <li>Capability transfer — your team is sharper at the end of it</li>
+              </ul>
+            </div>
+            <div class="approach-pillar">
+              <p class="approach-pillar__title">Designed for</p>
+              <ul class="approach-pillar__list">
+                <li>Series A&ndash;C founders without senior bench depth</li>
+                <li>Mid-market businesses navigating brand or category shift</li>
+                <li>Not-for-profit boards needing executive-grade thinking</li>
+                <li>Organisations between hires who can't afford to drift</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#contact" class="approach-cta">Discuss a fractional engagement <span aria-hidden="true">&#8594;</span></a>
+        </div>
+        <div class="approach-panel__visual">
+          <figure class="photo-frame photo-frame--clip-1">
+            <span class="photo-frame__tag" aria-hidden="true">01 / Embedded</span>
+            <img class="photo-frame__img" src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy">
+            <aside class="photo-frame__card photo-frame__card--left" aria-label="Engagement snapshot">
+              <span class="photo-frame__card-eyebrow"><span class="photo-frame__card-dash"></span>Snapshot</span>
+              <p class="photo-frame__card-headline">Two days a week.<br><em>Senior in the room.</em></p>
+              <p class="photo-frame__card-body">Typical fractional cadence &mdash; embedded enough to own outcomes, scoped enough to stay capital-efficient.</p>
+              <ul class="photo-frame__card-meta">
+                <li><strong><span class="counter" data-target="40">40</span><em>%</em></strong><span>cost vs full-time</span></li>
+                <li><strong>2&ndash;3</strong><span>days / week</span></li>
+                <li><strong>3&ndash;6</strong><span>months scope</span></li>
+              </ul>
+            </aside>
+            <span class="photo-frame__rings" aria-hidden="true">
+              <svg viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="1" opacity="0.55"/>
+                <circle cx="100" cy="100" r="64" fill="none" stroke="currentColor" stroke-width="1" opacity="0.32"/>
+                <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="1" opacity="0.16"/>
+              </svg>
+            </span>
+          </figure>
+        </div>
+      </article>
+
+      <!-- Panel 02 — Research & Validation (visual left, text right) -->
+      <article class="approach-panel approach-panel--reverse reveal">
+        <div class="approach-panel__copy">
+          <p class="approach-eyebrow"><span class="approach-dot" aria-hidden="true"></span>Pressure-testing assumptions</p>
+          <h3 class="approach-headline">Make the expensive decisions the <em>informed</em> ones.</h3>
+          <p class="approach-lead">By the time most organisations realise their assumptions were wrong, they've already spent eighteen months building the wrong thing. Research compresses that learning curve into weeks, not quarters &mdash; turning a pricing instinct into a defensible position, a market hunch into a sized opportunity, an investment thesis into a pressure-tested case. Done well, it pays for itself in the first decision it changes.</p>
+          <div class="approach-pillars">
+            <div class="approach-pillar">
+              <p class="approach-pillar__title">What we deliver</p>
+              <ul class="approach-pillar__list">
+                <li>Quantitative market sizing &amp; demand modelling</li>
+                <li>Qualitative customer &amp; stakeholder interviews</li>
+                <li>Competitive positioning &amp; whitespace analysis</li>
+                <li>Investment due diligence &amp; thesis validation</li>
+              </ul>
+            </div>
+            <div class="approach-pillar">
+              <p class="approach-pillar__title">Designed for</p>
+              <ul class="approach-pillar__list">
+                <li>Founders entering a new geography or vertical</li>
+                <li>Boards weighing capital allocation across options</li>
+                <li>Product teams pre-launch or pre-relaunch</li>
+                <li>Investors sizing private-market opportunities</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#contact" class="approach-cta">Scope a research engagement <span aria-hidden="true">&#8594;</span></a>
+        </div>
+        <div class="approach-panel__visual">
+          <figure class="photo-frame photo-frame--clip-2">
+            <span class="photo-frame__tag" aria-hidden="true">02 / Tested</span>
+            <img class="photo-frame__img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy">
+            <aside class="photo-frame__card photo-frame__card--right" aria-label="Research engagement snapshot">
+              <span class="photo-frame__card-eyebrow"><span class="photo-frame__card-dash"></span>Snapshot</span>
+              <p class="photo-frame__card-headline">14 days.<br><em>Not 14 quarters.</em></p>
+              <p class="photo-frame__card-body">Pressure-tested findings with footnotes you can defend in front of a board, an investor, or a sceptical CFO.</p>
+              <ul class="photo-frame__card-meta">
+                <li><strong><span class="counter" data-target="14">14</span><em>d</em></strong><span>turnaround</span></li>
+                <li><strong>3+</strong><span>data sources</span></li>
+                <li><strong>1</strong><span>defensible thesis</span></li>
+              </ul>
+            </aside>
+            <span class="photo-frame__crosshair" aria-hidden="true">
+              <svg viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="46" fill="none" stroke="currentColor" stroke-width="1" opacity="0.7"/>
+                <circle cx="100" cy="100" r="74" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35" stroke-dasharray="4 4"/>
+                <line x1="100" y1="20" x2="100" y2="60" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+                <line x1="100" y1="140" x2="100" y2="180" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+                <line x1="20" y1="100" x2="60" y2="100" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+                <line x1="140" y1="100" x2="180" y2="100" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+                <circle cx="100" cy="100" r="5" fill="currentColor"/>
+              </svg>
+            </span>
+          </figure>
+        </div>
+      </article>
+
+      <!-- Panel 03 — Impact & SROI (text left, visual right) -->
+      <article class="approach-panel reveal">
+        <div class="approach-panel__copy">
+          <p class="approach-eyebrow"><span class="approach-dot" aria-hidden="true"></span>Measuring what matters</p>
+          <h3 class="approach-headline">Impact you can put a number against &mdash; and a story funders <em>trust</em>.</h3>
+          <p class="approach-lead">Not-for-profits are increasingly held to a standard of measurement that the funding ecosystem hasn't fully equipped them for. Outcome reporting that satisfies a corporate funder, a government grant, and a board can pull in three different directions at once. We build measurement frameworks that hold up under each &mdash; and produce the kind of narrative that earns the next round of support without overstating the last.</p>
+          <div class="approach-pillars">
+            <div class="approach-pillar">
+              <p class="approach-pillar__title">What we deliver</p>
+              <ul class="approach-pillar__list">
+                <li>Social Return on Investment (SROI) frameworks</li>
+                <li>Outcome mapping &amp; theory-of-change documentation</li>
+                <li>Impact reporting tailored to funder requirements</li>
+                <li>ESG &amp; sustainability narrative for board / investor relations</li>
+              </ul>
+            </div>
+            <div class="approach-pillar">
+              <p class="approach-pillar__title">Designed for</p>
+              <ul class="approach-pillar__list">
+                <li>NFPs preparing major grant applications or renewals</li>
+                <li>Foundations demonstrating program effectiveness</li>
+                <li>Social enterprises balancing mission &amp; commercial returns</li>
+                <li>Corporates with regulated ESG reporting obligations</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#contact" class="approach-cta">Plan an impact engagement <span aria-hidden="true">&#8594;</span></a>
+        </div>
+        <div class="approach-panel__visual">
+          <figure class="photo-frame photo-frame--clip-3">
+            <span class="photo-frame__tag" aria-hidden="true">03 / Measured</span>
+            <img class="photo-frame__img" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy">
+            <aside class="photo-frame__card photo-frame__card--left" aria-label="Impact reporting snapshot">
+              <span class="photo-frame__card-eyebrow"><span class="photo-frame__card-dash"></span>Snapshot</span>
+              <p class="photo-frame__card-headline">Funder-grade <em>evidence</em>.<br>Board-grade narrative.</p>
+              <p class="photo-frame__card-body">An impact report has to do both at once &mdash; quantified outcomes, told as a story stakeholders can fund again.</p>
+              <ul class="photo-frame__card-meta">
+                <li><strong><span class="counter" data-target="2.4">2.4</span><em>&times;</em></strong><span>outcome lift</span></li>
+                <li><strong>4:1</strong><span>SROI ratio</span></li>
+                <li><strong>3+</strong><span>stakeholder lenses</span></li>
+              </ul>
+            </aside>
+            <span class="photo-frame__sparkline" aria-hidden="true">
+              <svg viewBox="0 0 240 100">
+                <line x1="0" y1="80" x2="240" y2="80" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+                <line x1="0" y1="60" x2="240" y2="60" stroke="currentColor" stroke-width="1" opacity="0.18" stroke-dasharray="3 4"/>
+                <line x1="0" y1="40" x2="240" y2="40" stroke="currentColor" stroke-width="1" opacity="0.18" stroke-dasharray="3 4"/>
+                <line x1="0" y1="20" x2="240" y2="20" stroke="currentColor" stroke-width="1" opacity="0.18" stroke-dasharray="3 4"/>
+                <rect class="spark-bar" x="20"  y="60" width="22" height="20" fill="currentColor" opacity="0.35"/>
+                <rect class="spark-bar" x="60"  y="46" width="22" height="34" fill="currentColor" opacity="0.45"/>
+                <rect class="spark-bar" x="100" y="52" width="22" height="28" fill="currentColor" opacity="0.4"/>
+                <rect class="spark-bar spark-bar--accent" x="140" y="22" width="22" height="58" fill="var(--color-accent)"/>
+                <rect class="spark-bar" x="180" y="34" width="22" height="46" fill="currentColor" opacity="0.55"/>
+                <path class="spark-curve" d="M 31 60 Q 71 46 111 52 T 191 34" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.85"/>
+              </svg>
+            </span>
+          </figure>
+        </div>
+      </article>
+
     </div>
   </section>
 
@@ -1371,7 +617,7 @@ a:focus-visible, button:focus-visible {
     <div class="container">
       <p class="section-label reveal">03 / Method</p>
       <h2 class="reveal" style="transition-delay:0.1s">Inputs in. Impact out.</h2>
-      <p class="method__intro reveal" style="transition-delay:0.15s">Every engagement follows a structured methodology that converts ambiguity into measurable results. We start with your business reality — not a templated framework — and work backward from the outcomes that actually move your metrics.</p>
+      <p class="method__intro reveal" style="transition-delay:0.15s">Every engagement follows a structured methodology that converts ambiguity into measurable results. We start with your reality — not a templated framework — and work backward from the outcomes that actually move your metrics.</p>
 
       <div class="method-flow" id="methodFlow">
         <div class="method-stage">
@@ -1419,43 +665,153 @@ a:focus-visible, button:focus-visible {
   </section>
 
   <!-- ============================================================
-       04 / CONTACT
+       VOICES — testimonials, editorial pull-quote cards
+       ============================================================ -->
+  <section class="voices" aria-label="What clients say">
+    <div class="container">
+      <div class="voices__header">
+        <h2 class="reveal">In their words.</h2>
+        <p class="voices__intro reveal" style="transition-delay:0.1s">A handful of recent engagements, in the language of the people we worked with. Names lightly edited; quotes reproduced verbatim.</p>
+      </div>
+      <div class="voices-grid">
+        <figure class="voice-card reveal" style="transition-delay:0.15s">
+          <span class="voice-card__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote class="voice-card__quote">
+            They reframed how we measure brand impact in three weeks. Two years on, we&rsquo;re still using the framework — and the team that learned it from them now teaches it.
+          </blockquote>
+          <figcaption class="voice-card__attr">
+            <span class="voice-card__name">Sarah Chen</span>
+            <span class="voice-card__role">CMO &middot; Placeholder Brand</span>
+          </figcaption>
+        </figure>
+        <figure class="voice-card reveal" style="transition-delay:0.25s">
+          <span class="voice-card__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote class="voice-card__quote">
+            They asked the questions our board hadn&rsquo;t thought to ask. The clarity that produced was worth ten times the engagement fee. We renewed for another quarter.
+          </blockquote>
+          <figcaption class="voice-card__attr">
+            <span class="voice-card__name">David Bryce</span>
+            <span class="voice-card__role">Executive Director &middot; Placeholder NFP</span>
+          </figcaption>
+        </figure>
+        <figure class="voice-card reveal" style="transition-delay:0.35s">
+          <span class="voice-card__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote class="voice-card__quote">
+            They show up senior. They leave the room with the team smarter than they found it. Rare combination — the kind you don&rsquo;t find in a global firm at any price.
+          </blockquote>
+          <figcaption class="voice-card__attr">
+            <span class="voice-card__name">Mira Patel</span>
+            <span class="voice-card__role">CEO &middot; Placeholder Startup</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       04 / CONTACT — split layout, animated SVG ambient decoration
        ============================================================ -->
   <section class="contact" id="contact">
+    <!-- Animated background decoration -->
+    <div class="contact-decor" aria-hidden="true">
+      <svg class="contact-decor__bg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="contactGlowA" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="currentColor" stop-opacity="0.20"/>
+            <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="contactGlowB" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="currentColor" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <ellipse class="contact-decor__glow contact-decor__glow--a" cx="950" cy="180" rx="280" ry="280" fill="url(#contactGlowA)"/>
+        <ellipse class="contact-decor__glow contact-decor__glow--b" cx="180" cy="640" rx="220" ry="220" fill="url(#contactGlowB)"/>
+        <path class="contact-decor__line contact-decor__line--1" d="M -50 380 Q 300 280 600 400 T 1250 380" fill="none" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="2 8" opacity="0.55"/>
+        <path class="contact-decor__line contact-decor__line--2" d="M -50 460 Q 350 540 700 460 T 1250 460" fill="none" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="2 8" opacity="0.35"/>
+      </svg>
+      <!-- Pulsing rings, top-right -->
+      <span class="contact-decor__rings" aria-hidden="true">
+        <span class="contact-decor__ring"></span>
+        <span class="contact-decor__ring"></span>
+        <span class="contact-decor__ring"></span>
+      </span>
+    </div>
+
     <div class="container">
-      <p class="section-label reveal">04 / Contact</p>
-      <h2 class="reveal" style="transition-delay:0.1s">Stop guessing.<br>Start measuring.</h2>
-      <p class="contact__intro reveal" style="transition-delay:0.15s">Tell us what you are working on. We will come back within one business day with a view on whether we can help — and if we cannot, who can.</p>
+      <div class="contact-grid">
+        <!-- Left: header + meta -->
+        <div class="contact-intro">
+          <p class="section-label reveal">04 / Contact</p>
+          <h2 class="reveal" style="transition-delay:0.1s">Stop guessing.<br>Start <em>measuring</em>.</h2>
+          <p class="contact__intro reveal" style="transition-delay:0.15s">Let us know what you're up to. We'll get back to you within a business day to let you know if we're the right fit &mdash; and if we aren't, we'll point you toward someone who is.</p>
 
-      <form class="contact-form reveal" id="contactForm" style="transition-delay:0.2s" novalidate>
-        <div class="form-field">
-          <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name">
-          <label for="cf-name">Name</label>
+          <ul class="contact-meta reveal" style="transition-delay:0.2s">
+            <li class="contact-meta__item">
+              <span class="contact-meta__dot" aria-hidden="true"></span>
+              <div class="contact-meta__body">
+                <strong>Response within one business day</strong>
+                <span>Read by a human, replied to by a senior. No pipeline triage, no &ldquo;account executive&rdquo; first.</span>
+              </div>
+            </li>
+            <li class="contact-meta__item">
+              <span class="contact-meta__dot" aria-hidden="true"></span>
+              <div class="contact-meta__body">
+                <strong>Conversations are confidential</strong>
+                <span>Whatever you share stays between us &mdash; even if we never end up working together.</span>
+              </div>
+            </li>
+            <li class="contact-meta__item">
+              <span class="contact-meta__dot" aria-hidden="true"></span>
+              <div class="contact-meta__body">
+                <strong>Melbourne&ndash;based, working anywhere</strong>
+                <span>Local roots, remote-friendly. Engagements across AU, NZ, and broader Asia-Pacific.</span>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="form-field">
-          <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email">
-          <label for="cf-email">Email</label>
-        </div>
-        <div class="form-field">
-          <select id="cf-need" name="need" required>
-            <option value="" disabled selected hidden></option>
-            <option value="research">Research &amp; validation</option>
-            <option value="impact">Impact &amp; SROI</option>
-            <option value="leadership">Fractional leadership</option>
-            <option value="unsure">Not sure yet</option>
-          </select>
-          <label for="cf-need">What do you need help with?</label>
-        </div>
-        <div class="form-field">
-          <textarea id="cf-notes" name="notes" placeholder=" " rows="2"></textarea>
-          <label for="cf-notes">Anything else?</label>
-        </div>
-        <button type="submit" class="btn-submit">Send</button>
-      </form>
 
-      <div class="form-thankyou" id="formThankyou">
-        <h3>Thank you.</h3>
-        <p>We have received your message and will be in touch within one business day.</p>
+        <!-- Right: form card -->
+        <div class="contact-form-wrap reveal" style="transition-delay:0.25s">
+          <div class="contact-form-card">
+            <p class="contact-form-card__title">Tell us about it.</p>
+            <p class="contact-form-card__sub">A short note is enough. We'll come back with thoughts.</p>
+
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-field">
+                <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name">
+                <label for="cf-name">Name</label>
+              </div>
+              <div class="form-field">
+                <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email">
+                <label for="cf-email">Email</label>
+              </div>
+              <div class="form-field">
+                <select id="cf-need" name="need" required>
+                  <option value="" disabled selected hidden></option>
+                  <option value="leadership">Fractional leadership &amp; strategists</option>
+                  <option value="research">Research &amp; validation</option>
+                  <option value="impact">Impact &amp; SROI</option>
+                  <option value="unsure">Not sure yet</option>
+                </select>
+                <label for="cf-need">What do you need help with?</label>
+              </div>
+              <div class="form-field">
+                <textarea id="cf-notes" name="notes" placeholder=" " rows="2"></textarea>
+                <label for="cf-notes">Anything else?</label>
+              </div>
+              <button type="submit" class="btn-submit">
+                <span>Send</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </button>
+            </form>
+
+            <div class="form-thankyou" id="formThankyou">
+              <h3>Thank you.</h3>
+              <p>We've received your message and will be in touch within one business day.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1476,7 +832,7 @@ a:focus-visible, button:focus-visible {
       </div>
       <div class="footer-col">
         <p class="footer-col__title">Services</p>
-        <a href="#services">Fractional Leadership</a>
+        <a href="#services">Fractional Leadership &amp; Strategists</a>
         <a href="#services">Research &amp; Validation</a>
         <a href="#services">Impact &amp; SROI</a>
         <a href="#method">Our Method</a>
@@ -1501,10 +857,13 @@ a:focus-visible, button:focus-visible {
     <div class="footer-bottom">
       <span>&copy; 2024 Antithesis Consulting</span>
       <div class="footer-bottom-links">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
       </div>
     </div>
+
+    <!-- Brand kicker -->
+    <p class="footer-brand-kicker" aria-hidden="true">We think different. — Est. 2024, Melbourne.</p>
 
     <!-- Giant brand logo at the very bottom -->
     <div class="footer-brand" aria-hidden="true">
@@ -1513,132 +872,6 @@ a:focus-visible, button:focus-visible {
   </div>
 </footer>
 
-<script>
-(function() {
-  'use strict';
-
-  /* ============================================================
-     INTERSECTION OBSERVER — SCROLL REVEAL
-     ============================================================ */
-  var revealElements = document.querySelectorAll('.reveal');
-  var revealObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-  revealElements.forEach(function(el) {
-    revealObserver.observe(el);
-  });
-
-  /* ============================================================
-     METHOD FLOW — OBSERVE & ANIMATE
-     ============================================================ */
-  var methodFlow = document.getElementById('methodFlow');
-  if (methodFlow) {
-    var methodObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          methodObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    methodObserver.observe(methodFlow);
-  }
-
-  /* ============================================================
-     NAV — BLEND OVER HERO, FLOATING PILL AFTER 30vh SCROLL
-     ============================================================ */
-  var nav = document.querySelector('.site-nav');
-  if (nav) {
-    var navScrolled = false;
-    function updateNavState() {
-      var shouldScroll = window.scrollY > window.innerHeight * 0.3;
-      if (shouldScroll !== navScrolled) {
-        nav.classList.toggle('scrolled', shouldScroll);
-        navScrolled = shouldScroll;
-      }
-    }
-    window.addEventListener('scroll', updateNavState, { passive: true });
-    updateNavState();
-  }
-
-  /* ============================================================
-     MOBILE MENU
-     ============================================================ */
-  var hamburger = document.querySelector('.nav-hamburger');
-  var overlay = document.querySelector('.mobile-overlay');
-  var overlayLinks = overlay ? overlay.querySelectorAll('a') : [];
-
-  function toggleMenu() {
-    var isOpen = hamburger.classList.toggle('open');
-    overlay.classList.toggle('open', isOpen);
-    overlay.setAttribute('aria-hidden', !isOpen);
-    hamburger.setAttribute('aria-expanded', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-  }
-
-  if (hamburger) hamburger.addEventListener('click', toggleMenu);
-  overlayLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
-      if (hamburger.classList.contains('open')) toggleMenu();
-    });
-  });
-
-  /* ============================================================
-     THEME TOGGLE
-     ============================================================ */
-  var themeToggle = document.querySelector('.theme-toggle');
-  if (themeToggle) {
-    themeToggle.addEventListener('click', function() {
-      var current = document.documentElement.getAttribute('data-theme') || 'dark';
-      var next = current === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', next);
-      try { localStorage.setItem('antithesis-theme', next); } catch (e) {}
-    });
-  }
-
-  /* ============================================================
-     FORM SUBMISSION
-     ============================================================ */
-  var form = document.getElementById('contactForm');
-  var thankyou = document.getElementById('formThankyou');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      form.style.display = 'none';
-      thankyou.classList.add('active');
-    });
-  }
-
-  /* ============================================================
-     SMOOTH SCROLL FOR ANCHOR LINKS
-     ============================================================ */
-  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-    anchor.addEventListener('click', function(e) {
-      var target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-  /* ============================================================
-     TRIGGER HERO REVEAL ON LOAD
-     ============================================================ */
-  window.addEventListener('load', function() {
-    document.querySelectorAll('.hero-content .reveal').forEach(function(el, i) {
-      setTimeout(function() { el.classList.add('visible'); }, 100 + (i * 120));
-    });
-  });
-
-})();
-</script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
