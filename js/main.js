@@ -8,27 +8,6 @@
   'use strict';
 
   /* ============================================================
-     SERVICES CONSTELLATION — link node hover to spoke highlight
-     ============================================================ */
-  document.querySelectorAll('.services-node[data-spoke]').forEach(function (node) {
-    var id = node.dataset.spoke;
-    var spoke = document.querySelector('.services-spoke[data-spoke="' + id + '"]');
-    var tip   = document.querySelector('.services-spoke-tip[data-spoke="' + id + '"]');
-    var activate = function () {
-      if (spoke) spoke.classList.add('is-active');
-      if (tip)   tip.classList.add('is-active');
-    };
-    var deactivate = function () {
-      if (spoke) spoke.classList.remove('is-active');
-      if (tip)   tip.classList.remove('is-active');
-    };
-    node.addEventListener('mouseenter', activate);
-    node.addEventListener('mouseleave', deactivate);
-    node.addEventListener('focusin', activate);
-    node.addEventListener('focusout', deactivate);
-  });
-
-  /* ============================================================
      INTERSECTION OBSERVER — SCROLL REVEAL
      ============================================================ */
   var revealElements = document.querySelectorAll('.reveal');
@@ -339,68 +318,20 @@
     }
 
     /* ============================================================
-       SERVICES CONSTELLATION — entrance choreography
-       Nodes fade up with stagger; hub scales in last; spokes draw
-       on once everything is in place.
+       SERVICES GRID — entrance choreography
+       Cards fade and lift in with a small stagger as the grid scrolls
+       into view.
        ============================================================ */
-    var constellation = document.querySelector('.services-constellation');
-    if (constellation && typeof ScrollTrigger !== 'undefined') {
-      var nodes = constellation.querySelectorAll('.services-node');
+    var servicesGrid = document.querySelector('.services-grid');
+    if (servicesGrid && typeof ScrollTrigger !== 'undefined') {
+      var nodes = servicesGrid.querySelectorAll('.services-node');
       gsap.from(nodes, {
-        scrollTrigger: { trigger: constellation, start: 'top 78%', once: true },
+        scrollTrigger: { trigger: servicesGrid, start: 'top 82%', once: true },
         y: 28,
         opacity: 0,
         duration: 0.85,
         stagger: 0.18,
         ease: 'power3.out'
-      });
-
-      var hub = constellation.querySelector('.services-hub');
-      if (hub) {
-        gsap.from(hub, {
-          scrollTrigger: { trigger: constellation, start: 'top 75%', once: true },
-          scale: 0,
-          opacity: 0,
-          duration: 0.95,
-          delay: 0.5,
-          ease: 'back.out(1.6)'
-        });
-      }
-
-      /* Spokes: draw from hub outward */
-      var spokes = constellation.querySelectorAll('.services-spoke');
-      spokes.forEach(function (spoke, i) {
-        var len = 0;
-        try { len = spoke.getTotalLength ? spoke.getTotalLength() : 0; } catch (e) { len = 0; }
-        if (!len) return;
-        gsap.fromTo(spoke,
-          { strokeDasharray: len, strokeDashoffset: len },
-          {
-            scrollTrigger: { trigger: constellation, start: 'top 70%', once: true },
-            strokeDashoffset: 0,
-            duration: 1.1,
-            delay: 0.7 + i * 0.12,
-            ease: 'power2.out',
-            onComplete: function () {
-              /* Restore the dashed pattern after the draw finishes */
-              spoke.style.strokeDasharray = '4 8';
-              spoke.style.strokeDashoffset = '0';
-            }
-          }
-        );
-      });
-
-      /* Spoke tips appear after their spoke */
-      var tips = constellation.querySelectorAll('.services-spoke-tip');
-      gsap.from(tips, {
-        scrollTrigger: { trigger: constellation, start: 'top 70%', once: true },
-        scale: 0,
-        opacity: 0,
-        duration: 0.5,
-        delay: 1.5,
-        stagger: 0.1,
-        transformOrigin: 'center',
-        ease: 'back.out(1.8)'
       });
     }
 
