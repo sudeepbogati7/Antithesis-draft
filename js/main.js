@@ -336,50 +336,42 @@
     }
 
     /* ============================================================
-       CAPITAL EFFICIENCY CHART — animate bar heights from 0
+       FTF CHART — Full-Time vs Fractional infographic
+       Reveal is CSS-driven (see .ftf-row.is-visible rules); GSAP is
+       only used for the optional hover micro-interactions so a missed
+       tween can never leave a row stranded in the hidden state.
        ============================================================ */
-    var capitalChart = document.getElementById('capitalChart');
-    if (capitalChart && typeof ScrollTrigger !== 'undefined') {
-      var chartBars = capitalChart.querySelectorAll('.chart-bar__shape');
-      gsap.from(chartBars, {
-        scrollTrigger: { trigger: capitalChart, start: 'top 80%', once: true },
-        scaleY: 0,
-        duration: 1.3,
-        stagger: 0.18,
-        ease: 'power3.out',
-        transformOrigin: '50% 100%'
-      });
-      var chartCallout = capitalChart.querySelector('.chart-callout__chip');
-      if (chartCallout) {
-        gsap.from(chartCallout, {
-          scrollTrigger: { trigger: capitalChart, start: 'top 75%', once: true },
-          scale: 0,
-          opacity: 0,
-          duration: 0.85,
-          delay: 0.55,
-          ease: 'back.out(1.7)'
+    var ftfChart = document.getElementById('capitalChart');
+    if (ftfChart) {
+      var ftfRows = ftfChart.querySelectorAll('.ftf-row');
+
+      /* Per-row IntersectionObserver — each row reveals independently
+         the moment it scrolls into view. */
+      var ftfRowObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            ftfRowObserver.unobserve(entry.target);
+          }
         });
-      }
-      var chartBracket = capitalChart.querySelector('.chart-callout__bracket path');
-      if (chartBracket) {
-        var bLen = 0;
-        try { bLen = chartBracket.getTotalLength ? chartBracket.getTotalLength() : 0; } catch (e) { bLen = 0; }
-        if (bLen) {
-          gsap.fromTo(chartBracket,
-            { strokeDasharray: bLen, strokeDashoffset: bLen },
-            {
-              scrollTrigger: { trigger: capitalChart, start: 'top 78%', once: true },
-              strokeDashoffset: 0,
-              duration: 1.3,
-              delay: 0.4,
-              ease: 'power2.out',
-              onComplete: function () {
-                chartBracket.style.strokeDasharray = '3 5';
-                chartBracket.style.strokeDashoffset = '0';
-              }
-            }
-          );
-        }
+      }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+
+      ftfRows.forEach(function (row) { ftfRowObserver.observe(row); });
+
+      /* Hover interactivity (decorative — depends on GSAP if present) */
+      if (typeof gsap !== 'undefined') {
+        ftfRows.forEach(function (row) {
+          var fracFill = row.querySelector('.ftf-bar--frac .ftf-bar__fill');
+          var delta    = row.querySelector('.ftf-row__delta');
+          row.addEventListener('mouseenter', function () {
+            if (fracFill) gsap.to(fracFill, { scaleY: 1.15, duration: 0.3, transformOrigin: 'center', ease: 'power2.out' });
+            if (delta)    gsap.to(delta, { scale: 1.06, duration: 0.3, ease: 'power2.out' });
+          });
+          row.addEventListener('mouseleave', function () {
+            if (fracFill) gsap.to(fracFill, { scaleY: 1, duration: 0.4, ease: 'power2.out' });
+            if (delta)    gsap.to(delta, { scale: 1, duration: 0.4, ease: 'power2.out' });
+          });
+        });
       }
     }
 

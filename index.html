@@ -109,14 +109,14 @@
     </div>
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
-      <p class="hero-kicker reveal">The antithesis of traditional consulting.</p>
+      <p class="hero-kicker reveal">Not your traditional consultants.</p>
       <h1 class="hero-headline reveal" style="transition-delay:0.05s">We think <em>different</em>.</h1>
       <p class="hero-sub reveal" style="transition-delay:0.15s">Fractional leadership and strategists embedded in your business — on retainer or by the project. Senior expertise without the six-figure overhead, measured by outcome rather than headcount.</p>
       <div class="hero-actions reveal" style="transition-delay:0.25s">
         <a href="#contact" class="btn-primary">Book a consultation</a>
         <a href="#the-case" class="text-link">See how it works &#8595;</a>
       </div>
-      <div class="hero-tag">Est. 2024 — Melbourne</div>
+      <div class="hero-tag">Est. 2024</div>
     </div>
   </section>
 
@@ -130,19 +130,19 @@
     <div class="trusted-stats" id="trustedStats">
       <div class="trusted-stats__item">
         <span class="trusted-stats__value">
-          <span class="trusted-stats__num" data-target="120">0</span><span class="trusted-stats__suffix">+</span>
+          <span class="trusted-stats__num" data-target="46">0</span>
         </span>
         <p class="trusted-stats__label">Engagements delivered</p>
       </div>
       <div class="trusted-stats__item">
         <span class="trusted-stats__value">
-          <span class="trusted-stats__num" data-target="7">0</span>
+          <span class="trusted-stats__num" data-target="11">0</span>
         </span>
         <p class="trusted-stats__label">Industries served</p>
       </div>
       <div class="trusted-stats__item">
         <span class="trusted-stats__value">
-          <span class="trusted-stats__num" data-target="98">0</span><span class="trusted-stats__suffix">%</span>
+          <span class="trusted-stats__num" data-target="100">0</span><span class="trusted-stats__suffix">%</span>
         </span>
         <p class="trusted-stats__label">On-time delivery</p>
       </div>
@@ -285,54 +285,84 @@
           <p>Fractional leadership resolves the timing paradox: senior expertise scoped to the decisions that actually matter — on retainer or by the project — without the fixed cost of a full-time hire. It is how smart organisations build strategic capacity without overbuilding the org chart.</p>
         </div>
         <div class="value-prop__chart reveal" style="transition-delay:0.25s">
-          <p class="chart-eyebrow"><span class="chart-eyebrow__dot" aria-hidden="true"></span>Capital efficiency &mdash; normalised</p>
-          <div class="chart-frame" id="capitalChart" role="img" aria-label="Capital efficiency comparison: full-time hire at 100% versus fractional engagement at approximately 28%, a 3 to 5 times gap.">
-            <div class="chart-grid" aria-hidden="true">
-              <span></span><span></span><span></span><span></span>
-            </div>
-            <div class="chart-axis-labels" aria-hidden="true">
-              <span>100</span><span>75</span><span>50</span><span>25</span>
-            </div>
-            <div class="chart-bars">
-              <div class="chart-bar">
-                <span class="chart-bar__value chart-bar__value--ft">100<em>%</em></span>
-                <span class="chart-bar__shape chart-bar__shape--ft"></span>
-                <span class="chart-bar__name">Full-time hire</span>
-              </div>
-              <div class="chart-bar chart-bar--accent">
-                <span class="chart-bar__value chart-bar__value--fr">~28<em>%</em></span>
-                <span class="chart-bar__shape chart-bar__shape--fr">
-                  <span class="chart-bar__pulse" aria-hidden="true"></span>
-                </span>
-                <span class="chart-bar__name">Fractional</span>
-              </div>
-            </div>
-            <div class="chart-callout" aria-hidden="true">
-              <svg class="chart-callout__bracket" viewBox="0 0 80 200" preserveAspectRatio="none">
-                <path d="M 10 6 Q 70 6 70 100 Q 70 194 10 194" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 5"/>
-              </svg>
-              <span class="chart-callout__chip">
-                <span class="chart-callout__num">3&ndash;5<em>&times;</em></span>
-                <span class="chart-callout__cap">capital efficiency</span>
+          <p class="chart-eyebrow"><span class="chart-eyebrow__dot" aria-hidden="true"></span>Full-time vs Fractional &mdash; at a glance</p>
+          <div class="ftf-chart" id="capitalChart" role="img" aria-label="Comparison between a full-time executive and a fractional leader across three metrics: total cost, strategic output, and waste.">
+            <div class="ftf-legend" aria-hidden="true">
+              <span class="ftf-legend__item ftf-legend__item--fte">
+                <span class="ftf-legend__swatch"></span>Full-Time Executive
+              </span>
+              <span class="ftf-legend__item ftf-legend__item--frac">
+                <span class="ftf-legend__swatch"></span>Fractional Leader
               </span>
             </div>
+
+            <!-- Metric 01 — Total Cost -->
+            <div class="ftf-row">
+              <header class="ftf-row__head">
+                <p class="ftf-row__metric">Total Cost</p>
+                <span class="ftf-row__delta ftf-row__delta--down">&#8595; up to 75% less</span>
+              </header>
+              <div class="ftf-row__bars">
+                <div class="ftf-bar ftf-bar--fte">
+                  <span class="ftf-bar__label">Full-Time</span>
+                  <span class="ftf-bar__track"><span class="ftf-bar__fill" style="--ftf-target:100%"></span></span>
+                  <span class="ftf-bar__value">100<em>%</em></span>
+                  <span class="ftf-bar__sub">Salary + Benefits + Equity</span>
+                </div>
+                <div class="ftf-bar ftf-bar--frac">
+                  <span class="ftf-bar__label">Fractional</span>
+                  <span class="ftf-bar__track"><span class="ftf-bar__fill" style="--ftf-target:30%"></span></span>
+                  <span class="ftf-bar__value">25&ndash;35<em>%</em></span>
+                  <span class="ftf-bar__sub">Flat Retainer</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Metric 02 — Strategic Output -->
+            <div class="ftf-row">
+              <header class="ftf-row__head">
+                <p class="ftf-row__metric">Strategic Output</p>
+                <span class="ftf-row__delta ftf-row__delta--up">&#8593; 2.25&times; more</span>
+              </header>
+              <div class="ftf-row__bars">
+                <div class="ftf-bar ftf-bar--fte">
+                  <span class="ftf-bar__label">Full-Time</span>
+                  <span class="ftf-bar__track"><span class="ftf-bar__fill" style="--ftf-target:40%"></span></span>
+                  <span class="ftf-bar__value">40<em>%</em></span>
+                  <span class="ftf-bar__sub">Time spent on &ldquo;Big Picture&rdquo;</span>
+                </div>
+                <div class="ftf-bar ftf-bar--frac">
+                  <span class="ftf-bar__label">Fractional</span>
+                  <span class="ftf-bar__track"><span class="ftf-bar__fill" style="--ftf-target:90%"></span></span>
+                  <span class="ftf-bar__value">90<em>%</em></span>
+                  <span class="ftf-bar__sub">Time spent on &ldquo;Big Picture&rdquo;</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Metric 03 — Waste (Admin / Politics) -->
+            <div class="ftf-row">
+              <header class="ftf-row__head">
+                <p class="ftf-row__metric">Waste <span class="ftf-row__metric-sub">Admin / Politics</span></p>
+                <span class="ftf-row__delta ftf-row__delta--down">&#8595; ~6&times; less</span>
+              </header>
+              <div class="ftf-row__bars">
+                <div class="ftf-bar ftf-bar--fte">
+                  <span class="ftf-bar__label">Full-Time</span>
+                  <span class="ftf-bar__track"><span class="ftf-bar__fill" style="--ftf-target:60%"></span></span>
+                  <span class="ftf-bar__value">60<em>%</em></span>
+                  <span class="ftf-bar__sub">Meetings, HR, Admin</span>
+                </div>
+                <div class="ftf-bar ftf-bar--frac">
+                  <span class="ftf-bar__label">Fractional</span>
+                  <span class="ftf-bar__track"><span class="ftf-bar__fill" style="--ftf-target:10%"></span></span>
+                  <span class="ftf-bar__value">&lt;10<em>%</em></span>
+                  <span class="ftf-bar__sub">Project-Specific Focus</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="chart-costs reveal" aria-hidden="true">
-            <span class="chart-costs__col">
-              <span class="chart-costs__amount">~$320K<em> / yr</em></span>
-              <span class="chart-costs__label">Loaded cost, full-time</span>
-            </span>
-            <span class="chart-costs__col chart-costs__col--accent">
-              <span class="chart-costs__amount">~$90K<em> / yr</em></span>
-              <span class="chart-costs__label">Fractional engagement</span>
-            </span>
-          </div>
-          <div class="chart-savings reveal" role="note">
-            <span class="chart-savings__num">Save ~$230K</span>
-            <span class="chart-savings__sub">+ ~6 months faster to impact &middot; lower commitment risk</span>
-          </div>
-          <p class="chart-strapline reveal"><strong>Save money. Save time. De&#8209;risk the decision.</strong></p>
-          <p class="chart-caption">The capital efficiency gap between fractional and full-time strategic leadership &mdash; in early-stage growth and not-for-profit organisations alike. Indicative figures based on AU senior-leadership market rates.</p>
+          <p class="chart-caption">Indicative comparison of a full-time executive against an embedded fractional leader across cost, strategic focus, and operational waste.</p>
         </div>
       </div>
     </div>
@@ -344,18 +374,12 @@
   <section class="services" id="services">
     <div class="container">
 
-      <!-- Editorial split: section label + heading + intro on the left,
-           recoloured monochrome illustration on the right. -->
-      <div class="services__split">
-        <div class="services__split-text">
-          <p class="section-label reveal">02 / Services</p>
-          <h2 class="reveal" style="transition-delay:0.1s">How we work with you.</h2>
-          <p class="services__intro reveal" style="transition-delay:0.15s">Senior expertise on retainer or by the project &mdash; for both for-profit and not-for-profit organisations. The shape of the engagement bends to what you actually need.</p>
-          <p class="services__sub reveal" style="transition-delay:0.2s">Two pathways &middot; one approach.</p>
-        </div>
-        <figure class="services__illustration reveal" style="transition-delay:0.2s" aria-hidden="true">
-          <img src="assets/Business decisions-cuate.svg" alt="" width="50" loading="lazy">
-        </figure>
+      <!-- Centred editorial header — no decorative illustration. -->
+      <div class="services__header">
+        <p class="section-label reveal">02 / Services</p>
+        <h2 class="reveal" style="transition-delay:0.1s">How we work with you.</h2>
+        <p class="services__intro reveal" style="transition-delay:0.15s">Senior expertise on retainer or by the project &mdash; for both for-profit and not-for-profit organisations. The shape of the engagement bends to what you actually need.</p>
+        <p class="services__sub reveal" style="transition-delay:0.2s">Two pathways &middot; one approach.</p>
       </div>
 
       <!-- Two cards, side-by-side at tablet+, stacked on mobile -->
@@ -892,7 +916,7 @@
     </div>
 
     <!-- Brand kicker -->
-    <p class="footer-brand-kicker" aria-hidden="true">We think different. — Est. 2024, Melbourne.</p>
+    <p class="footer-brand-kicker" aria-hidden="true">We think different. — Est. 2024.</p>
 
     <!-- Giant brand logo at the very bottom -->
     <div class="footer-brand" aria-hidden="true">
