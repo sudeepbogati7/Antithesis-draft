@@ -94,15 +94,75 @@
   }
 
   /* ============================================================
-     FORM SUBMISSION
+     FORM SUBMISSION — Web3Forms AJAX endpoint
+     Submits the contact form via fetch() so we can keep the in-page
+     thank-you UI. Validates client-side, shows loading + error states.
      ============================================================ */
-  var form = document.getElementById('contactForm');
-  var thankyou = document.getElementById('formThankyou');
+  var form        = document.getElementById('contactForm');
+  var thankyou    = document.getElementById('formThankyou');
+  var submitBtn   = document.getElementById('formSubmitBtn');
+  var formError   = document.getElementById('formError');
+  var emailRegex  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function setError(msg) {
+    if (!formError) return;
+    formError.textContent = msg || '';
+    formError.classList.toggle('is-visible', !!msg);
+  }
+
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      form.style.display = 'none';
-      thankyou.classList.add('active');
+      setError('');
+
+      var name      = (form.elements['Name']  && form.elements['Name'].value  || '').trim();
+      var email     = (form.elements['email'] && form.elements['email'].value || '').trim();
+      var need      = (form.elements['What they need'] && form.elements['What they need'].value || '').trim();
+      var botcheck  = form.elements['botcheck'] && form.elements['botcheck'].checked;
+      var accessKey = (form.elements['access_key'] && form.elements['access_key'].value || '').trim();
+
+      /* Honeypot caught a bot — fake success, drop quietly */
+      if (botcheck) {
+        form.style.display = 'none';
+        thankyou.classList.add('active');
+        return;
+      }
+
+      if (!name)                    return setError('Please add your name.');
+      if (!emailRegex.test(email))  return setError('That email looks off — mind double-checking?');
+      if (!need)                    return setError('Tell us what you need help with so we can route this right.');
+
+      /* If the access key hasn't been swapped in yet, fail loudly so the dev
+         doesn't ship a broken form to production by accident. */
+      if (!accessKey || accessKey.indexOf('REPLACE') === 0) {
+        return setError('Form not configured yet — set the Web3Forms access key. Email hello@antithesis.co in the meantime.');
+      }
+
+      submitBtn.classList.add('is-loading');
+      submitBtn.disabled = true;
+
+      var formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function (res) { return res.json().catch(function () { return { success: false }; }); })
+      .then(function (data) {
+        if (data && data.success) {
+          form.style.display = 'none';
+          thankyou.classList.add('active');
+        } else {
+          throw new Error(data && data.message ? data.message : 'Submission failed');
+        }
+      })
+      .catch(function (err) {
+        submitBtn.classList.remove('is-loading');
+        submitBtn.disabled = false;
+        setError('Something went wrong sending the message. Email us directly at hello@antithesis.co.');
+        if (window.console) console.error('Form submit failed:', err);
+      });
     });
   }
 

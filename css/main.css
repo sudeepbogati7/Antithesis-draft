@@ -13,8 +13,8 @@
   --color-bg: #0C0E09;
   --color-bg-raised: #161A12;
   --color-fg: #F1F4EC;
-  --color-accent: #A3E635;
-  --color-accent-hover: #BEF264;
+  --color-accent: #9ACD32;
+  --color-accent-hover: #B0DC56;
   --color-accent-text: #0C0E09;
   --color-muted: #888C82;
   --color-muted-dim: #5A5D54;
@@ -34,7 +34,7 @@
   --color-card-border: rgba(241, 244, 236, 0.08);
   --color-card-highlight: rgba(241, 244, 236, 0.04);
   --color-card-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
-  --color-quote-mark: rgba(163, 230, 53, 0.18);
+  --color-quote-mark: rgba(154, 205, 50, 0.18);
   --font-display: 'Instrument Serif', 'Times New Roman', Georgia, serif;
   --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'DM Mono', 'SFMono-Regular', Consolas, monospace;
@@ -50,9 +50,9 @@
   --color-bg: #F4F6F0;
   --color-bg-raised: #E6EADE;
   --color-fg: #15181A;
-  --color-accent: #65A30D;
-  --color-accent-hover: #84CC16;
-  --color-accent-text: #FBFCF7;
+  --color-accent: #7CB518;
+  --color-accent-hover: #94CC2C;
+  --color-accent-text: #0C0E09;
   --color-muted: #55585C;
   --color-muted-dim: #8A8D8E;
   --color-border: #D2D7C9;
@@ -71,7 +71,7 @@
   --color-card-border: rgba(21, 24, 26, 0.08);
   --color-card-highlight: rgba(21, 24, 26, 0.02);
   --color-card-shadow: 0 8px 24px rgba(21, 24, 26, 0.08);
-  --color-quote-mark: rgba(101, 163, 13, 0.16);
+  --color-quote-mark: rgba(124, 181, 24, 0.16);
 }
 
 html { transition: background-color 0.3s ease; }
@@ -926,8 +926,8 @@ a:focus-visible, button:focus-visible {
   border: 1px solid var(--color-accent);
   border-radius: 10px;
   background: linear-gradient(180deg,
-    rgba(163, 230, 53, 0.10),
-    rgba(163, 230, 53, 0.02));
+    rgba(154, 205, 50, 0.10),
+    rgba(154, 205, 50, 0.02));
 }
 .chart-savings__num {
   font-family: var(--font-display);
@@ -965,8 +965,8 @@ a:focus-visible, button:focus-visible {
 .ftf-chart {
   display: flex;
   flex-direction: column;
-  gap: 36px;
-  padding: 16px 0 4px;
+  gap: 22px;
+  padding: 8px 0 0;
 }
 .ftf-legend {
   display: flex;
@@ -1000,13 +1000,13 @@ a:focus-visible, button:focus-visible {
 .ftf-row {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding-bottom: 28px;
+  gap: 10px;
+  padding-bottom: 18px;
   border-bottom: 1px dashed var(--color-card-border);
 }
 .ftf-row:last-of-type {
   border-bottom: none;
-  padding-bottom: 4px;
+  padding-bottom: 0;
 }
 .ftf-row__head {
   display: flex;
@@ -1045,23 +1045,23 @@ a:focus-visible, button:focus-visible {
 }
 .ftf-row__delta--up {
   color: var(--color-accent);
-  background: rgba(163, 230, 53, 0.10);
+  background: rgba(154, 205, 50, 0.10);
   border: 1px solid var(--color-accent);
 }
 .ftf-row__delta--down {
   color: var(--color-accent);
-  background: rgba(163, 230, 53, 0.10);
+  background: rgba(154, 205, 50, 0.10);
   border: 1px solid var(--color-accent);
 }
 [data-theme="light"] .ftf-row__delta--up,
 [data-theme="light"] .ftf-row__delta--down {
-  background: rgba(101, 163, 13, 0.10);
+  background: rgba(124, 181, 24, 0.10);
 }
 
 .ftf-row__bars {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 .ftf-bar {
   display: grid;
@@ -1071,7 +1071,7 @@ a:focus-visible, button:focus-visible {
     ".     sub   sub";
   align-items: center;
   column-gap: 18px;
-  row-gap: 6px;
+  row-gap: 3px;
 }
 .ftf-bar__label {
   grid-area: label;
@@ -1087,7 +1087,7 @@ a:focus-visible, button:focus-visible {
   grid-area: track;
   display: block;
   width: 100%;
-  height: 18px;
+  height: 14px;
   background: var(--color-card-border);
   border-radius: 100px;
   overflow: hidden;
@@ -1105,8 +1105,8 @@ a:focus-visible, button:focus-visible {
 }
 .ftf-bar--frac .ftf-bar__fill {
   background: var(--color-accent);
-  box-shadow: 0 0 0 1px rgba(163, 230, 53, 0.0),
-              0 4px 16px rgba(163, 230, 53, 0.18);
+  box-shadow: 0 0 0 1px rgba(154, 205, 50, 0.0),
+              0 4px 16px rgba(154, 205, 50, 0.18);
 }
 
 /* Continuous shimmer on the winning (fractional) bars — a soft band
@@ -1170,10 +1170,10 @@ a:focus-visible, button:focus-visible {
 .ftf-chart:hover .ftf-row:not(:hover) { opacity: 0.55; }
 .ftf-row:hover .ftf-row__metric { color: var(--color-accent); }
 .ftf-row:hover .ftf-row__delta {
-  box-shadow: 0 0 0 3px rgba(163, 230, 53, 0.12);
+  box-shadow: 0 0 0 3px rgba(154, 205, 50, 0.12);
 }
 [data-theme="light"] .ftf-row:hover .ftf-row__delta {
-  box-shadow: 0 0 0 3px rgba(101, 163, 13, 0.12);
+  box-shadow: 0 0 0 3px rgba(124, 181, 24, 0.12);
 }
 .ftf-bar__value {
   grid-area: value;
@@ -2690,6 +2690,55 @@ a:focus-visible, button:focus-visible {
   gap: 16px;
 }
 .btn-submit:hover::before { transform: translateX(120%); }
+
+/* Disabled / loading state — used during AJAX submission */
+.btn-submit:disabled,
+.btn-submit.is-loading {
+  cursor: progress;
+  pointer-events: none;
+  transform: none;
+  opacity: 0.85;
+}
+.btn-submit.is-loading .btn-submit__label,
+.btn-submit.is-loading .btn-submit__icon { opacity: 0; }
+.btn-submit__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  border: 2px solid var(--color-accent-text);
+  border-top-color: transparent;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  animation: submitSpin 0.8s linear infinite;
+}
+.btn-submit { position: relative; }
+.btn-submit.is-loading .btn-submit__spinner { opacity: 1; }
+@keyframes submitSpin { to { transform: rotate(360deg); } }
+
+/* Inline error message above the submit button */
+.form-error {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: #D14343;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  min-height: 0;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+.form-error.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 .form-thankyou {
   display: none;
 }
@@ -2922,7 +2971,7 @@ a:focus-visible, button:focus-visible {
   .value-prop__grid {
     grid-template-columns: 1fr 1fr;
     gap: 80px;
-    align-items: start;
+    align-items: center;
   }
   .value-prop__chart { order: 0; }
   .value-prop__body { order: 0; }
