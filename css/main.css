@@ -13,8 +13,8 @@
   --color-bg: #0C0E09;
   --color-bg-raised: #161A12;
   --color-fg: #F1F4EC;
-  --color-accent: #9ACD32;
-  --color-accent-hover: #B0DC56;
+  --color-accent: #42F527;
+  --color-accent-hover: #6BF855;
   --color-accent-text: #0C0E09;
   --color-muted: #888C82;
   --color-muted-dim: #5A5D54;
@@ -34,7 +34,7 @@
   --color-card-border: rgba(241, 244, 236, 0.08);
   --color-card-highlight: rgba(241, 244, 236, 0.04);
   --color-card-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
-  --color-quote-mark: rgba(154, 205, 50, 0.18);
+  --color-quote-mark: rgba(66, 245, 39, 0.18);
   --font-display: 'Instrument Serif', 'Times New Roman', Georgia, serif;
   --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'DM Mono', 'SFMono-Regular', Consolas, monospace;
@@ -50,8 +50,8 @@
   --color-bg: #F4F6F0;
   --color-bg-raised: #E6EADE;
   --color-fg: #15181A;
-  --color-accent: #7CB518;
-  --color-accent-hover: #94CC2C;
+  --color-accent: #2BC60D;
+  --color-accent-hover: #42F527;
   --color-accent-text: #0C0E09;
   --color-muted: #55585C;
   --color-muted-dim: #8A8D8E;
@@ -71,7 +71,7 @@
   --color-card-border: rgba(21, 24, 26, 0.08);
   --color-card-highlight: rgba(21, 24, 26, 0.02);
   --color-card-shadow: 0 8px 24px rgba(21, 24, 26, 0.08);
-  --color-quote-mark: rgba(124, 181, 24, 0.16);
+  --color-quote-mark: rgba(43, 198, 13, 0.16);
 }
 
 html { transition: background-color 0.3s ease; }
@@ -927,8 +927,8 @@ a:focus-visible, button:focus-visible {
   border: 1px solid var(--color-accent);
   border-radius: 10px;
   background: linear-gradient(180deg,
-    rgba(154, 205, 50, 0.10),
-    rgba(154, 205, 50, 0.02));
+    rgba(66, 245, 39, 0.10),
+    rgba(66, 245, 39, 0.02));
 }
 .chart-savings__num {
   font-family: var(--font-display);
@@ -1059,10 +1059,10 @@ a:focus-visible, button:focus-visible {
 }
 .ftf-stat--frac .ftf-stat__meter-fill {
   background: var(--color-accent);
-  box-shadow: 0 0 12px rgba(154, 205, 50, 0.4);
+  box-shadow: 0 0 12px rgba(66, 245, 39, 0.4);
 }
 [data-theme="light"] .ftf-stat--frac .ftf-stat__meter-fill {
-  box-shadow: 0 0 12px rgba(124, 181, 24, 0.3);
+  box-shadow: 0 0 12px rgba(43, 198, 13, 0.3);
 }
 
 /* Subtle shimmer sweep across the fractional (winning) meter fill */
@@ -1111,11 +1111,11 @@ a:focus-visible, button:focus-visible {
   white-space: nowrap;
   color: var(--color-accent);
   border: 1px solid var(--color-accent);
-  background: rgba(154, 205, 50, 0.08);
+  background: rgba(66, 245, 39, 0.08);
   transition: background 0.3s ease, transform 0.3s ease;
 }
 [data-theme="light"] .ftf-row__delta {
-  background: rgba(124, 181, 24, 0.08);
+  background: rgba(43, 198, 13, 0.08);
 }
 
 /* Reveal — driven by the per-row IntersectionObserver. JS adds .is-visible
@@ -1145,11 +1145,11 @@ a:focus-visible, button:focus-visible {
 .ftf-chart:hover .ftf-row:not(:hover) { opacity: 0.55; }
 .ftf-row:hover .ftf-row__metric { color: var(--color-accent); }
 .ftf-row:hover .ftf-row__delta {
-  background: rgba(154, 205, 50, 0.18);
+  background: rgba(66, 245, 39, 0.18);
   transform: scale(1.05);
 }
 [data-theme="light"] .ftf-row:hover .ftf-row__delta {
-  background: rgba(124, 181, 24, 0.18);
+  background: rgba(43, 198, 13, 0.18);
 }
 
 /* ================================================================
