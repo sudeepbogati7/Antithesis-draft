@@ -2281,106 +2281,11 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ================================================================
-   HOME CTA BAND
-   ================================================================ */
-.home-cta {
-  padding: var(--section-pad) var(--page-gutter);
-  border-top: 1px solid var(--color-border);
-}
-.home-cta__inner {
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
-.home-cta__eyebrow {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 20px;
-}
-.home-cta__title {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(32px, 4.5vw, 52px);
-  letter-spacing: -0.02em;
-  line-height: 1.08;
-}
-.home-cta__title em { font-style: italic; color: var(--color-accent); }
-.home-cta__lead {
-  margin: 20px auto 36px;
-  max-width: 520px;
-  color: var(--color-muted);
-  font-size: 17px;
-  line-height: 1.6;
-}
-.home-cta__actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 28px;
-  flex-wrap: wrap;
-}
-
-/* ================================================================
-   INNER PAGE HEADER (services / about / faq / contact)
-   ================================================================ */
-.page-head {
-  padding: calc(var(--section-pad) + 40px) var(--page-gutter) var(--section-pad);
-  border-bottom: 1px solid var(--color-border);
-}
-.breadcrumb {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-muted-dim);
-  margin-bottom: 28px;
-}
-.breadcrumb a { color: var(--color-muted); text-decoration: none; transition: color 0.2s ease; }
-.breadcrumb a:hover { color: var(--color-accent); }
-.breadcrumb span:last-child { color: var(--color-fg); }
-.page-head__title {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(44px, 7vw, 88px);
-  letter-spacing: -0.02em;
-  line-height: 1.02;
-}
-.page-head__title em { font-style: italic; color: var(--color-accent); }
-.page-head__lead {
-  margin-top: 24px;
-  max-width: 620px;
-  font-size: clamp(17px, 2vw, 20px);
-  line-height: 1.6;
-  color: var(--color-muted);
-}
-
-/* CTA band used at the foot of inner pages */
-.page-cta {
-  margin-top: 72px;
-  padding-top: 48px;
-  border-top: 1px solid var(--color-border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-.page-cta__text {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 3vw, 34px);
-  letter-spacing: -0.01em;
-}
-
-/* ================================================================
    FAQ
    ================================================================ */
 .faq {
   padding: var(--section-pad) var(--page-gutter);
 }
-.faq--page { padding-top: 72px; }
 .faq__header {
   margin-bottom: 56px;
 }
