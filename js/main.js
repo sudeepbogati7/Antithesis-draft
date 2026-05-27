@@ -94,7 +94,7 @@
   }
 
   /* ============================================================
-     FORM SUBMISSION — Web3Forms AJAX endpoint
+     FORM SUBMISSION — Formspree AJAX endpoint
      Submits the contact form via fetch() so we can keep the in-page
      thank-you UI. Validates client-side, shows loading + error states.
      ============================================================ */
@@ -115,11 +115,10 @@
       e.preventDefault();
       setError('');
 
-      var name      = (form.elements['Name']  && form.elements['Name'].value  || '').trim();
+      var name      = (form.elements['name']  && form.elements['name'].value  || '').trim();
       var email     = (form.elements['email'] && form.elements['email'].value || '').trim();
       var need      = (form.elements['What they need'] && form.elements['What they need'].value || '').trim();
-      var botcheck  = form.elements['botcheck'] && form.elements['botcheck'].checked;
-      var accessKey = (form.elements['access_key'] && form.elements['access_key'].value || '').trim();
+      var botcheck  = form.elements['_gotcha'] && form.elements['_gotcha'].value;
 
       /* Honeypot caught a bot — fake success, drop quietly */
       if (botcheck) {
@@ -132,35 +131,38 @@
       if (!emailRegex.test(email))  return setError('That email looks off — mind double-checking?');
       if (!need)                    return setError('Tell us what you need help with so we can route this right.');
 
-      /* If the access key hasn't been swapped in yet, fail loudly so the dev
-         doesn't ship a broken form to production by accident. */
-      if (!accessKey || accessKey.indexOf('REPLACE') === 0) {
-        return setError('Form not configured yet — set the Web3Forms access key. Email hello@antithesis.co in the meantime.');
-      }
-
       submitBtn.classList.add('is-loading');
       submitBtn.disabled = true;
 
       var formData = new FormData(form);
 
+      /* Formspree AJAX: returns HTTP 200 + { ok: true } on success, or a
+         non-2xx with { errors: [{ message }] } on failure. */
       fetch(form.action, {
         method: 'POST',
         body: formData,
         headers: { 'Accept': 'application/json' }
       })
-      .then(function (res) { return res.json().catch(function () { return { success: false }; }); })
-      .then(function (data) {
-        if (data && data.success) {
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          return { ok: res.ok, data: data };
+        });
+      })
+      .then(function (result) {
+        if (result.ok) {
           form.style.display = 'none';
           thankyou.classList.add('active');
         } else {
-          throw new Error(data && data.message ? data.message : 'Submission failed');
+          var msg = result.data && result.data.errors && result.data.errors.length
+            ? result.data.errors.map(function (e) { return e.message; }).join(', ')
+            : 'Submission failed';
+          throw new Error(msg);
         }
       })
       .catch(function (err) {
         submitBtn.classList.remove('is-loading');
         submitBtn.disabled = false;
-        setError('Something went wrong sending the message. Email us directly at hello@antithesis.co.');
+        setError('Something went wrong sending the message. Email us directly at hello@antithesis-consulting.com.');
         if (window.console) console.error('Form submit failed:', err);
       });
     });
