@@ -23,13 +23,13 @@
   --color-nav-bg: rgba(12, 14, 9, 0.82);
   --color-nav-border: rgba(241, 244, 236, 0.06);
   --color-mobile-overlay: rgba(12, 14, 9, 0.97);
-  --color-hero-overlay-1: rgba(12, 14, 9, 0.55);
-  --color-hero-overlay-2: rgba(12, 14, 9, 0.45);
-  --color-hero-overlay-3: rgba(12, 14, 9, 0.88);
+  --color-hero-overlay-1: rgba(12, 14, 9, 0.72);
+  --color-hero-overlay-2: rgba(12, 14, 9, 0.62);
+  --color-hero-overlay-3: rgba(12, 14, 9, 0.92);
   --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%238A8A92' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   --grain-opacity: 0.035;
   --grain-blend: overlay;
-  --hero-image-filter: grayscale(1) brightness(0.55) contrast(1.08);
+  --hero-image-filter: grayscale(1) brightness(0.42) contrast(1.15);
   --color-card-bg: #181C13;
   --color-card-border: rgba(241, 244, 236, 0.08);
   --color-card-highlight: rgba(241, 244, 236, 0.04);
@@ -60,13 +60,15 @@
   --color-nav-bg: rgba(244, 246, 240, 0.82);
   --color-nav-border: rgba(21, 24, 26, 0.08);
   --color-mobile-overlay: rgba(244, 246, 240, 0.97);
-  --color-hero-overlay-1: rgba(244, 246, 240, 0.72);
-  --color-hero-overlay-2: rgba(244, 246, 240, 0.62);
-  --color-hero-overlay-3: rgba(244, 246, 240, 0.92);
+  /* Slight primary-green tint folded into a darker charcoal wash so the
+     kicker + hero text read sharply and the photo gets a brand cast. */
+  --color-hero-overlay-1: rgba(20, 36, 14, 0.62);
+  --color-hero-overlay-2: rgba(20, 36, 14, 0.55);
+  --color-hero-overlay-3: rgba(20, 36, 14, 0.82);
   --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%2355585C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   --grain-opacity: 0.05;
   --grain-blend: multiply;
-  --hero-image-filter: grayscale(1) brightness(1.05) contrast(1.05);
+  --hero-image-filter: grayscale(1) brightness(0.48) contrast(1.18);
   --color-card-bg: #FCFDFA;
   --color-card-border: rgba(21, 24, 26, 0.08);
   --color-card-highlight: rgba(21, 24, 26, 0.02);
@@ -255,6 +257,15 @@ a:focus-visible, button:focus-visible {
 .nav-links a:hover { color: var(--color-fg); }
 .nav-links a:hover::after { width: 100%; }
 
+/* Light theme: hero overlay is dark, so the nav-over-hero state needs
+   light text. Once .scrolled is applied (pill bg appears), revert to
+   the normal dark-on-light styling. */
+[data-theme="light"] .site-nav:not(.scrolled) .nav-wordmark { color: #F4F6F0; }
+[data-theme="light"] .site-nav:not(.scrolled) .nav-links a { color: rgba(244, 246, 240, 0.82); }
+[data-theme="light"] .site-nav:not(.scrolled) .nav-links a:hover { color: #F4F6F0; }
+[data-theme="light"] .site-nav:not(.scrolled) .theme-toggle { color: rgba(244, 246, 240, 0.82); border-color: rgba(244, 246, 240, 0.22); }
+[data-theme="light"] .site-nav:not(.scrolled) .nav-hamburger span { background: #F4F6F0; }
+
 /* Theme toggle */
 .theme-toggle {
   width: 34px;
@@ -419,6 +430,11 @@ a:focus-visible, button:focus-visible {
   opacity: 0.78;
   margin-bottom: 48px;
 }
+/* Light theme: hero overlay is dark, so force hero text to light for contrast. */
+[data-theme="light"] .hero-headline { color: #F4F6F0; }
+[data-theme="light"] .hero-sub { color: #F4F6F0; opacity: 0.85; }
+[data-theme="light"] .hero-tag { color: rgba(244, 246, 240, 0.6); }
+[data-theme="light"] .hero-actions .text-link { color: #F4F6F0; }
 .hero-actions {
   display: flex;
   align-items: center;
@@ -1153,7 +1169,10 @@ a:focus-visible, button:focus-visible {
   transition: background 0.3s ease, transform 0.3s ease;
 }
 [data-theme="light"] .ftf-row__delta {
-  background: rgba(66, 245, 39, 0.08);
+  background: rgba(43, 132, 18, 0.10);
+  color: #2B8412;
+  border-color: #2B8412;
+  font-weight: 700;
 }
 
 /* Reveal — driven by the per-row IntersectionObserver. JS adds .is-visible
@@ -1179,8 +1198,7 @@ a:focus-visible, button:focus-visible {
 .ftf-row.is-visible .ftf-stat--frac .ftf-stat__meter-fill { transition-delay: 0.65s; }
 .ftf-row.is-visible .ftf-row__delta { transition-delay: 0.85s; }
 
-/* Hover — metric highlight + delta pill lift */
-.ftf-chart:hover .ftf-row:not(:hover) { opacity: 0.55; }
+/* Hover — metric highlight + delta pill lift (no dimming of siblings) */
 .ftf-row:hover .ftf-row__metric { color: var(--color-accent); }
 .ftf-row:hover .ftf-row__delta {
   background: rgba(66, 245, 39, 0.18);
