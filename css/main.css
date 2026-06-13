@@ -682,7 +682,7 @@ a:focus-visible, button:focus-visible {
   padding-top: 24px;
 }
 .value-prop__signals::before {
-  content: 'Best fit when';
+  content: 'The signal you need fractional leadership';
   display: block;
   font-family: var(--font-mono);
   font-size: 11px;
@@ -1394,6 +1394,28 @@ a:focus-visible, button:focus-visible {
   border-color: var(--color-accent);
   color: var(--color-accent-text);
   transform: translateX(4px);
+}
+/* Text variant — used by "Start the conversation →" */
+.services-node__cta--text {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  border: none;
+  padding: 0;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.services-node__cta--text svg { width: 16px; height: 16px; }
+.services-node:hover .services-node__cta--text {
+  background: transparent;
+  border: none;
+  color: var(--color-accent);
+  transform: translateX(6px);
 }
 
 /* ================================================================
