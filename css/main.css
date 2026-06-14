@@ -3185,8 +3185,8 @@ a:focus-visible, button:focus-visible {
    ================================================================ */
 @media (max-width: 767px) {
   :root {
-    --page-gutter: 24px;
-    --section-pad: 72px;
+    --page-gutter: 18px;
+    --section-pad: 56px;
   }
   .site-nav { padding: 12px 16px 0; }
   .site-nav__inner { padding: 12px 20px; }
@@ -3204,13 +3204,13 @@ a:focus-visible, button:focus-visible {
   .ftf-chart--callouts { gap: 10px; }
 
   /* Bridge panel tightens on mobile so the raised card doesn't feel boxed-in */
-  .approach-panel.approach-panel--accent { padding: 36px 22px; border-radius: 12px; }
+  .approach-panel.approach-panel--accent { padding: 24px 16px; border-radius: 10px; }
   .rhythm-card { padding: 0; gap: 22px; }
   .rhythm-card__head { gap: 10px; padding-bottom: 14px; }
   .rhythm-card__label { font-size: 17px; }
   .rhythm-card__highlight { gap: 14px; padding-top: 14px; }
   .rhythm-card__highlight-num { font-size: 32px; }
-  .services-node { padding: 22px 20px 20px; gap: 12px; }
+  .services-node { padding: 18px 16px 16px; gap: 10px; border-radius: 10px; }
   .services-node__num { font-size: 38px; }
   .services-node__title { font-size: 22px; }
   .services-node__icon { width: 42px; height: 42px; }
@@ -3302,9 +3302,9 @@ a:focus-visible, button:focus-visible {
 
   /* Contact section — single column, decoration scales down */
   .contact-grid { gap: 48px; }
-  .contact-form-card { padding: 24px 18px 22px; border-radius: 12px; }
+  .contact-form-card { padding: 18px 14px 18px; border-radius: 10px; }
   .contact-form-card__title { font-size: 22px; }
-  .contact-form-card__sub { margin-bottom: 20px; }
+  .contact-form-card__sub { margin-bottom: 18px; }
   .contact-decor__rings { width: 160px; height: 160px; top: 8%; right: 4%; }
 
   .footer-grid { grid-template-columns: 1fr; gap: 40px; padding: 56px 0 40px; }
