@@ -412,9 +412,9 @@ a:focus-visible, button:focus-visible {
 .hero-headline {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(56px, 9vw, 132px);
+  font-size: clamp(40px, 6vw, 84px);
   letter-spacing: -0.02em;
-  line-height: 1.0;
+  line-height: 1.05;
   max-width: 880px;
   margin-bottom: 32px;
 }
@@ -1206,6 +1206,79 @@ a:focus-visible, button:focus-visible {
 }
 [data-theme="light"] .ftf-row:hover .ftf-row__delta {
   background: rgba(66, 245, 39, 0.18);
+}
+
+/* ----------------------------------------------------------------
+   Callout variant — clean stat cards stacked in the chart column.
+   Each .ftf-row becomes a card with metric label + headline + sub.
+   ---------------------------------------------------------------- */
+.ftf-chart--callouts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0;
+}
+.ftf-chart--callouts .ftf-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.7fr) minmax(0, 1.3fr);
+  align-items: center;
+  gap: 24px;
+  padding: 22px 24px;
+  border: 1px solid var(--color-card-border);
+  border-radius: 12px;
+  background: var(--color-card-bg);
+  transition: border-color 0.3s ease, transform 0.3s var(--ease-out-expo);
+}
+.ftf-chart--callouts .ftf-row:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+.ftf-chart--callouts .ftf-row__metric {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
+}
+.ftf-callout__value {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.8vw, 32px);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--color-fg);
+  grid-column: 2;
+  grid-row: 1;
+}
+.ftf-callout__value strong {
+  font-weight: 400;
+  color: var(--color-accent);
+}
+[data-theme="light"] .ftf-callout__value strong { color: #2B8412; }
+.ftf-callout__value span[aria-hidden] { color: var(--color-accent); margin-right: 4px; }
+[data-theme="light"] .ftf-callout__value span[aria-hidden] { color: #2B8412; }
+.ftf-callout__sub {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-muted);
+  grid-column: 2;
+  grid-row: 2;
+}
+@media (max-width: 540px) {
+  .ftf-chart--callouts .ftf-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 18px 18px;
+  }
+  .ftf-chart--callouts .ftf-row__metric {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .ftf-callout__value { grid-column: 1; grid-row: 2; font-size: 22px; }
+  .ftf-callout__sub { grid-column: 1; grid-row: 3; font-size: 12.5px; }
 }
 
 /* ================================================================
@@ -3127,11 +3200,8 @@ a:focus-visible, button:focus-visible {
 
   .services__header { margin-bottom: 40px; }
 
-  /* FTE chart reflow on mobile — delta drops to its own row below */
-  .ftf-row__compare { gap: 12px; }
-  .ftf-row__delta { margin-left: 0; width: 100%; text-align: center; font-size: 10px; padding: 5px 10px; }
-  .ftf-stat__value { font-size: 26px; }
-  .ftf-row__arrow { font-size: 18px; }
+  /* Callout chart — tighter vertical rhythm on mobile */
+  .ftf-chart--callouts { gap: 10px; }
 
   /* Bridge panel tightens on mobile so the raised card doesn't feel boxed-in */
   .approach-panel.approach-panel--accent { padding: 36px 22px; border-radius: 12px; }
@@ -3147,18 +3217,6 @@ a:focus-visible, button:focus-visible {
   .services-node__icon svg { width: 18px; height: 18px; }
 
   .value-prop__chart { order: -1; }
-  .chart-frame { height: 280px; padding: 32px 20px 52px; gap: 28px; }
-  .chart-axis-labels { left: 4px; font-size: 8.5px; }
-  .chart-callout { width: 76px; }
-  .chart-callout__num { font-size: 24px; }
-  .chart-callout__cap { font-size: 7.5px; }
-  .chart-costs { gap: 24px; padding: 0 12px; }
-  .chart-costs__amount { font-size: 18px; }
-  .chart-costs__label { font-size: 9px; letter-spacing: 0.1em; }
-  .chart-savings { padding: 10px 16px; }
-  .chart-savings__num { font-size: 20px; }
-  .chart-savings__sub { font-size: 9px; }
-  .chart-strapline { font-size: 17px; }
 
   .method-flow {
     flex-direction: column;
