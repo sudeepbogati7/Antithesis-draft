@@ -3210,11 +3210,19 @@ a:focus-visible, button:focus-visible {
   .rhythm-card__label { font-size: 17px; }
   .rhythm-card__highlight { gap: 14px; padding-top: 14px; }
   .rhythm-card__highlight-num { font-size: 32px; }
-  .services-node { padding: 26px 24px 22px; }
+  .services-node { padding: 22px 20px 20px; gap: 12px; }
   .services-node__num { font-size: 38px; }
   .services-node__title { font-size: 22px; }
   .services-node__icon { width: 42px; height: 42px; }
   .services-node__icon svg { width: 18px; height: 18px; }
+  /* Stack footer: sector pill above, CTA below — prevents the two from colliding */
+  .services-node__foot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding-top: 6px;
+  }
+  .services-node__cta--text { font-size: 10.5px; gap: 8px; }
 
   .value-prop__chart { order: -1; }
 
@@ -3294,7 +3302,9 @@ a:focus-visible, button:focus-visible {
 
   /* Contact section — single column, decoration scales down */
   .contact-grid { gap: 48px; }
-  .contact-form-card { padding: 32px 24px 28px; }
+  .contact-form-card { padding: 24px 18px 22px; border-radius: 12px; }
+  .contact-form-card__title { font-size: 22px; }
+  .contact-form-card__sub { margin-bottom: 20px; }
   .contact-decor__rings { width: 160px; height: 160px; top: 8%; right: 4%; }
 
   .footer-grid { grid-template-columns: 1fr; gap: 40px; padding: 56px 0 40px; }
@@ -3307,9 +3317,13 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 480px) {
   :root { --page-gutter: 20px; }
   .hero-actions { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .services-node { padding: 22px 20px 20px; }
+  .services-node { padding: 20px 18px 18px; gap: 10px; }
   .services-node__num { font-size: 34px; }
   .services-node__title { font-size: 20px; }
+  .services-node__desc { font-size: 14.5px; }
+  .services-node__use { font-size: 13px; }
+  .contact-form-card { padding: 20px 16px 20px; }
+  .ftf-chart--callouts .ftf-row { padding: 16px 16px; }
 }
 
 /* ================================================================
