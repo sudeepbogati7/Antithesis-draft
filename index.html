@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,22 +33,10 @@
 <meta name="twitter:description" content="Fractional executives and SROI impact measurement. Based in Melbourne &amp; New Zealand, working globally.">
 <meta name="twitter:image" content="https://antithesis-consulting.com/assets/hero_bg.jpeg">
 <link rel="icon" type="image/svg+xml" href="assets/brand_logo.svg">
-<meta name="theme-color" content="#0C0E09">
+<meta name="theme-color" content="#F4F6F0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<script>
-  // Pre-paint theme detection — must run before stylesheet to avoid FOUC.
-  (function() {
-    try {
-      var saved = localStorage.getItem('antithesis-theme');
-      var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-      document.documentElement.setAttribute('data-theme', theme);
-    } catch (e) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
-  })();
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,700;1,800&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -96,7 +84,8 @@
           "@type": "Service",
           "name": "Fractional Leadership & Strategists",
           "description": "Fractional CEO, CFO, CMO and C-suite executives. Part-time, interim, on-demand and shared leadership models for growing organisations.",
-          "serviceType": "Fractional Executive Leadership"
+          "serviceType": "Fractional Executive Leadership",
+          "url": "https://antithesis-consulting.com/fractional.html"
         }
       },
       {
@@ -105,7 +94,8 @@
           "@type": "Service",
           "name": "Impact & SROI",
           "description": "Social Return on Investment (SROI), social impact measurement, Theory of Change, ESG and sustainability reporting, outcomes reporting and stakeholder engagement.",
-          "serviceType": "Social Impact Measurement"
+          "serviceType": "Social Impact Measurement",
+          "url": "https://antithesis-consulting.com/impact.html"
         }
       }
     ]
@@ -140,6 +130,11 @@
     },
     {
       "@type": "Question",
+      "name": "How quickly can a fractional executive start?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most engagements begin within two to three weeks of a first conversation. Every engagement opens with a short discovery phase — listening, diagnosing, scoping — so by the time we embed, the remit and the metrics are already agreed." }
+    },
+    {
+      "@type": "Question",
       "name": "What is Social Return on Investment (SROI)?",
       "acceptedAnswer": { "@type": "Answer", "text": "SROI is a framework for measuring and valuing the social, environmental and economic outcomes an organisation creates, expressed as the social value generated for every dollar invested, backed by stakeholder engagement and a Theory of Change." }
     },
@@ -150,11 +145,21 @@
     },
     {
       "@type": "Question",
-      "name": "Where is Antithesis Consulting based, and who do you work with?",
-      "acceptedAnswer": { "@type": "Answer", "text": "We are based in Melbourne, Australia and across New Zealand, working with for-profit and not-for-profit organisations throughout Australia, New Zealand and globally. We are remote-friendly and can be reached by email or WhatsApp on +64 27 233 0313." }
+      "name": "When is the right time to measure our impact?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Before the funding conversation, not after. Walking into a grant renewal or board meeting with defensible evidence already in hand is the strongest position an organisation can be in. If a funder application, renewal or annual report is 6–12 months away, now is the right time to start." }
     }
   ]
 }
+</script>
+<script>
+  // Pre-paint theme detection — must run before stylesheet to avoid FOUC. Light is the default.
+  (function() {
+    try {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('antithesis-theme') || 'light');
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
 </script>
 <link rel="stylesheet" href="css/main.css">
 <!-- GSAP for advanced carousel + counter animations -->
@@ -186,7 +191,8 @@
     </a>
     <div class="site-nav__right">
       <div class="nav-links" role="navigation" aria-label="Main navigation">
-        <a href="#services">Services</a>
+        <a href="fractional.html">Fractional</a>
+        <a href="impact.html">Impact &amp; SROI</a>
         <a href="#method">Method</a>
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
@@ -200,6 +206,7 @@
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
       </button>
+      <a href="#contact" class="nav-cta">Book a call</a>
       <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -210,7 +217,8 @@
 <!-- Mobile overlay -->
 <div class="mobile-overlay" aria-hidden="true">
   <nav aria-label="Mobile navigation">
-    <a href="#services">Services</a>
+    <a href="fractional.html">Fractional Leadership</a>
+    <a href="impact.html">Impact &amp; SROI</a>
     <a href="#method">Method</a>
     <a href="#work">Work</a>
     <a href="#contact">Contact</a>
@@ -219,7 +227,7 @@
 
 <main>
   <!-- ============================================================
-       HERO
+       HERO — segmented: one strong line, two doors
        ============================================================ -->
   <section class="hero" id="hero">
     <div class="hero-bg">
@@ -229,77 +237,64 @@
     <div class="hero-content">
       <p class="hero-kicker reveal">Not your traditional consultants.</p>
       <h1 class="hero-headline reveal" style="transition-delay:0.05s">Senior leadership, embedded in your <em>business</em>.</h1>
-      <p class="hero-sub reveal" style="transition-delay:0.15s">Fractional executives and strategists &mdash; on retainer or by the project. The expertise of a seasoned C-suite, scoped to what you actually need.</p>
+      <p class="hero-sub reveal" style="transition-delay:0.15s">Two ways we work: <strong>fractional executives</strong> who close your leadership gap from inside the room &mdash; and <strong>impact measurement</strong> that proves your outcomes to funders and boards.</p>
       <div class="hero-actions reveal" style="transition-delay:0.25s">
-        <a href="#contact" class="btn-primary">Book a conversation</a>
-        <a href="#the-case" class="text-link">See how it works &#8595;</a>
+        <a href="#contact" class="btn-primary" data-need="fractional">Book a fractional conversation</a>
+        <a href="#contact" class="btn-secondary" data-need="impact">Talk impact measurement</a>
       </div>
-      <div class="hero-tag">Est. 2024</div>
+      <div class="hero-tag">Melbourne &amp; New Zealand &middot; Est. 2024</div>
     </div>
   </section>
 
   <!-- ============================================================
-       01 / SERVICES — how we work with you (two pathways)
+       01 / CHOOSE YOUR PATH — instant self-select strip
        ============================================================ -->
-  <section class="services" id="services">
-    <div class="container">
-
-      <!-- Centred editorial header — no decorative illustration. -->
-      <div class="services__header">
-        <p class="section-label reveal">01 / Services</p>
-        <h2 class="reveal" style="transition-delay:0.1s">How we work with you.</h2>
-        <p class="services__intro reveal" style="transition-delay:0.15s">Antithesis works with for-profit and not-for-profit organisations &mdash; on retainer or scoped to a single project. Every engagement is structured around your outcomes, not a templated deliverable.</p>
+  <section class="path-strip" id="services">
+    <div class="path-strip__inner">
+      <div class="path-strip__header">
+        <h2 class="reveal" style="transition-delay:0.1s">Which gap are you <em>closing</em>?</h2>
+        <p class="reveal" style="transition-delay:0.15s">Two distinct practices, one standard: senior people, accountable for outcomes. Pick the door that sounds like your Monday morning.</p>
       </div>
-
-      <!-- Two cards, side-by-side at tablet+, stacked on mobile -->
-      <div class="services-grid reveal" style="transition-delay:0.25s">
-        <article class="services-node services-node--01" data-spoke="01">
-          <header class="services-node__head">
-            <span class="services-node__num">01</span>
-            <span class="services-node__icon">
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="16" cy="11" r="5"/>
-                <path d="M6 28c1-5 5-8 10-8s9 3 10 8"/>
-                <circle cx="16" cy="11" r="1.5" fill="currentColor"/>
-              </svg>
-            </span>
-          </header>
-
-          
-          <h3 class="services-node__title">Fractional Leadership &amp; Strategists</h3>
-          <p class="services-node__desc">A senior operator &mdash; embedded in your business and accountable for results. Not advisory from the outside. In the room, on the decisions, building capability your team keeps.</p>
-          <p class="services-node__use"><span>Right for you if</span> &mdash; a full-time hire isn&rsquo;t justified yet, but the strategic gap is real.</p>
-          <footer class="services-node__foot">
-            <span class="services-node__sector">For-profit &amp; NFP</span>
-            <a href="#contact" class="services-node__cta services-node__cta--text" aria-label="Start a fractional engagement conversation">
-              Start the conversation
+      <div class="path-grid">
+        <article class="path-card reveal reveal--left" style="transition-delay:0.2s">
+          <div class="path-card__head">
+            <p class="path-card__q">Need senior leadership without a full-time hire?</p>
+            <span class="path-card__num" aria-hidden="true">01</span>
+          </div>
+          <h3 class="path-card__title">Fractional Leadership &amp; <em>Strategists</em></h3>
+          <p class="path-card__desc">A seasoned executive &mdash; CEO, CFO, CMO or COO calibre &mdash; embedded in your business two to three days a week. In the room, on the decisions, accountable for results.</p>
+          <div class="path-card__meta">
+            <span class="path-card__chip">Fractional C-suite</span>
+            <span class="path-card__chip">Retainer or project</span>
+            <span class="path-card__chip">4-phase method</span>
+          </div>
+          <footer class="path-card__foot">
+            <a href="fractional.html" class="path-card__cta path-card__link" aria-label="Explore fractional leadership">
+              Explore fractional
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
+            <span class="path-card__sector">For-profit &amp; NFP</span>
           </footer>
         </article>
 
-        <article class="services-node services-node--03" data-spoke="03">
-          <header class="services-node__head">
-            <span class="services-node__num">02</span>
-            <span class="services-node__icon">
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 26V14"/>
-                <path d="M13 26V8"/>
-                <path d="M21 26V18"/>
-                <path d="M29 26V4"/>
-                <path d="M3 28h28"/>
-              </svg>
-            </span>
-          </header>
-          <h3 class="services-node__title">Impact &amp; SROI</h3>
-          <p class="services-node__desc">Measurement frameworks that give funders the evidence they need and boards the narrative they can stand behind. SROI analysis, Theory of Change, ESG reporting, and outcomes documentation &mdash; built for the scrutiny of grant panels and impact investors alike.</p>
-          <p class="services-node__use"><span>Right for you if</span> &mdash; you do meaningful work and need to prove it.</p>
-          <footer class="services-node__foot">
-            <span class="services-node__sector">NFP-specific</span>
-            <a href="#contact" class="services-node__cta services-node__cta--text" aria-label="Start an impact engagement conversation">
-              Start the conversation
+        <article class="path-card reveal reveal--right" style="transition-delay:0.3s">
+          <div class="path-card__head">
+            <p class="path-card__q">Need to prove your impact to funders &amp; boards?</p>
+            <span class="path-card__num" aria-hidden="true">02</span>
+          </div>
+          <h3 class="path-card__title">Impact &amp; <em>SROI</em></h3>
+          <p class="path-card__desc">Social Return on Investment, Theory of Change and ESG reporting &mdash; funder-grade evidence of the outcomes you create, and a narrative your board can stand behind.</p>
+          <div class="path-card__meta">
+            <span class="path-card__chip">SROI analysis</span>
+            <span class="path-card__chip">Theory of Change</span>
+            <span class="path-card__chip">ESG reporting</span>
+          </div>
+          <footer class="path-card__foot">
+            <a href="impact.html" class="path-card__cta path-card__link" aria-label="Explore impact and SROI">
+              Explore impact &amp; SROI
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
+            <span class="path-card__sector">NFP &amp; purpose-led</span>
           </footer>
         </article>
       </div>
@@ -307,7 +302,7 @@
   </section>
 
   <!-- ============================================================
-       LOGO STRIP (Trusted By) — colourful cards + animated stats
+       LOGO STRIP (Trusted By) — logos tagged by track
        ============================================================ -->
   <section class="logo-strip reveal" id="work" aria-label="Trusted by">
     <p class="logo-strip__label">Trusted by</p>
@@ -341,398 +336,130 @@
         <!-- Set 1 (announced to screen readers) -->
         <div class="logo-card">
           <img class="logo-card__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="Disney" loading="lazy">
-          <span class="logo-card__industry">Entertainment</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Entertainment</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card">
           <img class="logo-card__img" src="assets/trusted-by/SFF_Logo V_Spot copy.jpeg" alt="Surfing for Farmers" loading="lazy">
-          <span class="logo-card__industry">Not-for-profit</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Not-for-profit</span><span class="logo-card__track logo-card__track--impact">Impact &amp; SROI</span></div>
         </div>
         <div class="logo-card">
           <img class="logo-card__img" src="assets/trusted-by/T2 logo.png" alt="T2 Tea" loading="lazy">
-          <span class="logo-card__industry">Retail</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Retail</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card">
           <img class="logo-card__img" src="assets/trusted-by/Bioderma 2.png" alt="Bioderma" loading="lazy">
-          <span class="logo-card__industry">Skincare</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Skincare</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card">
           <img class="logo-card__img" src="assets/trusted-by/Naos 2.png" alt="NAOS" loading="lazy">
-          <span class="logo-card__industry">Skincare</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Skincare</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card">
           <img class="logo-card__img" src="assets/trusted-by/Amazonia logo.png" alt="Amazonia" loading="lazy">
-          <span class="logo-card__industry">Wellness</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Wellness</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card">
           <img class="logo-card__img" src="assets/trusted-by/Raw logo.jpeg" alt="RAW" loading="lazy">
-          <span class="logo-card__industry">Wellness</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Wellness</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <!-- Set 2 -->
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Entertainment</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Entertainment</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/SFF_Logo V_Spot copy.jpeg" alt="" loading="lazy">
-          <span class="logo-card__industry">Not-for-profit</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Not-for-profit</span><span class="logo-card__track logo-card__track--impact">Impact &amp; SROI</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/T2 logo.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Retail</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Retail</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Skincare</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Skincare</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/Naos 2.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Skincare</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Skincare</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Wellness</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Wellness</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy">
-          <span class="logo-card__industry">Wellness</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Wellness</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <!-- Set 3 -->
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Entertainment</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Entertainment</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/SFF_Logo V_Spot copy.jpeg" alt="" loading="lazy">
-          <span class="logo-card__industry">Not-for-profit</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Not-for-profit</span><span class="logo-card__track logo-card__track--impact">Impact &amp; SROI</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/T2 logo.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Retail</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Retail</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Skincare</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Skincare</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/Naos 2.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Skincare</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Skincare</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Wellness</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Wellness</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy">
-          <span class="logo-card__industry">Wellness</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Wellness</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <!-- Set 4 -->
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/disney-logo-png_seeklogo-41972.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Entertainment</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Entertainment</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/SFF_Logo V_Spot copy.jpeg" alt="" loading="lazy">
-          <span class="logo-card__industry">Not-for-profit</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Not-for-profit</span><span class="logo-card__track logo-card__track--impact">Impact &amp; SROI</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/T2 logo.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Retail</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Retail</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/Bioderma 2.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Skincare</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Skincare</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/Naos 2.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Skincare</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Skincare</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/Amazonia logo.png" alt="" loading="lazy">
-          <span class="logo-card__industry">Wellness</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Wellness</span><span class="logo-card__track">Fractional</span></div>
         </div>
         <div class="logo-card" aria-hidden="true">
           <img class="logo-card__img" src="assets/trusted-by/Raw logo.jpeg" alt="" loading="lazy">
-          <span class="logo-card__industry">Wellness</span>
+          <div class="logo-card__tags"><span class="logo-card__industry">Wellness</span><span class="logo-card__track">Fractional</span></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       01 / THE CASE — VALUE PROPOSITION
+       02 / METHOD — shared across both tracks (unifying moment)
        ============================================================ -->
-  <section class="value-prop" id="the-case">
-    <div class="container">
-      <p class="section-label reveal">02 / The Case</p>
-      <div class="value-prop__grid">
-        <div class="value-prop__body reveal" style="transition-delay:0.1s">
-          <h2>When the full-time hire is the wrong default.</h2>
-          <p>Hire too early and you burn runway. Too late, and the gaps compound. Antithesis resolves the timing problem: senior expertise scoped to the decisions that matter, without the fixed cost of a permanent role.</p>
-          <ul class="value-prop__signals" aria-label="The signal you need fractional leadership">
-            <li class="value-prop__signal">
-              <span class="value-prop__signal-num">01</span>
-              <span class="value-prop__signal-text">Strategy is stalling, but a full-time hire isn&rsquo;t justified yet.</span>
-            </li>
-            <li class="value-prop__signal">
-              <span class="value-prop__signal-num">02</span>
-              <span class="value-prop__signal-text">Your board or funders want senior accountability on a defined outcome.</span>
-            </li>
-            <li class="value-prop__signal">
-              <span class="value-prop__signal-num">03</span>
-              <span class="value-prop__signal-text">You&rsquo;re in a critical 6&ndash;18 month window &mdash; growth, transition, or reset.</span>
-            </li>
-          </ul>
-        </div>
-        <div class="value-prop__chart reveal" style="transition-delay:0.25s">
-          <p class="chart-eyebrow"><span class="chart-eyebrow__dot" aria-hidden="true"></span>Full-time vs Fractional &mdash; at a glance</p>
-          <div class="ftf-chart ftf-chart--callouts" id="capitalChart" role="img" aria-label="Three callout stats comparing a full-time executive against an embedded fractional leader across cost, strategic focus, and overhead.">
-            <div class="ftf-row">
-              <p class="ftf-row__metric">Cost</p>
-              <p class="ftf-callout__value"><span aria-hidden="true">&#8595;</span> up to <strong>75%</strong> less</p>
-              <p class="ftf-callout__sub">Versus a full-time executive hire</p>
-            </div>
-            <div class="ftf-row">
-              <p class="ftf-row__metric">Strategic Focus</p>
-              <p class="ftf-callout__value"><span aria-hidden="true">&#8593;</span> <strong>2.25&times;</strong> more</p>
-              <p class="ftf-callout__sub">Time spent on the decisions that move the business</p>
-            </div>
-            <div class="ftf-row">
-              <p class="ftf-row__metric">Overhead</p>
-              <p class="ftf-callout__value"><span aria-hidden="true">&#8595;</span> <strong>~6&times;</strong> less</p>
-              <p class="ftf-callout__sub">Admin, politics, and internal coordination</p>
-            </div>
-          </div>
-          <p class="chart-caption">Indicative comparison of an embedded fractional leader against a full-time hire across cost, strategic focus, and overhead.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="approach" aria-label="How each engagement works in practice">
-    <div class="container">
-
-      <!-- Panel 01 — Fractional Leadership (text left, visual right) -->
-      <article class="approach-panel reveal" id="fractional">
-        <div class="approach-panel__copy">
-          <p class="approach-eyebrow"><span class="approach-dot" aria-hidden="true"></span>Closing leadership gaps</p>
-          <h3 class="approach-headline">When the strategic gap is real, but a full-time hire is <em>overkill</em>.</h3>
-          <p class="approach-lead">You don&rsquo;t need a full-time CMO, COO, or Head of Strategy to get the work done &mdash; you need someone senior in the room when decisions are made. Fractional leadership closes that gap: a senior operator embedded in your business, owning specific outcomes on retainer or by the project.</p>
-          <div class="approach-pillars">
-            <div class="approach-pillar">
-              <p class="approach-pillar__title">What we deliver</p>
-              <ul class="approach-pillar__list">
-                <li>Embedded weekly &mdash; not advisory from a distance</li>
-                <li>Strategic ownership of a defined remit</li>
-                <li>Accountability for the metrics that move the business</li>
-              </ul>
-            </div>
-            <div class="approach-pillar">
-              <p class="approach-pillar__title">Designed for</p>
-              <ul class="approach-pillar__list">
-                <li>Series A&ndash;C founders without senior bench depth</li>
-                <li>Mid-market businesses navigating brand or category shift</li>
-                <li>NFP boards needing executive-grade thinking</li>
-              </ul>
-            </div>
-          </div>
-          <a href="#contact" class="approach-cta">Discuss a fractional engagement <span aria-hidden="true">&#8594;</span></a>
-        </div>
-        <div class="approach-panel__visual">
-          <figure class="photo-frame photo-frame--clip-1">
-            <span class="photo-frame__tag" aria-hidden="true">01 / Embedded</span>
-            <!-- Editorial B&W placeholder — designer to replace with bespoke photography -->
-            <img class="photo-frame__img" src="assets/embedded3.jpg" alt="Fractional executive embedded in a client leadership team" loading="lazy">
-
-            <!-- <img class="photo-frame__img" src="https://images.unsplash.com/photo-1521119989659-a83eee488004?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy"> -->
-            <aside class="photo-frame__card photo-frame__card--left" aria-label="Engagement snapshot">
-              <span class="photo-frame__card-eyebrow"><span class="photo-frame__card-dash"></span>Snapshot</span>
-              <p class="photo-frame__card-headline">Two days a week.<br><em>Senior in the room.</em></p>
-              <p class="photo-frame__card-body">Typical fractional cadence &mdash; embedded enough to own outcomes, scoped enough to stay capital-efficient.</p>
-              <ul class="photo-frame__card-meta">
-                <li><strong><span class="counter" data-target="40">40</span><em>%</em></strong><span>cost vs full-time</span></li>
-                <li><strong>2&ndash;3</strong><span>days / week</span></li>
-                <li><strong>3&ndash;6</strong><span>months scope</span></li>
-              </ul>
-            </aside>
-            <span class="photo-frame__rings" aria-hidden="true">
-              <svg viewBox="0 0 200 200">
-                <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="1" opacity="0.55"/>
-                <circle cx="100" cy="100" r="64" fill="none" stroke="currentColor" stroke-width="1" opacity="0.32"/>
-                <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="1" opacity="0.16"/>
-              </svg>
-            </span>
-          </figure>
-        </div>
-      </article>
-
-      <!-- Bridge panel — "Inside an engagement" (visual LEFT, raised card bg) -->
-      <article class="approach-panel approach-panel--reverse approach-panel--accent reveal">
-        <div class="approach-panel__copy">
-          <p class="approach-eyebrow"><span class="approach-dot" aria-hidden="true"></span>Inside an engagement</p>
-          <h3 class="approach-headline">Long enough to own the outcome. Brief enough to respect your <em>budget</em>.</h3>
-          <p class="approach-lead">Four phases &mdash; and we don&rsquo;t skip the one that matters most.</p>
-          <div class="approach-pillars">
-            <div class="approach-pillar">
-              <p class="approach-pillar__title">What this looks like</p>
-              <ul class="approach-pillar__list">
-                <li>Weekly cadence, embedded in the team</li>
-                <li>Direct line to the senior responsible</li>
-                <li>Defined exit ramp from day one</li>
-              </ul>
-            </div>
-            <div class="approach-pillar">
-              <p class="approach-pillar__title">Designed for</p>
-              <ul class="approach-pillar__list">
-                <li>Boards wanting senior accountability, not slideware</li>
-                <li>Founders between funding rounds without bench depth</li>
-                <li>NFP CEOs sized for the next phase, not the current one</li>
-              </ul>
-            </div>
-          </div>
-          <a href="#contact" class="approach-cta">Talk through an engagement <span aria-hidden="true">&#8594;</span></a>
-        </div>
-        <div class="approach-panel__visual">
-          <div class="rhythm-card" aria-label="Typical engagement cadence">
-            <header class="rhythm-card__head">
-              <p class="rhythm-card__eyebrow"><span class="rhythm-card__dot" aria-hidden="true"></span>The cadence</p>
-              <span class="rhythm-card__chip">4 phases &middot; 1 outcome</span>
-            </header>
-            <ol class="rhythm-card__list">
-              <li class="rhythm-card__step">
-                <span class="rhythm-card__num" aria-hidden="true">01</span>
-                <div class="rhythm-card__body">
-                  <p class="rhythm-card__label">Discover</p>
-                  <p class="rhythm-card__when">Weeks 1&ndash;2 &middot; Listen, diagnose, scope</p>
-                </div>
-              </li>
-              <li class="rhythm-card__step">
-                <span class="rhythm-card__num" aria-hidden="true">02</span>
-                <div class="rhythm-card__body">
-                  <p class="rhythm-card__label">Embed</p>
-                  <p class="rhythm-card__when">Weeks 3&ndash;12 &middot; Senior in the room</p>
-                </div>
-              </li>
-              <li class="rhythm-card__step">
-                <span class="rhythm-card__num" aria-hidden="true">03</span>
-                <div class="rhythm-card__body">
-                  <p class="rhythm-card__label">Transfer</p>
-                  <p class="rhythm-card__when">Months 4&ndash;6 &middot; Capability handover to your team</p>
-                </div>
-              </li>
-              <li class="rhythm-card__step rhythm-card__step--accent">
-                <span class="rhythm-card__num" aria-hidden="true">04</span>
-                <div class="rhythm-card__body">
-                  <p class="rhythm-card__label">Compound</p>
-                  <p class="rhythm-card__when">Ongoing &middot; Light-touch retainer, on call</p>
-                </div>
-              </li>
-            </ol>
-            <div class="rhythm-card__highlight">
-              <span class="rhythm-card__highlight-num">~40<em>%</em></span>
-              <div>
-                <p class="rhythm-card__highlight-label">Typical cost vs full-time hire</p>
-                <p class="rhythm-card__highlight-sub">Same seniority, scoped to the decisions that matter</p>
-              </div>
-            </div>
-            <p class="rhythm-card__footnote">Most consultancies end at phase two. We consider three the real deliverable.</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Panel 02 — Impact & SROI (text left, visual right) -->
-      <article class="approach-panel reveal" id="impact-sroi">
-        <div class="approach-panel__copy">
-          <p class="approach-eyebrow"><span class="approach-dot" aria-hidden="true"></span>Measuring what matters</p>
-          <h3 class="approach-headline">Impact you can put a number against &mdash; and a story funders <em>trust</em>.</h3>
-          <p class="approach-lead">Funders, grants, and boards each demand different evidence. We build measurement frameworks that hold up under all three &mdash; and produce the narrative that earns the next round without overstating the last.</p>
-          <div class="approach-pillars">
-            <div class="approach-pillar">
-              <p class="approach-pillar__title">What we deliver</p>
-              <ul class="approach-pillar__list">
-                <li>Social Return on Investment (SROI) frameworks</li>
-                <li>Outcome mapping &amp; theory-of-change documents</li>
-                <li>Impact reports tailored to funder requirements</li>
-              </ul>
-            </div>
-            <div class="approach-pillar">
-              <p class="approach-pillar__title">Designed for</p>
-              <ul class="approach-pillar__list">
-                <li>NFPs preparing grant applications or renewals</li>
-                <li>Foundations demonstrating program effectiveness</li>
-                <li>Corporates with regulated ESG reporting obligations</li>
-              </ul>
-            </div>
-          </div>
-          <a href="#contact" class="approach-cta">Plan an impact engagement <span aria-hidden="true">&#8594;</span></a>
-        </div>
-        <div class="approach-panel__visual">
-          <figure class="photo-frame photo-frame--clip-3">
-            <span class="photo-frame__tag" aria-hidden="true">02 / Measured</span>
-            <!-- Editorial B&W placeholder — designer to replace with bespoke photography -->
-            <img class="photo-frame__img" src="assets/Measured.jpg" alt="SROI impact measurement and outcomes reporting for a not-for-profit" loading="lazy">
-            <aside class="photo-frame__card photo-frame__card--left" aria-label="Impact reporting snapshot">
-              <span class="photo-frame__card-eyebrow"><span class="photo-frame__card-dash"></span>Snapshot</span>
-              <p class="photo-frame__card-headline">Funder-grade <em>evidence</em>.<br>Board-grade narrative.</p>
-              <p class="photo-frame__card-body">An impact report has to do both at once &mdash; quantified outcomes, told as a story stakeholders can fund again.</p>
-              <ul class="photo-frame__card-meta">
-                <li><strong><span class="counter" data-target="2.4">2.4</span><em>&times;</em></strong><span>outcome lift</span></li>
-                <li><strong>4:1</strong><span>SROI ratio</span></li>
-                <li><strong>3+</strong><span>stakeholder lenses</span></li>
-              </ul>
-            </aside>
-            <span class="photo-frame__sparkline" aria-hidden="true">
-              <svg viewBox="0 0 240 100">
-                <line x1="0" y1="80" x2="240" y2="80" stroke="currentColor" stroke-width="1" opacity="0.4"/>
-                <line x1="0" y1="60" x2="240" y2="60" stroke="currentColor" stroke-width="1" opacity="0.18" stroke-dasharray="3 4"/>
-                <line x1="0" y1="40" x2="240" y2="40" stroke="currentColor" stroke-width="1" opacity="0.18" stroke-dasharray="3 4"/>
-                <line x1="0" y1="20" x2="240" y2="20" stroke="currentColor" stroke-width="1" opacity="0.18" stroke-dasharray="3 4"/>
-                <rect class="spark-bar" x="20"  y="60" width="22" height="20" fill="currentColor" opacity="0.35"/>
-                <rect class="spark-bar" x="60"  y="46" width="22" height="34" fill="currentColor" opacity="0.45"/>
-                <rect class="spark-bar" x="100" y="52" width="22" height="28" fill="currentColor" opacity="0.4"/>
-                <rect class="spark-bar spark-bar--accent" x="140" y="22" width="22" height="58" fill="var(--color-accent)"/>
-                <rect class="spark-bar" x="180" y="34" width="22" height="46" fill="currentColor" opacity="0.55"/>
-                <path class="spark-curve" d="M 31 60 Q 71 46 111 52 T 191 34" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.85"/>
-              </svg>
-            </span>
-          </figure>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="commitments" aria-label="Three commitments every engagement honours">
-    <div class="container">
-      <div class="commitments__header">
-        <p class="section-label reveal">Our commitments</p>
-        <h2 class="reveal" style="transition-delay:0.1s">What every Antithesis engagement <em>delivers</em>.</h2>
-      </div>
-      <div class="commitments__grid">
-        <article class="commitment-card reveal" style="transition-delay:0.2s">
-          <span class="commitment-card__num" aria-hidden="true">01</span>
-          <h3 class="commitment-card__title">Senior in the room.</h3>
-          <p class="commitment-card__body">A senior operator with their name on the outcome &mdash; embedded, accountable, and present when decisions are made.</p>
-        </article>
-        <article class="commitment-card reveal" style="transition-delay:0.3s">
-          <span class="commitment-card__num" aria-hidden="true">02</span>
-          <h3 class="commitment-card__title">Outcomes you can defend.</h3>
-          <p class="commitment-card__body">Every deliverable produces a number, a narrative, or a framework that holds up in front of a board, a funder, or a sceptical CFO.</p>
-        </article>
-        <article class="commitment-card reveal" style="transition-delay:0.4s">
-          <span class="commitment-card__num" aria-hidden="true">03</span>
-          <h3 class="commitment-card__title">A sharper team at the end.</h3>
-          <p class="commitment-card__body">Capability transfer is a core deliverable, not a courtesy. Your team leaves the engagement more capable than when we arrived.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="method" id="method">
     <div class="container">
-      <p class="section-label reveal">03 / Method</p>
       <h2 class="reveal" style="transition-delay:0.1s">Inputs in. Impact out.</h2>
-      <p class="method__intro reveal" style="transition-delay:0.15s">Every engagement follows a structured methodology that converts ambiguity into measurable results. We start with your reality — not a templated framework — and work backward from the outcomes that actually move your metrics.</p>
+      <p class="method__intro reveal" style="transition-delay:0.15s">Whether we&rsquo;re embedding a fractional executive or building an SROI framework, every engagement follows the same discipline: start with your reality &mdash; not a templated framework &mdash; and work backward from the outcomes that actually move your metrics.</p>
 
       <div class="method-flow" id="methodFlow">
         <div class="method-stage">
@@ -772,13 +499,59 @@
       <div class="outcome-chips reveal">
         <span class="chip">Lower CAC</span>
         <span class="chip">Increased efficiency</span>
+        <span class="chip">Funder-grade evidence</span>
         <span class="chip">Long-term resilience</span>
-        <span class="chip">Faster time to market</span>
         <span class="chip">Reduced burn</span>
       </div>
     </div>
   </section>
 
+  <!-- ============================================================
+       COMMITMENTS — what every engagement delivers (shared)
+       ============================================================ -->
+  <section class="commitments" aria-label="Three commitments every engagement honours">
+    <div class="container">
+      <div class="commitments__header">
+        <h2 class="reveal" style="transition-delay:0.1s">What every Antithesis engagement <em>delivers</em>.</h2>
+      </div>
+      <div class="commitments__grid">
+        <article class="commitment-card reveal" style="transition-delay:0.2s">
+          <span class="commitment-card__head">
+            <span class="commitment-card__icon" aria-hidden="true">
+              <img src="assets/svgs/senior.svg" alt="" loading="lazy">
+            </span>
+            <span class="commitment-card__num" aria-hidden="true">/ 01</span>
+          </span>
+          <h3 class="commitment-card__title">Senior in the room.</h3>
+          <p class="commitment-card__body">A senior operator with their name on the outcome &mdash; embedded, accountable, and present when decisions are made.</p>
+        </article>
+        <article class="commitment-card reveal" style="transition-delay:0.3s">
+          <span class="commitment-card__head">
+            <span class="commitment-card__icon" aria-hidden="true">
+              <img src="assets/svgs/outcomes-you-can-defend.svg" alt="" loading="lazy">
+            </span>
+            <span class="commitment-card__num" aria-hidden="true">/ 02</span>
+          </span>
+          <h3 class="commitment-card__title">Outcomes you can defend.</h3>
+          <p class="commitment-card__body">Every deliverable produces a number, a narrative, or a framework that holds up in front of a board, a funder, or a sceptical CFO.</p>
+        </article>
+        <article class="commitment-card reveal" style="transition-delay:0.4s">
+          <span class="commitment-card__head">
+            <span class="commitment-card__icon" aria-hidden="true">
+              <img src="assets/svgs/sharper-team.svg" alt="" loading="lazy">
+            </span>
+            <span class="commitment-card__num" aria-hidden="true">/ 03</span>
+          </span>
+          <h3 class="commitment-card__title">A sharper team at the end.</h3>
+          <p class="commitment-card__body">Capability transfer is a core deliverable, not a courtesy. Your team leaves the engagement more capable than when we arrived.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       VOICES — testimonials, labeled by track
+       ============================================================ -->
   <section class="voices" aria-label="What clients say">
     <div class="container">
       <div class="voices__header">
@@ -787,6 +560,7 @@
       <div class="voices-grid">
         <figure class="voice-card reveal" style="transition-delay:0.15s">
           <span class="voice-card__mark" aria-hidden="true">&ldquo;</span>
+          <span class="voice-card__track voice-card__track--impact">Impact &amp; SROI</span>
           <blockquote class="voice-card__quote">
             When we needed to understand and communicate the real impact Surfing for Farmers was having on rural communities, Antithesis delivered. Their impact and SROI reporting gave us genuine insight into our outcomes while providing our funding partners with the measurable, transparent evidence they needed. A collaborative, expert team &mdash; we wouldn&rsquo;t hesitate to recommend them.
           </blockquote>
@@ -796,6 +570,7 @@
         </figure>
         <figure class="voice-card reveal" style="transition-delay:0.25s">
           <span class="voice-card__mark" aria-hidden="true">&ldquo;</span>
+          <span class="voice-card__track">Fractional Leadership</span>
           <blockquote class="voice-card__quote">
             Antithesis helped us cut through the noise and focus on what truly mattered. They developed a clear, measurable go-to-market strategy that gave us real direction, and their fractional leadership approach meant we weren&rsquo;t just getting advice &mdash; we were building genuine capability within our own team. They became a trusted extension of our business at exactly the right time.
           </blockquote>
@@ -805,6 +580,7 @@
         </figure>
         <figure class="voice-card reveal" style="transition-delay:0.35s">
           <span class="voice-card__mark" aria-hidden="true">&ldquo;</span>
+          <span class="voice-card__track">Fractional Leadership</span>
           <blockquote class="voice-card__quote">
             Antithesis gave us the strategic foundation we needed to scale sustainably from the ground up. Their market blueprint brought clarity and confidence to our growth plans, and their fractional leadership model meant we had senior-level expertise exactly when we needed it &mdash; without the overhead. It freed us up to focus on what actually mattered.
           </blockquote>
@@ -816,37 +592,90 @@
     </div>
   </section>
 
-  <section class="faq" id="faq" aria-label="Frequently asked questions">
-    <div class="container">
-      <div class="faq__header">
-        <p class="section-label reveal">04 / FAQ</p>
-        <h2 class="reveal" style="transition-delay:0.1s">Questions, answered.</h2>
-      </div>
-      <div class="faq-list reveal">
-        <details class="faq-item">
-          <summary class="faq-item__q">What is a fractional executive?</summary>
-          <div class="faq-item__a"><p>A fractional executive is a senior leader &mdash; a fractional CEO, CFO, CMO, COO or other C-suite operator &mdash; who works with your organisation part-time, on retainer or scoped to a project. You get the experience of a seasoned executive without the cost and commitment of a full-time hire. It&rsquo;s ideal for startups, scale-ups and not-for-profits that need senior leadership but can&rsquo;t yet justify a permanent role.</p></div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-item__q">How is fractional leadership different from interim or consulting?</summary>
-          <div class="faq-item__a"><p>Interim leaders fill a full-time seat temporarily; traditional consultants advise from the outside and leave a report. Fractional leaders embed in your team part-time and own the outcomes from inside the room &mdash; building genuine capability rather than dependency. It&rsquo;s a flexible, on-demand model that scales up or down as your needs change.</p></div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-item__q">What is Social Return on Investment (SROI)?</summary>
-          <div class="faq-item__a"><p>SROI is a framework for measuring and valuing the social, environmental and economic outcomes an organisation creates. It expresses impact in a ratio &mdash; the social value generated for every dollar invested &mdash; backed by stakeholder engagement and a Theory of Change. It gives funders, boards and impact investors transparent, defensible evidence of the difference you make.</p></div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-item__q">What impact and ESG services do you provide?</summary>
-          <div class="faq-item__a"><p>We deliver SROI analysis, social impact measurement, Theory of Change, outcomes and impact reporting, ESG and sustainability reporting, social value and social procurement advice, program evaluation and stakeholder engagement &mdash; built specifically for not-for-profit organisations, social enterprises and purpose-driven businesses.</p></div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-item__q">Where is Antithesis Consulting based, and who do you work with?</summary>
-          <div class="faq-item__a"><p>We&rsquo;re based in Melbourne, Australia and across New Zealand, working with for-profit and not-for-profit organisations throughout Australia, New Zealand and globally. We&rsquo;re remote-friendly, so distance is never a barrier &mdash; you can reach us by email or WhatsApp on +64 27 233 0313.</p></div>
-        </details>
+  <!-- ============================================================
+       03 / ABOUT — trust block
+       ============================================================ -->
+  <section class="about" id="about" aria-label="About Antithesis Consulting">
+    <div class="about__inner">
+      <div class="about__grid">
+        <div class="about__body reveal" style="transition-delay:0.1s">
+          <h2>The antithesis of business-as-usual <em>consulting</em>.</h2>
+          <p>Antithesis was founded in 2024 on a simple objection: organisations don&rsquo;t need more advice &mdash; they need senior people in the room, accountable for outcomes. So that&rsquo;s the firm we built.</p>
+          <p><strong>No juniors learning on your budget.</strong> Every engagement is delivered by senior operators who have run the functions they now lead for clients &mdash; across entertainment, retail, wellness, skincare and the not-for-profit sector.</p>
+          <p>We work from Melbourne and New Zealand with organisations across Australia, New Zealand and globally &mdash; on retainer, by the project, and always with a defined exit ramp. If we&rsquo;re not the right fit, we&rsquo;ll say so and point you to someone who is.</p>
+        </div>
+        <div class="about-facts reveal" style="transition-delay:0.25s">
+          <div class="about-fact">
+            <p class="about-fact__num">2024</p>
+            <p class="about-fact__label">Founded</p>
+          </div>
+          <div class="about-fact">
+            <p class="about-fact__num">2</p>
+            <p class="about-fact__label">Countries, working globally</p>
+          </div>
+          <div class="about-fact">
+            <p class="about-fact__num">46</p>
+            <p class="about-fact__label">Engagements delivered</p>
+          </div>
+          <div class="about-fact">
+            <p class="about-fact__num">100%</p>
+            <p class="about-fact__label">Senior-led, always</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ============================================================
+       04 / FAQ — split into the two tracks
+       ============================================================ -->
+  <section class="faq" id="faq" aria-label="Frequently asked questions">
+    <div class="container">
+      <div class="faq__header">
+        <h2 class="reveal" style="transition-delay:0.1s">Questions, answered.</h2>
+      </div>
+      <div class="faq-groups">
+        <div class="faq-group reveal">
+          <p class="faq-group__title">Fractional Leadership</p>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary class="faq-item__q">What is a fractional executive?</summary>
+              <div class="faq-item__a"><p>A fractional executive is a senior leader &mdash; a fractional CEO, CFO, CMO, COO or other C-suite operator &mdash; who works with your organisation part-time, on retainer or scoped to a project. You get the experience of a seasoned executive without the cost and commitment of a full-time hire. It&rsquo;s ideal for startups, scale-ups and not-for-profits that need senior leadership but can&rsquo;t yet justify a permanent role.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__q">How is it different from interim or consulting?</summary>
+              <div class="faq-item__a"><p>Interim leaders fill a full-time seat temporarily; traditional consultants advise from the outside and leave a report. Fractional leaders embed in your team part-time and own the outcomes from inside the room &mdash; building genuine capability rather than dependency. It&rsquo;s a flexible, on-demand model that scales up or down as your needs change.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__q">How quickly can a fractional executive start?</summary>
+              <div class="faq-item__a"><p>Most engagements begin within two to three weeks of a first conversation. Every engagement opens with a short discovery phase &mdash; listening, diagnosing, scoping &mdash; so by the time we embed, the remit and the metrics are already agreed.</p></div>
+            </details>
+          </div>
+        </div>
+        <div class="faq-group reveal" style="transition-delay:0.15s">
+          <p class="faq-group__title">Impact &amp; SROI</p>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary class="faq-item__q">What is Social Return on Investment (SROI)?</summary>
+              <div class="faq-item__a"><p>SROI is a framework for measuring and valuing the social, environmental and economic outcomes an organisation creates. It expresses impact in a ratio &mdash; the social value generated for every dollar invested &mdash; backed by stakeholder engagement and a Theory of Change. It gives funders, boards and impact investors transparent, defensible evidence of the difference you make.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__q">What impact and ESG services do you provide?</summary>
+              <div class="faq-item__a"><p>We deliver SROI analysis, social impact measurement, Theory of Change, outcomes and impact reporting, ESG and sustainability reporting, social value and social procurement advice, program evaluation and stakeholder engagement &mdash; built specifically for not-for-profit organisations, social enterprises and purpose-driven businesses.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__q">When is the right time to measure our impact?</summary>
+              <div class="faq-item__a"><p>Before the funding conversation, not after. Walking into a grant renewal or board meeting with defensible evidence already in hand is the strongest position an organisation can be in. If a funder application, renewal or annual report is 6&ndash;12 months away, now is the right time to start.</p></div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       05 / CONTACT
+       ============================================================ -->
   <section class="contact" id="contact">
     <!-- Animated background decoration -->
     <div class="contact-decor" aria-hidden="true">
@@ -878,7 +707,6 @@
       <div class="contact-grid">
         <!-- Left: header + meta -->
         <div class="contact-intro">
-          <p class="section-label reveal">05 / Contact</p>
           <h2 class="reveal" style="transition-delay:0.1s">Ready to close the <em>gap</em>?</h2>
           <p class="contact__intro reveal" style="transition-delay:0.15s">Tell us what you&rsquo;re working on. We&rsquo;ll respond within one business day &mdash; and if we&rsquo;re not the right fit, we&rsquo;ll say so and point you toward someone who is.</p>
 
@@ -913,7 +741,9 @@
             <!-- Form posts to Formspree (https://formspree.io/f/xgoqddgl).
                  Submissions are emailed to the address on the Formspree
                  account; configure forwarding/recipients in the Formspree
-                 dashboard. JS handles AJAX submit + the custom thank-you state. -->
+                 dashboard. JS handles AJAX submit + the custom thank-you state.
+                 The "what do you need" select is pre-filled by JS from the
+                 CTA the visitor arrived through (?need= param or data-need). -->
             <form class="contact-form"
                   id="contactForm"
                   action="https://formspree.io/f/xgoqddgl"
@@ -980,11 +810,12 @@
         <p>Melbourne &amp; New Zealand</p>
       </div>
       <div class="footer-col">
-        <p class="footer-col__title">Services</p>
-        <a href="#services">Fractional Leadership &amp; Strategists</a>
-        <a href="#services">Impact &amp; SROI</a>
-        <a href="#method">Our Method</a>
-        <a href="#faq">FAQ</a>
+        <p class="footer-col__title">Explore</p>
+        <a href="fractional.html">Fractional Leadership</a>
+        <a href="impact.html">Impact &amp; SROI</a>
+        <a href="index.html#method">Our Method</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#faq">FAQ</a>
       </div>
       <div class="footer-col">
         <p class="footer-col__title">Connect</p>

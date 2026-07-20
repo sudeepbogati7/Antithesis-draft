@@ -1,8 +1,8 @@
 /* ================================================================
    ANTITHESIS — MAIN SCRIPT
    Handles: scroll reveal, method flow animation, nav scroll state,
-   mobile menu, theme toggle, form submission, smooth scroll, hero
-   reveal sequence on load.
+   mobile menu, contact pre-fill by track, form submission, smooth
+   scroll, hero reveal sequence on load.
    ================================================================ */
 (function () {
   'use strict';
@@ -81,15 +81,41 @@
   });
 
   /* ============================================================
-     THEME TOGGLE
+     THEME TOGGLE — light is the default; choice persists
      ============================================================ */
   var themeToggle = document.querySelector('.theme-toggle');
   if (themeToggle) {
     themeToggle.addEventListener('click', function () {
-      var current = document.documentElement.getAttribute('data-theme') || 'dark';
-      var next = current === 'light' ? 'dark' : 'light';
+      var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', next);
       try { localStorage.setItem('antithesis-theme', next); } catch (e) { /* no-op */ }
+    });
+  }
+
+  /* ============================================================
+     CONTACT PRE-FILL — the form continues the visitor's path
+     Sources, in priority order:
+       1. ?need=fractional | ?need=impact in the URL (cross-page CTAs)
+       2. data-need="..." on any CTA clicked within the page
+     Track pages ship with the correct <option selected> already.
+     ============================================================ */
+  var needSelect = document.getElementById('cf-need');
+  var NEED_MAP = {
+    fractional: 'Fractional leadership & strategists',
+    impact: 'Impact & SROI'
+  };
+
+  if (needSelect) {
+    try {
+      var needParam = new URLSearchParams(window.location.search).get('need');
+      if (needParam && NEED_MAP[needParam]) needSelect.value = NEED_MAP[needParam];
+    } catch (e) { /* URLSearchParams unavailable — skip pre-fill */ }
+
+    document.querySelectorAll('[data-need]').forEach(function (cta) {
+      cta.addEventListener('click', function () {
+        var mapped = NEED_MAP[cta.getAttribute('data-need')];
+        if (mapped) needSelect.value = mapped;
+      });
     });
   }
 

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===================== PRIMARY SEO ===================== -->
+<title>Impact Measurement &amp; SROI Consulting | Antithesis Consulting</title>
+<meta name="description" content="SROI analysis, Theory of Change, ESG and outcomes reporting for not-for-profits and purpose-led organisations. Funder-grade evidence of the impact you create — across Australia &amp; New Zealand.">
+<meta name="author" content="Antithesis Consulting">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://antithesis-consulting.com/impact.html">
+
+<!-- ===================== OPEN GRAPH ===================== -->
+<meta property="og:title" content="Impact Measurement &amp; SROI — Antithesis Consulting">
+<meta property="og:description" content="Social Return on Investment, Theory of Change and ESG reporting. Funder-grade evidence of the outcomes you create.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://antithesis-consulting.com/impact.html">
+<meta property="og:site_name" content="Antithesis Consulting">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image" content="https://antithesis-consulting.com/assets/Measured.jpg">
+<link rel="icon" type="image/svg+xml" href="assets/brand_logo.svg">
+<meta name="theme-color" content="#F4F6F0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,700;1,800&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Impact & SROI",
+  "serviceType": "Social Impact Measurement",
+  "description": "Social Return on Investment (SROI), social impact measurement, Theory of Change, ESG and sustainability reporting, outcomes reporting and stakeholder engagement for not-for-profits and purpose-led organisations.",
+  "url": "https://antithesis-consulting.com/impact.html",
+  "provider": { "@id": "https://antithesis-consulting.com/#organization" },
+  "areaServed": [
+    { "@type": "Country", "name": "Australia" },
+    { "@type": "Country", "name": "New Zealand" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://antithesis-consulting.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Impact & SROI", "item": "https://antithesis-consulting.com/impact.html" }
+  ]
+}
+</script>
+<script>
+  // Pre-paint theme detection — must run before stylesheet to avoid FOUC. Light is the default.
+  (function() {
+    try {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('antithesis-theme') || 'light');
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="css/main.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+<!-- SVG noise filter (hidden) -->
+<svg aria-hidden="true" style="position:absolute;width:0;height:0">
+  <filter id="noiseFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+</svg>
+
+<!-- Grain overlay -->
+<svg class="grain" aria-hidden="true" width="100%" height="100%">
+  <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+</svg>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<header class="site-nav" role="banner">
+  <div class="site-nav__inner">
+    <a href="index.html" class="nav-wordmark" aria-label="Antithesis — Home">
+      <svg class="nav-logo" viewBox="100 160 2210 295" aria-hidden="true"><g transform="scale(8.571428571428571) translate(10, 10)"><path d="M5.6641 27.266l-2.2461 0 9.1797-16.387 9.7461 0 1.582 16.387 2.1875 0 1.2305 12.715-10.059 0-0.41016-5.4883-5.5664 0c-0.97656 1.8164-1.8945 3.6523-2.8711 5.4883l-9.8828 0zM16.621 27.676l0-0.41016-2.1289 0 0.039063-6.4844-2.6172 6.4844 2.168 0-0.15625 0.41016 2.6953 0zM58.408 27.266l-2.9102 12.715-9.082 0-3.8672-12.715-0.44922 0-2.9492 12.715-9.1992 0 2.9492-12.715-1.7773 0 3.7695-16.367 10.723 0 3.1641 10.273 2.4023-10.273 9.2383 0-3.7891 16.367 1.7773 0zM80.879 26.719l-2.9688 13.359-9.9023 0 3.0469-13.359-1.7773 0 1.9727-8.5547-7.8125 0 1.7188-7.4023 25.352 0-1.6602 7.4023-7.793 0-1.9141 8.5547 1.7383 0zM101.944 27.344l-2.9297 12.734-9.8828 0 2.9297-12.734-1.9922 0 3.8281-16.484 9.8633 0-3.7891 16.484 1.9727 0zM122.989 26.719l-2.9688 13.359-9.9023 0 3.0469-13.359-1.7773 0 1.9727-8.5547-7.8125 0 1.7188-7.4023 25.352 0-1.6602 7.4023-7.793 0-1.9141 8.5547 1.7383 0zM159.619 27.344l-2.9688 12.734-9.7852 0 2.7734-11.953-5.6641 0-2.793 11.953-9.8438 0 2.9492-12.734-1.9727 0 3.7695-16.484 9.8438 0-2.2461 9.9023 5.6445 0 2.2852-9.9023 9.8047 0-3.8086 16.484 2.0117 0zM165.449 27.344l-1.9922 0 3.8281-16.484 20.918 0-1.6797 7.4023-11.152 0-0.58594 2.5 10.254 0-1.5039 6.582 1.9922 0-0.17578 0.78125-10.273 0-1.0352 4.5703 11.113 0-1.6797 7.3828-20.957 0zM213.779 26.719c1.1328 4.1016-2.2656 8.9453-5.4102 11.074-6.1719 4.043-14.316 3.3984-20.625 0.15625l1.8359-8.125 3.0273 0c0.39063 4.1992 9.7852 5.9375 10.742 1.7969 0.46875-2.0508-6.8945-2.6172-9.3555-4.5508-0.13672-0.11719-0.29297-0.23438-0.41016-0.35156l-1.7969 0c-1.9531-1.8359-2.1289-4.2773-1.5625-6.8164 2.3828-10.41 16.523-11.445 24.688-7.3242l-1.8164 7.9102-3.0469 0c0.19531-2.9688-8.7891-5-9.6289-1.4258-0.56641 2.7734 8.5352 1.9531 11.055 6.3477 0.21484 0.39063 0.39063 0.85938 0.50781 1.3086l1.7969 0zM228.301 27.344l-2.9297 12.734-9.8828 0 2.9297-12.734-1.9922 0 3.8281-16.484 9.8633 0-3.7891 16.484 1.9727 0zM257.529 26.719c1.1328 4.1016-2.2656 8.9453-5.4102 11.074-6.1719 4.043-14.316 3.3984-20.625 0.15625l1.8359-8.125 3.0273 0c0.39063 4.1992 9.7852 5.9375 10.742 1.7969 0.46875-2.0508-6.8945-2.6172-9.3555-4.5508-0.13672-0.11719-0.29297-0.23438-0.41016-0.35156l-1.7969 0c-1.9531-1.8359-2.1289-4.2773-1.5625-6.8164 2.3828-10.41 16.523-11.445 24.688-7.3242l-1.8164 7.9102-3.0469 0c0.19531-2.9688-8.7891-5-9.6289-1.4258-0.56641 2.7734 8.5352 1.9531 11.055 6.3477 0.21484 0.39063 0.39063 0.85938 0.50781 1.3086l1.7969 0z"/></g></svg>
+    </a>
+    <div class="site-nav__right">
+      <div class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="fractional.html">Fractional</a>
+        <a href="impact.html" class="is-active" aria-current="page">Impact &amp; SROI</a>
+        <a href="index.html#method">Method</a>
+        <a href="index.html#work">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle theme" type="button">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a href="#contact" class="nav-cta">Book a call</a>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile overlay -->
+<div class="mobile-overlay" aria-hidden="true">
+  <nav aria-label="Mobile navigation">
+    <a href="fractional.html">Fractional Leadership</a>
+    <a href="impact.html">Impact &amp; SROI</a>
+    <a href="index.html#method">Method</a>
+    <a href="index.html#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div>
+
+<main>
+  <!-- ============================================================
+       PAGE HERO
+       ============================================================ -->
+  <section class="hero hero--page" id="hero">
+    <div class="hero-bg">
+      <img src="assets/Measured.jpg" alt="" aria-hidden="true">
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-crumb reveal"><a href="index.html">Home</a> <span class="hero-crumb__sep" aria-hidden="true">/</span> <b>Impact &amp; SROI</b></p>
+      <h1 class="hero-headline reveal" style="transition-delay:0.05s">Impact you can put a number against &mdash; and a story funders <em>trust</em>.</h1>
+      <p class="hero-sub reveal" style="transition-delay:0.15s">Social Return on Investment, Theory of Change and ESG reporting for not-for-profits and purpose-led organisations. You do meaningful work &mdash; we help you prove it.</p>
+      <div class="hero-actions reveal" style="transition-delay:0.25s">
+        <a href="#contact" class="btn-primary">Plan an impact engagement</a>
+        <a href="#deliver" class="text-link">What we deliver &#8595;</a>
+      </div>
+      <div class="hero-tag">NFP &amp; purpose-led &middot; Funder-grade evidence</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       01 / WHO IT'S FOR
+       ============================================================ -->
+  <section class="approach" aria-label="Who impact measurement is for">
+    <div class="container">
+      <article class="approach-panel reveal" id="who-for">
+        <div class="approach-panel__copy">
+          <p class="approach-eyebrow"><span class="approach-dot" aria-hidden="true"></span>Who it&rsquo;s for</p>
+          <h3 class="approach-headline">Funders, grants, and boards each demand different <em>evidence</em>.</h3>
+          <p class="approach-lead">We build measurement frameworks that hold up under all three &mdash; and produce the narrative that earns the next round without overstating the last. Built for the scrutiny of grant panels and impact investors alike.</p>
+          <div class="approach-pillars">
+            <div class="approach-pillar">
+              <p class="approach-pillar__title">The signals</p>
+              <ul class="approach-pillar__list">
+                <li>A grant application or renewal is on the horizon</li>
+                <li>Your board wants an outcomes narrative, not anecdotes</li>
+                <li>ESG or sustainability reporting obligations are growing</li>
+              </ul>
+            </div>
+            <div class="approach-pillar">
+              <p class="approach-pillar__title">Designed for</p>
+              <ul class="approach-pillar__list">
+                <li>NFPs preparing grant applications or renewals</li>
+                <li>Foundations demonstrating program effectiveness</li>
+                <li>Corporates with regulated ESG reporting obligations</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#contact" class="approach-cta">Plan an impact engagement <span aria-hidden="true">&#8594;</span></a>
+        </div>
+        <div class="approach-panel__visual">
+          <figure class="photo-frame photo-frame--clip-3">
+            <span class="photo-frame__tag" aria-hidden="true">01 / Measured</span>
+            <img class="photo-frame__img" src="assets/Measured.jpg" alt="SROI impact measurement and outcomes reporting for a not-for-profit" loading="lazy">
+            <aside class="photo-frame__card photo-frame__card--left" aria-label="Impact reporting snapshot">
+              <span class="photo-frame__card-eyebrow"><span class="photo-frame__card-dash"></span>Snapshot</span>
+              <p class="photo-frame__card-headline">Funder-grade <em>evidence</em>.<br>Board-grade narrative.</p>
+              <p class="photo-frame__card-body">An impact report has to do both at once &mdash; quantified outcomes, told as a story stakeholders can fund again.</p>
+              <ul class="photo-frame__card-meta">
+                <li><strong><span class="counter" data-target="2.4">2.4</span><em>&times;</em></strong><span>outcome lift</span></li>
+                <li><strong>4:1</strong><span>SROI ratio</span></li>
+                <li><strong>3+</strong><span>stakeholder lenses</span></li>
+              </ul>
+            </aside>
+            <span class="photo-frame__sparkline" aria-hidden="true">
+              <svg viewBox="0 0 240 100">
+                <line x1="0" y1="80" x2="240" y2="80" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+                <line x1="0" y1="60" x2="240" y2="60" stroke="currentColor" stroke-width="1" opacity="0.18" stroke-dasharray="3 4"/>
+                <line x1="0" y1="40" x2="240" y2="40" stroke="currentColor" stroke-width="1" opacity="0.18" stroke-dasharray="3 4"/>
+                <line x1="0" y1="20" x2="240" y2="20" stroke="currentColor" stroke-width="1" opacity="0.18" stroke-dasharray="3 4"/>
+                <rect class="spark-bar" x="20"  y="60" width="22" height="20" fill="currentColor" opacity="0.35"/>
+                <rect class="spark-bar" x="60"  y="46" width="22" height="34" fill="currentColor" opacity="0.45"/>
+                <rect class="spark-bar" x="100" y="52" width="22" height="28" fill="currentColor" opacity="0.4"/>
+                <rect class="spark-bar spark-bar--accent" x="140" y="22" width="22" height="58" fill="var(--color-accent)"/>
+                <rect class="spark-bar" x="180" y="34" width="22" height="46" fill="currentColor" opacity="0.55"/>
+                <path class="spark-curve" d="M 31 60 Q 71 46 111 52 T 191 34" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.85"/>
+              </svg>
+            </span>
+          </figure>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       02 / WHAT WE DELIVER
+       ============================================================ -->
+  <section class="deliverables" id="deliver" aria-label="What an impact engagement delivers">
+    <div class="deliverables__inner">
+      <div class="deliverables__header">
+        <h2 class="reveal" style="transition-delay:0.1s">Three frameworks. One defensible <em>story</em>.</h2>
+        <p class="reveal" style="transition-delay:0.15s">Every engagement is scoped to the evidence your stakeholders actually ask for &mdash; not a templated report that sits in a drawer.</p>
+      </div>
+      <div class="deliverables__grid">
+        <article class="deliverable reveal" style="transition-delay:0.2s">
+          <span class="deliverable__icon" aria-hidden="true">
+            <img src="assets/svgs/sroi-analysis.svg" alt="" loading="lazy">
+          </span>
+          <h3 class="deliverable__title">SROI Analysis</h3>
+          <p class="deliverable__desc">Social Return on Investment measured to the recognised framework: stakeholder engagement, valuation of outcomes, and a ratio that states the social value created per dollar invested.</p>
+          <p class="deliverable__for">For <strong>grant panels &amp; impact investors</strong></p>
+        </article>
+        <article class="deliverable reveal" style="transition-delay:0.3s">
+          <span class="deliverable__icon" aria-hidden="true">
+            <img src="assets/svgs/theory-of-change.svg" alt="" loading="lazy">
+          </span>
+          <h3 class="deliverable__title">Theory of Change</h3>
+          <p class="deliverable__desc">Outcome mapping that connects what you do to the change you create &mdash; the logic model funders expect to see before they believe a single number in your report.</p>
+          <p class="deliverable__for">For <strong>boards &amp; program leads</strong></p>
+        </article>
+        <article class="deliverable reveal" style="transition-delay:0.4s">
+          <span class="deliverable__icon" aria-hidden="true">
+            <img src="assets/svgs/esg-outcomes-reporting.svg" alt="" loading="lazy">
+          </span>
+          <h3 class="deliverable__title">ESG &amp; Outcomes Reporting</h3>
+          <p class="deliverable__desc">Sustainability and outcomes documentation built for scrutiny &mdash; annual impact reports, social procurement evidence, and program evaluation your stakeholders can audit.</p>
+          <p class="deliverable__for">For <strong>regulators, funders &amp; partners</strong></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       03 / CASE — Surfing for Farmers, front and centre
+       ============================================================ -->
+  <section class="case-feature" aria-label="Case study: Surfing for Farmers">
+    <div class="case-feature__inner">
+      <div class="case-feature__card reveal">
+        <p class="case-feature__kicker">Case study &middot; Not-for-profit &middot; New Zealand</p>
+        <h2 class="case-feature__title">Surfing for Farmers: proving what rural communities already <em>felt</em>.</h2>
+        <p class="case-feature__body">Surfing for Farmers takes farmers off the land and into the surf to protect their mental health. The impact was visible on every beach &mdash; but funders needed more than stories. Antithesis built the SROI framework and impact reporting that turned lived outcomes into measurable, transparent evidence for funding partners.</p>
+        <blockquote class="case-feature__quote">
+          When we needed to understand and communicate the real impact Surfing for Farmers was having on rural communities, Antithesis delivered. Their impact and SROI reporting gave us genuine insight into our outcomes while providing our funding partners with the measurable, transparent evidence they needed. A collaborative, expert team &mdash; we wouldn&rsquo;t hesitate to recommend them.
+        </blockquote>
+        <p class="case-feature__attr">Surfing for Farmers &mdash; New Zealand</p>
+        <div class="case-feature__stats">
+          <div class="case-feature__stat">
+            <p class="case-feature__stat-num">4:1<em>&nbsp;</em></p>
+            <p class="case-feature__stat-label">SROI ratio evidenced</p>
+          </div>
+          <div class="case-feature__stat">
+            <p class="case-feature__stat-num"><span class="counter" data-target="2.4">2.4</span><em>&times;</em></p>
+            <p class="case-feature__stat-label">Outcome lift documented</p>
+          </div>
+          <div class="case-feature__stat">
+            <p class="case-feature__stat-num">3+<em>&nbsp;</em></p>
+            <p class="case-feature__stat-label">Stakeholder lenses engaged</p>
+          </div>
+          <div class="case-feature__stat">
+            <p class="case-feature__stat-num">1<em>&nbsp;</em></p>
+            <p class="case-feature__stat-label">Report funders fund again</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA BAND
+       ============================================================ -->
+  <section class="cta-band" aria-label="Plan an impact engagement">
+    <div class="cta-band__inner reveal">
+      <div>
+        <h2 class="cta-band__title">Evidence in hand <em>before</em> the funding conversation.</h2>
+        <p class="cta-band__sub">If a grant application, renewal or annual report is 6&ndash;12 months away, now is the right time to start.</p>
+      </div>
+      <a href="#contact" class="btn-primary">Plan an impact engagement</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       04 / CONTACT — pre-filled for the impact track
+       ============================================================ -->
+  <section class="contact" id="contact">
+    <div class="contact-decor" aria-hidden="true">
+      <svg class="contact-decor__bg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="contactGlowA" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="currentColor" stop-opacity="0.20"/>
+            <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="contactGlowB" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="currentColor" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <ellipse class="contact-decor__glow contact-decor__glow--a" cx="950" cy="180" rx="280" ry="280" fill="url(#contactGlowA)"/>
+        <ellipse class="contact-decor__glow contact-decor__glow--b" cx="180" cy="640" rx="220" ry="220" fill="url(#contactGlowB)"/>
+        <path class="contact-decor__line contact-decor__line--1" d="M -50 380 Q 300 280 600 400 T 1250 380" fill="none" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="2 8" opacity="0.55"/>
+        <path class="contact-decor__line contact-decor__line--2" d="M -50 460 Q 350 540 700 460 T 1250 460" fill="none" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="2 8" opacity="0.35"/>
+      </svg>
+      <span class="contact-decor__rings" aria-hidden="true">
+        <span class="contact-decor__ring"></span>
+        <span class="contact-decor__ring"></span>
+        <span class="contact-decor__ring"></span>
+      </span>
+    </div>
+
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-intro">
+          <h2 class="reveal" style="transition-delay:0.1s">Ready to prove your <em>impact</em>?</h2>
+          <p class="contact__intro reveal" style="transition-delay:0.15s">Tell us what you&rsquo;re working on. We&rsquo;ll respond within one business day &mdash; and if we&rsquo;re not the right fit, we&rsquo;ll say so and point you toward someone who is.</p>
+
+          <ul class="contact-meta reveal" style="transition-delay:0.2s">
+            <li class="contact-meta__item">
+              <span class="contact-meta__dot" aria-hidden="true"></span>
+              <div class="contact-meta__body">
+                <span>Read and replied to by a senior. No account-executive triage.</span>
+              </div>
+            </li>
+            <li class="contact-meta__item">
+              <span class="contact-meta__dot" aria-hidden="true"></span>
+              <div class="contact-meta__body">
+                <span>Everything shared stays confidential &mdash; whether we work together or not.</span>
+              </div>
+            </li>
+            <li class="contact-meta__item">
+              <span class="contact-meta__dot" aria-hidden="true"></span>
+              <div class="contact-meta__body">
+                <span>Melbourne &amp; New Zealand &middot; Working globally &middot; WhatsApp <a href="https://wa.me/64272330313" target="_blank" rel="noopener noreferrer">+64 27 233 0313</a></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-form-wrap reveal" style="transition-delay:0.25s">
+          <div class="contact-form-card">
+            <p class="contact-form-card__title">Tell us about it.</p>
+            <p class="contact-form-card__sub">A short note is enough. We'll come back with thoughts.</p>
+
+            <!-- Same Formspree endpoint as the homepage; the track select is
+                 pre-selected for impact & SROI so the form continues the
+                 visitor's path instead of restarting the triage. -->
+            <form class="contact-form"
+                  id="contactForm"
+                  action="https://formspree.io/f/xgoqddgl"
+                  method="POST"
+                  novalidate>
+              <input type="hidden" name="_subject" value="New impact & SROI enquiry from Antithesis website">
+              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <div class="form-field">
+                <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name">
+                <label for="cf-name">Name</label>
+              </div>
+              <div class="form-field">
+                <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email">
+                <label for="cf-email">Email</label>
+              </div>
+              <div class="form-field">
+                <select id="cf-need" name="What they need" required>
+                  <option value="" disabled hidden></option>
+                  <option value="Fractional leadership &amp; strategists">Fractional leadership &amp; strategists</option>
+                  <option value="Impact &amp; SROI" selected>Impact &amp; SROI</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+                <label for="cf-need">What do you need help with?</label>
+              </div>
+              <div class="form-field">
+                <textarea id="cf-notes" name="Notes" placeholder=" " rows="2"></textarea>
+                <label for="cf-notes">Anything else?</label>
+              </div>
+
+              <p class="form-error" id="formError" role="alert" aria-live="polite"></p>
+
+              <button type="submit" class="btn-submit" id="formSubmitBtn">
+                <span class="btn-submit__label">Send</span>
+                <svg class="btn-submit__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                <span class="btn-submit__spinner" aria-hidden="true"></span>
+              </button>
+            </form>
+
+            <div class="form-thankyou" id="formThankyou">
+              <h3>Thank you.</h3>
+              <p>We've received your message and will be in touch within one business day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="footer-col__title">Contact</p>
+        <a href="mailto:hello@antithesis-consulting.com">hello@antithesis-consulting.com</a>
+        <a href="https://wa.me/64272330313" target="_blank" rel="noopener noreferrer">+64 27 233 0313</a>
+        <p>Melbourne &amp; New Zealand</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Explore</p>
+        <a href="fractional.html">Fractional Leadership</a>
+        <a href="impact.html">Impact &amp; SROI</a>
+        <a href="index.html#method">Our Method</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Connect</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/antithesis-consulting/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/antithesis.consulting/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/antithesis.consulting/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="mailto:hello@antithesis-consulting.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2024 Antithesis Consulting &mdash; Not your traditional consultants.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+
+    <p class="footer-brand-kicker" aria-hidden="true">Not your traditional consultants. — Est. 2024.</p>
+
+    <div class="footer-brand" aria-hidden="true">
+      <svg class="footer-brand-logo" viewBox="100 160 2210 295"><g transform="scale(8.571428571428571) translate(10, 10)"><path d="M5.6641 27.266l-2.2461 0 9.1797-16.387 9.7461 0 1.582 16.387 2.1875 0 1.2305 12.715-10.059 0-0.41016-5.4883-5.5664 0c-0.97656 1.8164-1.8945 3.6523-2.8711 5.4883l-9.8828 0zM16.621 27.676l0-0.41016-2.1289 0 0.039063-6.4844-2.6172 6.4844 2.168 0-0.15625 0.41016 2.6953 0zM58.408 27.266l-2.9102 12.715-9.082 0-3.8672-12.715-0.44922 0-2.9492 12.715-9.1992 0 2.9492-12.715-1.7773 0 3.7695-16.367 10.723 0 3.1641 10.273 2.4023-10.273 9.2383 0-3.7891 16.367 1.7773 0zM80.879 26.719l-2.9688 13.359-9.9023 0 3.0469-13.359-1.7773 0 1.9727-8.5547-7.8125 0 1.7188-7.4023 25.352 0-1.6602 7.4023-7.793 0-1.9141 8.5547 1.7383 0zM101.944 27.344l-2.9297 12.734-9.8828 0 2.9297-12.734-1.9922 0 3.8281-16.484 9.8633 0-3.7891 16.484 1.9727 0zM122.989 26.719l-2.9688 13.359-9.9023 0 3.0469-13.359-1.7773 0 1.9727-8.5547-7.8125 0 1.7188-7.4023 25.352 0-1.6602 7.4023-7.793 0-1.9141 8.5547 1.7383 0zM159.619 27.344l-2.9688 12.734-9.7852 0 2.7734-11.953-5.6641 0-2.793 11.953-9.8438 0 2.9492-12.734-1.9727 0 3.7695-16.484 9.8438 0-2.2461 9.9023 5.6445 0 2.2852-9.9023 9.8047 0-3.8086 16.484 2.0117 0zM165.449 27.344l-1.9922 0 3.8281-16.484 20.918 0-1.6797 7.4023-11.152 0-0.58594 2.5 10.254 0-1.5039 6.582 1.9922 0-0.17578 0.78125-10.273 0-1.0352 4.5703 11.113 0-1.6797 7.3828-20.957 0zM213.779 26.719c1.1328 4.1016-2.2656 8.9453-5.4102 11.074-6.1719 4.043-14.316 3.3984-20.625 0.15625l1.8359-8.125 3.0273 0c0.39063 4.1992 9.7852 5.9375 10.742 1.7969 0.46875-2.0508-6.8945-2.6172-9.3555-4.5508-0.13672-0.11719-0.29297-0.23438-0.41016-0.35156l-1.7969 0c-1.9531-1.8359-2.1289-4.2773-1.5625-6.8164 2.3828-10.41 16.523-11.445 24.688-7.3242l-1.8164 7.9102-3.0469 0c0.19531-2.9688-8.7891-5-9.6289-1.4258-0.56641 2.7734 8.5352 1.9531 11.055 6.3477 0.21484 0.39063 0.39063 0.85938 0.50781 1.3086l1.7969 0zM228.301 27.344l-2.9297 12.734-9.8828 0 2.9297-12.734-1.9922 0 3.8281-16.484 9.8633 0-3.7891 16.484 1.9727 0zM257.529 26.719c1.1328 4.1016-2.2656 8.9453-5.4102 11.074-6.1719 4.043-14.316 3.3984-20.625 0.15625l1.8359-8.125 3.0273 0c0.39063 4.1992 9.7852 5.9375 10.742 1.7969 0.46875-2.0508-6.8945-2.6172-9.3555-4.5508-0.13672-0.11719-0.29297-0.23438-0.41016-0.35156l-1.7969 0c-1.9531-1.8359-2.1289-4.2773-1.5625-6.8164 2.3828-10.41 16.523-11.445 24.688-7.3242l-1.8164 7.9102-3.0469 0c0.19531-2.9688-8.7891-5-9.6289-1.4258-0.56641 2.7734 8.5352 1.9531 11.055 6.3477 0.21484 0.39063 0.39063 0.85938 0.50781 1.3086l1.7969 0z"/></g></svg>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

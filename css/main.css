@@ -35,7 +35,7 @@
   --color-card-highlight: rgba(241, 244, 236, 0.04);
   --color-card-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
   --color-quote-mark: rgba(66, 245, 39, 0.18);
-  --font-display: 'Instrument Serif', 'Times New Roman', Georgia, serif;
+  --font-display: 'Montserrat', 'DM Sans', -apple-system, 'Segoe UI', sans-serif;
   --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'DM Mono', 'SFMono-Regular', Consolas, monospace;
   --page-gutter: 80px;
@@ -3385,3 +3385,800 @@ a:focus-visible, button:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ================================================================
+   ================================================================
+   REVAMP — SINGLE LIGHT SITE, BOLD DISPLAY TYPE, SPLIT TRACKS
+   Appended layer: later rules win at equal specificity.
+   - Display font swapped to Montserrat (geometric, Gotham-style)
+   - Headings pushed to heavy weights for impact
+   - New components: dual-path strip, track tags, split FAQ,
+     about block, sub-page hero, case feature, deliverables grid
+   ================================================================
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   DISPLAY TYPE — heavy geometric sans
+   ---------------------------------------------------------------- */
+.hero-headline,
+.value-prop__body h2,
+.services h2,
+.commitments h2,
+.method h2,
+.faq__header h2,
+.voices h2,
+.contact h2,
+.approach-headline,
+.prose-page h1,
+.prose-page h2,
+.prose-page h3,
+.form-thankyou h3,
+.mobile-overlay nav a {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+.services-node__title,
+.commitment-card__title,
+.contact-form-card__title,
+.rhythm-card__label,
+.method-stage__label,
+.photo-frame__card-headline {
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+.faq-item__q { font-weight: 700; font-size: clamp(17px, 2vw, 21px); letter-spacing: -0.01em; }
+.services-node__num,
+.commitment-card__num,
+.rhythm-card__highlight-num,
+.ftf-callout__value,
+.ftf-row__metric,
+.photo-frame__card-meta strong,
+.chart-strapline { font-weight: 700; }
+
+/* Montserrat heavy runs wider than the old serif — pull sizes in a notch */
+.hero-headline { font-size: clamp(35px, 5.1vw, 68px); line-height: 1.06; }
+.value-prop__body h2, .services h2, .method h2, .voices h2, .contact h2 {
+  font-size: clamp(30px, 4.2vw, 50px); line-height: 1.1;
+}
+.commitments h2, .faq__header h2 { font-size: clamp(28px, 3.8vw, 44px); line-height: 1.12; }
+.approach-headline { font-size: clamp(26px, 3.4vw, 42px); line-height: 1.12; }
+.prose-page h1 { font-size: clamp(32px, 4.6vw, 54px); }
+.prose-page h2 { font-size: 24px; }
+.prose-page h3 { font-size: 19px; }
+.mobile-overlay nav a { font-size: 30px; }
+.method-stage__label { font-size: clamp(21px, 2.2vw, 26px); }
+
+/* Italic emphasis reads better with a hint of weight contrast */
+.hero-headline em, .approach-headline em, .commitments h2 em, .contact h2 em {
+  font-style: italic;
+}
+
+/* Keep the oversized quotation mark editorial-serif — Montserrat quote glyph is clumsy */
+.voice-card__mark { font-family: 'Instrument Serif', Georgia, serif; }
+
+/* ----------------------------------------------------------------
+   NAV — active page state + book CTA
+   ---------------------------------------------------------------- */
+.nav-links a.is-active { color: var(--color-fg); }
+.nav-links a.is-active::after { width: 100%; }
+[data-theme="light"] .site-nav:not(.scrolled) .nav-links a.is-active { color: #F4F6F0; }
+.nav-cta {
+  display: inline-block;
+  padding: 9px 18px;
+  background: var(--color-fg);
+  color: var(--color-bg);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.nav-cta:hover { background: var(--color-accent); color: var(--color-accent-text); transform: translateY(-1px); }
+@media (max-width: 767px) { .nav-cta { display: none; } }
+
+/* ----------------------------------------------------------------
+   HERO — dual CTA
+   ---------------------------------------------------------------- */
+.btn-secondary {
+  display: inline-block;
+  padding: 15px 34px;
+  background: rgba(244, 246, 240, 0.06);
+  color: #F4F6F0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(244, 246, 240, 0.45);
+  border-radius: 2px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+.btn-secondary:hover {
+  background: rgba(244, 246, 240, 0.16);
+  border-color: #F4F6F0;
+  transform: translateY(-1px);
+}
+/* Secondary button on light page background (not over the hero photo) */
+.btn-secondary--ink {
+  background: transparent;
+  color: var(--color-fg);
+  border-color: var(--color-fg);
+}
+.btn-secondary--ink:hover { background: var(--color-fg); color: var(--color-bg); }
+
+.hero-sub { max-width: 660px; }
+.hero-sub strong { font-weight: 600; color: #F4F6F0; }
+
+/* ----------------------------------------------------------------
+   PATH STRIP — instant self-select (two doors)
+   ---------------------------------------------------------------- */
+.path-strip { padding: var(--section-pad) var(--page-gutter); }
+.path-strip__inner { max-width: var(--content-max); margin: 0 auto; }
+.path-strip__header { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+.path-strip__header h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: clamp(30px, 4.2vw, 50px);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.path-strip__header h2 em { font-style: italic; }
+.path-strip__header p { color: var(--color-muted); font-size: 17px; }
+.path-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+@media (min-width: 768px) { .path-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+.path-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 40px 36px 32px;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 16px;
+  box-shadow: var(--color-card-shadow);
+  overflow: hidden;
+  transition: transform 0.35s var(--ease-out-expo), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.path-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--ease-out-expo);
+}
+.path-card:hover { transform: translateY(-6px); border-color: var(--color-accent); }
+.path-card:hover::before { transform: scaleX(1); }
+.path-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.path-card__q {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  padding-top: 8px;
+}
+.path-card__num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+  color: var(--color-accent);
+}
+.path-card__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.12;
+}
+.path-card__title em { font-style: italic; }
+.path-card__desc { color: var(--color-muted); font-size: 15.5px; line-height: 1.6; }
+.path-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.path-card__chip {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-muted);
+}
+.path-card__foot {
+  margin-top: auto;
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-border);
+}
+.path-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-fg);
+}
+.path-card__cta svg { width: 16px; height: 16px; transition: transform 0.3s var(--ease-out-expo); }
+.path-card:hover .path-card__cta svg { transform: translateX(6px); }
+.path-card__sector {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+/* Whole card is clickable via stretched link */
+.path-card__link::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+
+/* ----------------------------------------------------------------
+   LOGO CARDS — track tags
+   ---------------------------------------------------------------- */
+.logo-card__tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.logo-card__track {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+.logo-card__track--impact {
+  border-color: rgba(66, 245, 39, 0.5);
+  background: rgba(66, 245, 39, 0.12);
+  color: var(--color-fg);
+}
+
+/* ----------------------------------------------------------------
+   VOICES — track labels on testimonials
+   ---------------------------------------------------------------- */
+.voice-card__track {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+  margin-bottom: 18px;
+  align-self: flex-start;
+  position: relative;
+  z-index: 1;
+}
+.voice-card__track--impact {
+  border-color: rgba(66, 245, 39, 0.5);
+  background: rgba(66, 245, 39, 0.12);
+  color: var(--color-fg);
+}
+
+/* ----------------------------------------------------------------
+   FAQ — split into two track groups
+   ---------------------------------------------------------------- */
+.faq-groups { display: grid; grid-template-columns: 1fr; gap: 56px; }
+@media (min-width: 1024px) { .faq-groups { grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; } }
+.faq-group__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+.faq-group__title::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* ----------------------------------------------------------------
+   ABOUT — trust block for a 2024-founded firm
+   ---------------------------------------------------------------- */
+.about {
+  padding: var(--section-pad) var(--page-gutter);
+  border-top: 1px solid var(--color-border);
+}
+.about__inner { max-width: var(--content-max); margin: 0 auto; }
+.about__grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
+@media (min-width: 1024px) { .about__grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 96px; align-items: start; } }
+.about h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: clamp(28px, 3.8vw, 46px);
+  line-height: 1.12;
+  margin-bottom: 24px;
+}
+.about h2 em { font-style: italic; }
+.about__body p { color: var(--color-muted); font-size: 16.5px; line-height: 1.7; margin-bottom: 18px; max-width: 620px; }
+.about__body p strong { color: var(--color-fg); font-weight: 600; }
+.about-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--color-border); border: 1px solid var(--color-border); border-radius: 14px; overflow: hidden; }
+.about-fact { background: var(--color-card-bg); padding: 26px 24px; }
+.about-fact__num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(26px, 2.6vw, 34px);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--color-fg);
+  margin-bottom: 8px;
+}
+.about-fact__label { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-muted); }
+
+/* ----------------------------------------------------------------
+   SUB-PAGE HERO — shorter, breadcrumbed
+   ---------------------------------------------------------------- */
+.hero--page { min-height: 72vh; }
+.hero--page .hero-content { padding-top: 160px; }
+.hero-crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244, 246, 240, 0.72);
+  margin-bottom: 24px;
+}
+.hero-crumb a { color: inherit; transition: color 0.3s ease; }
+.hero-crumb a:hover { color: #F4F6F0; }
+.hero-crumb .hero-crumb__sep { opacity: 0.5; }
+.hero-crumb b { color: var(--color-accent); font-weight: 500; }
+
+/* ----------------------------------------------------------------
+   CASE FEATURE — flagship case study block (SFF on impact page)
+   ---------------------------------------------------------------- */
+.case-feature { padding: var(--section-pad) var(--page-gutter); border-top: 1px solid var(--color-border); }
+.case-feature__inner { max-width: var(--content-max); margin: 0 auto; }
+.case-feature__card {
+  position: relative;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 20px;
+  box-shadow: var(--color-card-shadow);
+  padding: 48px 40px;
+  overflow: hidden;
+}
+@media (min-width: 1024px) { .case-feature__card { padding: 72px 80px; } }
+.case-feature__card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), transparent 70%);
+}
+.case-feature__kicker {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 20px;
+}
+.case-feature__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: clamp(26px, 3.6vw, 44px);
+  line-height: 1.1;
+  max-width: 720px;
+  margin-bottom: 24px;
+}
+.case-feature__title em { font-style: italic; }
+.case-feature__body { color: var(--color-muted); font-size: 16.5px; line-height: 1.7; max-width: 680px; margin-bottom: 40px; }
+.case-feature__quote {
+  border-left: 3px solid var(--color-accent);
+  padding: 4px 0 4px 24px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-fg);
+  max-width: 720px;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.case-feature__attr { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-muted); margin-bottom: 40px; }
+.case-feature__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.case-feature__stat { background: var(--color-surface); padding: 24px 22px; }
+.case-feature__stat-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(26px, 2.8vw, 36px);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.case-feature__stat-num em { color: var(--color-accent); font-style: normal; }
+.case-feature__stat-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-muted); }
+
+/* ----------------------------------------------------------------
+   DELIVERABLES — what an impact engagement produces
+   ---------------------------------------------------------------- */
+.deliverables { padding: var(--section-pad) var(--page-gutter); border-top: 1px solid var(--color-border); }
+.deliverables__inner { max-width: var(--content-max); margin: 0 auto; }
+.deliverables__header { max-width: 680px; margin-bottom: 56px; }
+.deliverables__header h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.deliverables__header h2 em { font-style: italic; }
+.deliverables__header p { color: var(--color-muted); font-size: 16.5px; }
+.deliverables__grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 768px) { .deliverables__grid { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+.deliverable {
+  position: relative;
+  padding: 32px 28px 28px;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 14px;
+  transition: transform 0.3s var(--ease-out-expo), border-color 0.3s ease;
+}
+.deliverable:hover { transform: translateY(-4px); border-color: var(--color-accent); }
+.deliverable__icon {
+  width: 44px; height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  color: var(--color-fg);
+  margin-bottom: 20px;
+}
+.deliverable__icon svg { width: 20px; height: 20px; }
+.deliverable__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.deliverable__desc { color: var(--color-muted); font-size: 14.5px; line-height: 1.65; margin-bottom: 16px; }
+.deliverable__for {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  border-top: 1px solid var(--color-border);
+  padding-top: 14px;
+}
+.deliverable__for strong { color: var(--color-fg); font-weight: 500; }
+
+/* ----------------------------------------------------------------
+   CTA BAND — bottom-of-track-page conversion strip
+   ---------------------------------------------------------------- */
+.cta-band { padding: 0 var(--page-gutter) var(--section-pad); }
+.cta-band__inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  background: var(--color-fg);
+  color: var(--color-bg);
+  border-radius: 20px;
+  padding: 56px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+@media (min-width: 1024px) {
+  .cta-band__inner { flex-direction: row; align-items: center; justify-content: space-between; padding: 64px 80px; }
+}
+.cta-band__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: clamp(26px, 3.4vw, 42px);
+  line-height: 1.12;
+  max-width: 560px;
+}
+.cta-band__title em { font-style: italic; color: var(--color-accent); }
+.cta-band__sub { font-size: 15px; opacity: 0.7; margin-top: 10px; max-width: 480px; }
+.cta-band .btn-primary { flex-shrink: 0; }
+
+/* ----------------------------------------------------------------
+   REVEAL VARIANTS — slight directional interest for new sections
+   ---------------------------------------------------------------- */
+.reveal--left { transform: translateX(-24px); }
+.reveal--right { transform: translateX(24px); }
+.reveal--left.visible, .reveal--right.visible { transform: translateX(0); }
+
+@media (max-width: 767px) {
+  .path-card { padding: 28px 22px 24px; }
+  .about-facts { grid-template-columns: 1fr 1fr; }
+  .about-fact { padding: 20px 16px; }
+  .case-feature__card { padding: 36px 22px; }
+  .cta-band__inner { padding: 40px 24px; }
+  .hero--page { min-height: 60vh; }
+  .hero--page .hero-content { padding-top: 130px; }
+}
+
+
+
+/* ================================================================
+   REFINEMENT PASS — wider canvas, tighter rhythm, heavy stat
+   numerals, iconized commitments, stretched about facts, flat form
+   ================================================================ */
+
+:root { --content-max: 1340px; --section-pad: 84px; }
+
+/* Trusted-by stats — heavy display numerals */
+.trusted-stats__value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.trusted-stats__suffix { font-weight: 700; }
+.trusted-stats { margin: 0 auto 56px; }
+.logo-strip { padding: 64px var(--page-gutter) 72px; }
+
+/* Tighter inter-section rhythm */
+.path-strip__header { margin-bottom: 44px; }
+.commitments__header { margin: 0 auto 44px; }
+.voices__header { margin-bottom: 44px; }
+.faq__header { margin-bottom: 44px; }
+.deliverables__header { margin-bottom: 44px; }
+@media (min-width: 1024px) {
+  .approach .container { gap: 88px; }
+  .services__header { margin-bottom: 56px; }
+}
+
+/* Commitment cards — icon chip + small index, more editorial */
+.commitment-card { gap: 12px; padding: 34px 30px 32px; }
+.commitment-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+.commitment-card__icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(66, 245, 39, 0.12);
+  border: 1px solid rgba(66, 245, 39, 0.35);
+  color: var(--color-fg);
+  transition: transform 0.35s var(--ease-out-expo), background 0.3s ease;
+}
+.commitment-card__icon svg { width: 24px; height: 24px; }
+.commitment-card:hover .commitment-card__icon {
+  transform: translateY(-2px) scale(1.05);
+  background: rgba(66, 245, 39, 0.2);
+}
+.commitment-card__num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--color-muted-dim);
+}
+
+/* Voices — roomier cards on the wider canvas */
+.voices-grid { gap: 28px; }
+.voice-card { padding: 56px 34px 34px; }
+@media (min-width: 1024px) { .voices-grid { gap: 32px; } }
+
+/* About — facts panel stretches to match the copy height */
+@media (min-width: 1024px) { .about__grid { align-items: stretch; } }
+.about-facts { height: 100%; grid-auto-rows: 1fr; }
+.about-fact { display: flex; flex-direction: column; justify-content: center; }
+
+/* Contact form — flat and professional: no card chrome, the fields
+   carry the design through focus/action states instead */
+.contact-form-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+.contact-form-card::before { display: none; }
+.form-field { margin-bottom: 32px; }
+/* Accent underline sweeps in on focus */
+.form-field::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out-expo);
+  pointer-events: none;
+}
+.form-field:focus-within::after { transform: scaleX(1); }
+.btn-submit { transition: background 0.3s ease, transform 0.25s var(--ease-out-expo); }
+.btn-submit:hover { transform: translateY(-2px); }
+
+
+/* ================================================================
+   POLISH PASS — no italics, livelier buttons, duo testimonials,
+   relaxed comparison callouts, fixed CTA band, asset-file icons
+   ================================================================ */
+
+/* 1. No italic type anywhere — emphasis carries through weight/colour only */
+em, i { font-style: normal !important; }
+.chart-strapline,
+.case-feature__quote,
+.voice-card__mark { font-style: normal !important; }
+
+/* 2. Full-time vs Fractional callouts — breathing room */
+.ftf-chart--callouts { gap: 20px; }
+.ftf-chart--callouts .ftf-row {
+  padding: 30px 32px;
+  gap: 28px;
+  border-radius: 14px;
+}
+.ftf-callout__sub { font-size: 14px; line-height: 1.6; margin-top: 4px; }
+.chart-caption { margin-top: 18px; }
+
+/* 3. Buttons — every button responds: lift, glow, press */
+.btn-primary,
+.btn-secondary,
+.btn-submit,
+.nav-cta {
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.25s var(--ease-out-expo),
+    box-shadow 0.3s ease;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(66, 245, 39, 0.35); }
+.btn-primary:active { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(66, 245, 39, 0.3); }
+.btn-secondary:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22); }
+.btn-secondary:active { transform: translateY(-1px); }
+.nav-cta:hover { box-shadow: 0 6px 16px rgba(66, 245, 39, 0.3); }
+.nav-cta:active { transform: translateY(0); box-shadow: none; }
+.btn-submit:hover { box-shadow: 0 12px 28px rgba(66, 245, 39, 0.35); }
+.btn-submit:active { transform: translateY(0); box-shadow: none; }
+.approach-cta span { display: inline-block; transition: transform 0.3s var(--ease-out-expo); }
+.approach-cta:hover span { transform: translateX(5px); }
+
+/* 4. Duo testimonials (fractional page) — two large editorial cards */
+.voices-grid--duo { grid-template-columns: 1fr; gap: 28px; }
+@media (min-width: 900px) {
+  .voices-grid--duo { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+.voices-grid--duo .voice-card {
+  padding: 60px 44px 36px;
+  border-radius: 18px;
+}
+.voices-grid--duo .voice-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), transparent 65%);
+}
+.voices-grid--duo .voice-card__quote { font-size: 17px; line-height: 1.75; }
+.voices-grid--duo .voice-card__attr {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.voices-grid--duo .voice-card__track { margin-bottom: 0; }
+
+/* 5. CTA band — fixed charcoal palette so it reads right in BOTH themes */
+.cta-band__inner {
+  background: #14170F;
+  color: #F1F4EC;
+  border: 1px solid rgba(241, 244, 236, 0.08);
+  border-radius: 18px;
+  padding: 44px 36px;
+  gap: 28px;
+}
+@media (min-width: 1024px) {
+  .cta-band__inner { padding: 52px 64px; align-items: center; }
+}
+.cta-band__title { font-size: clamp(24px, 3vw, 38px); }
+.cta-band__sub { color: rgba(241, 244, 236, 0.68); opacity: 1; }
+
+/* 6. Icons served from assets/svgs — sized here, inverted for dark theme */
+.commitment-card__icon img,
+.deliverable__icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+[data-theme="dark"] .commitment-card__icon img,
+[data-theme="dark"] .deliverable__icon img { filter: invert(1) brightness(1.05); }
+
+/* Closing note under the fractional signals list */
+.value-prop__note {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 15.5px;
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+
+/* Icons — bare, no chip chrome: no background, no border, just the mark */
+.commitment-card__icon,
+.deliverable__icon {
+  width: auto;
+  height: auto;
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+.commitment-card__icon img,
+.deliverable__icon img {
+  width: 36px;
+  height: 36px;
+}
+.commitment-card:hover .commitment-card__icon {
+  transform: none;
+  background: none;
+}
+
+
+/* Bare icons align left with the card text, not centered */
+.commitment-card__icon,
+.deliverable__icon {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  place-items: unset;
+}
+
+
+/* CTA band — align its edges with the section content above (the
+   .container sections are content-max WITH gutter padding inside,
+   so the band box must be content-max minus both gutters), give it
+   clear air above, and keep it visibly raised in dark mode */
+.cta-band { padding: 40px var(--page-gutter) var(--section-pad); }
+.cta-band__inner { max-width: calc(var(--content-max) - 2 * var(--page-gutter)); }
+[data-theme="dark"] .cta-band__inner {
+  background: #1B2015;
+  border-color: rgba(241, 244, 236, 0.14);
+}
+
